@@ -1,23 +1,42 @@
+"use client";
 import Image from "next/image";
+import { dimensions } from "../utils/layout";
 
 export default function Banner() {
   return (
-    <div className="flex flex-col h-screen max-w-screen max-h-screen pt-24">
-      <div className="mb-16">
-        <Image
-          src="bgd_home.svg"
-          alt="background image"
-          width={850}
-          height={850}
-        />
-      </div>
+    <div className="mb-16 relative flex items-center justify-center">
+      <Image
+        src="background_blue.svg"
+        alt="background image"
+        width={dimensions.width / 2}
+        height={dimensions.height / 2}
+      />
 
-      <div className="flex flex-col items-center">
-        <p className="text-3xl mb-2 pb-1" style={{ borderBottomWidth: 1 }}>
-          More Informations
-        </p>
+      <div
+        className="absolute bg-black p-6 rounded-xl"
+        style={{
+          height: dimensions.height / 2.45,
+          width: dimensions.width / 2.13,
+        }}
+      >
+        <div className="flex flex-row items-center justify-start">
+          <h1 className="pr-6 text-4xl">Hi</h1>
+          <Image
+            src="hand.svg"
+            alt="hand icon"
+            width={dimensions.width / 34}
+            height={dimensions.width / 34}
+          />
+        </div>
 
-        <Image src="arrow.svg" alt="arrow icon" width={32} height={40} />
+        <div className="flex flex-col pt-12 space-y-4">
+          <p className="text-4xl">{"I'm"}</p>
+          <p className="text-6xl font-bold">Ingrid Lima</p>
+          <div className="flex flex-row">
+            <p className="text-4xl flex flex-row items-center">{"And I'm a"}</p>
+            <p className="font-bold ml-2 text-5xl">mobile developer</p>
+          </div>
+        </div>
       </div>
     </div>
   );
