@@ -7,6 +7,16 @@ const config: Config = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    colors: {
+      customBlue: "#0AC8FF",
+      customGreen: "#00D0D0",
+      customGray: "#CDCDCD",
+      black: "#000",
+      white: "#FFF",
+    },
+    fontFamily: {
+      "gentium-book-plus": ["--font-gentium-book-plus"],
+    },
     extend: {
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
