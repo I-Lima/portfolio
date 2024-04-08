@@ -1,9 +1,14 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Gentium_Book_Plus } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 
-const inter = Inter({ subsets: ["latin"] });
+const gentiumBookPlus = Gentium_Book_Plus({
+  weight: ["400", "700"],
+  style: ["normal"],
+  subsets: ["latin"],
+  variable: "--font-gentium-book-plus",
+});
 
 export const metadata: Metadata = {
   title: "IL Portfolio",
@@ -17,7 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={gentiumBookPlus.className}>
         <header>
           <Navbar />
         </header>

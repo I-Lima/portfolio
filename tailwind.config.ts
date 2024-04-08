@@ -14,6 +14,9 @@ const config: Config = {
       black: "#000",
       white: "#FFF",
     },
+    fontFamily: {
+      "gentium-book-plus": ["--font-gentium-book-plus"],
+    },
     extend: {
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
