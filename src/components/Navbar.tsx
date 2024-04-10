@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Navbar() {
   return (
-    <nav className="p-4 mb-12">
+    <nav className="px-12 py-4 mb-12">
       <div className="container mx-auto flex items-center justify-between bg-black fixed">
         <div>
           <a href="/">
@@ -11,7 +11,7 @@ export default function Navbar() {
         </div>
 
         <div className="hidden md:flex">
-          <a href="/" className="text-customGray ml-4">
+          <a href="#about" className="text-customGray ml-4">
             About
           </a>
           <a href="/" className="text-customGray ml-4">
