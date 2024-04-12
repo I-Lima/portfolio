@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Banner from "@/components/Home/Banner";
 import { dimensions } from "../components/utils/layout";
+import About from "@/components/Home/About";
 
 export default function Home() {
   return (
@@ -23,6 +24,8 @@ export default function Home() {
           />
         </div>
       </div>
+
+      <About />
     </main>
   );
 }
