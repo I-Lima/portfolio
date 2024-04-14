@@ -14,7 +14,7 @@ export default function Navbar() {
           <a href="#about" className="text-customGray ml-4">
             About
           </a>
-          <a href="/" className="text-customGray ml-4">
+          <a href="#experiences" className="text-customGray ml-4">
             Experiences
           </a>
           <a href="/" className="text-customGray ml-4">
