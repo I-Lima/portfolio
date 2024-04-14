@@ -1,4 +1,5 @@
 export type Skill = { url: string; name: string };
+
 export type ExperienceData = {
   role: string;
   description: string;
