@@ -11,4 +11,3 @@ export type Experience = {
   enterprise: string;
   data: ExperienceData[];
 };
-

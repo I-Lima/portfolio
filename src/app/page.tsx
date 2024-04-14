@@ -6,7 +6,6 @@ import { dimensions } from "../components/utils/layout";
 import About from "@/components/Home/About";
 import Experiences from "@/components/Home/Experiences";
 
-
 export default function Home() {
   return (
     <main className="flex min-h-screen min-w-screen flex-col items-center">
