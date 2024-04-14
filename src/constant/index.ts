@@ -79,6 +79,7 @@ export const SKILL_ELEMENTS: Skill[] = [
     name: "Docker",
   },
 ];
+
 export const EXPERIENCE_LIST: Experience[] = [
   {
     enterprise: "FFIT - Inovações e Tecnologia (Home Office)",
