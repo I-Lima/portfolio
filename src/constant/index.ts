@@ -1,4 +1,4 @@
-import { Experience, Skill } from "./types";
+import { Experience, Skill } from "../types/constants";
 
 export const PHOTO = "https://avatars.githubusercontent.com/u/83174653?v=4";
 export const GITHUB = "https://github.com/I-Lima";

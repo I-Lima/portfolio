@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Navbar() {
   return (
-    <nav className="px-12 py-4 mb-12 bg-black z-50 fixed container mx-auto flex items-center justify-between">
+    <nav className="px-12 py-4 mb-12 bg-black z-50 fixed mx-auto flex items-center justify-between w-full">
       <div>
         <a href="/">
           <Image src="logo.svg" alt="website logo" width={100} height={80} />
@@ -16,7 +16,7 @@ export default function Navbar() {
         <a href="#experiences" className="text-customGray ml-4 text-xl">
           Experiences
         </a>
-        <a href="/" className="text-customGray ml-4 text-xl">
+        <a href="#projects" className="text-customGray ml-4 text-xl">
           Projects
         </a>
       </div>

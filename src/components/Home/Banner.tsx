@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { dimensions } from "../utils/layout";
+import { dimensions } from "../../utils/layout";
 
 export default function Banner() {
   return (

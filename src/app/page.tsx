@@ -2,9 +2,10 @@
 
 import Image from "next/image";
 import Banner from "@/components/Home/Banner";
-import { dimensions } from "../components/utils/layout";
+import { dimensions } from "../utils/layout";
 import About from "@/components/Home/About";
 import Experiences from "@/components/Home/Experiences";
+import Projects from "@/components/Home/Projects";
 
 export default function Home() {
   return (
@@ -14,7 +15,7 @@ export default function Home() {
 
         <div className="flex flex-col items-center mt-20">
           <p className="text-3xl mb-2 pb-1" style={{ borderBottomWidth: 1 }}>
-            More Informations
+            More Information
           </p>
 
           <Image
@@ -29,6 +30,8 @@ export default function Home() {
       <About />
 
       <Experiences />
+
+      <Projects />
     </main>
   );
 }

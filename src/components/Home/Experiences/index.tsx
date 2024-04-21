@@ -1,9 +1,9 @@
 "use client";
 import { useMemo } from "react";
 import { EXPERIENCE_LIST } from "@/constant";
-import Tag from "./Tag";
+import Tag from "../../Tag";
 import SectionTitle from "../SectionTitle";
-import { MdArrowForward } from "react-icons/md";
+import ButtonMore from "../ButtonMore";
 
 export default function Experiences() {
   const item = EXPERIENCE_LIST[0];
@@ -23,7 +23,7 @@ export default function Experiences() {
         <div
           key={i}
           className="flex justify-center"
-          style={{ marginLeft: "-8rem" }} // -100 em px equivalente
+          style={{ marginLeft: "-8rem" }}
         >
           <div className={`mr-4 ${paddingTopClass}`}>
             <p className="text-customGray">{`(${dataItem.entrance} - ${output})`}</p>
@@ -74,14 +74,7 @@ export default function Experiences() {
         {listData()}
 
         <div className="flex flex-wrap justify-start px-96">
-          <div
-            className="flex flex-row gap-2 px-4 py-2 border-2 border-dashed rounded-xl hover:cursor-pointer"
-            onClick={() => {}}
-          >
-            <p className="text-2xl font-bold">More</p>
-
-            <MdArrowForward size={35} />
-          </div>
+          <ButtonMore onClick={() => {}} />
         </div>
       </div>
     </div>
