@@ -1,11 +1,5 @@
 import { Experience, Skill } from "../types/constants";
 
-export const PHOTO = "https://avatars.githubusercontent.com/u/83174653?v=4";
-export const GITHUB = "https://github.com/I-Lima";
-export const LINKEDIN = "https://www.linkedin.com/in/ingridlima-js/";
-export const MEDIUM = "https://medium.com/@i-lima";
-export const MAIL = "mailto:ibezerradelima@gmail.com";
-
 export const ABOUT_TEXT =
   "I have accumulated solid professional experience in the mobile development field, focusing on React Native and Javascript. Additionally, I have explored personal projects using native Android, where I utilized Kotlin as the primary language. \nI contribute to the community by writing articles on Medium, in which I share my recent experiences and learnings.";
 

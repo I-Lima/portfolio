@@ -1,5 +1,5 @@
 "use client";
-import { GITHUB, LINKEDIN, MAIL, MEDIUM } from "@/constant";
+import { GITHUB, LINKEDIN, MAIL, MEDIUM } from "@/constant/urls";
 import Image from "next/image";
 
 export default function Footer() {
@@ -22,7 +22,7 @@ export default function Footer() {
           alt="github icon"
           width={50}
           height={50}
-          onClick={() => window.open(GITHUB)}
+          onClick={() => window.open(GITHUB.PROFILE)}
           className="hover:cursor-pointer"
         />
 

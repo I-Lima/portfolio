@@ -3,6 +3,7 @@
 import SectionTitle from "../SectionTitle";
 import ButtonMore from "../ButtonMore";
 import ServerListProjects from "./ServerListProjects";
+import { GITHUB } from "@/constant/urls";
 export default function Projects() {
   const _renderList = ServerListProjects();
 
@@ -20,7 +21,7 @@ export default function Projects() {
       </div>
 
       <div className="flex justify-start px-50 mt-14">
-        <ButtonMore onClick={() => {}} />
+        <ButtonMore onClick={() => window.open(GITHUB.REPOSITORIES)} />
       </div>
     </div>
   );

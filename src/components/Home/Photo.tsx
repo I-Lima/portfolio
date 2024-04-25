@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import { dimensions } from "../../utils/layout";
-import { PHOTO } from "@/constant/index";
+import { PHOTO } from "@/constant/urls";
 
 export default function Photo() {
   return (
