@@ -2,14 +2,8 @@
 import Image from "next/image";
 import SectionTitle from "./SectionTitle";
 import Photo from "./Photo";
-import {
-  GITHUB,
-  LINKEDIN,
-  MAIL,
-  MEDIUM,
-  SKILL_ELEMENTS,
-  ABOUT_TEXT,
-} from "@/constant/index";
+import { GITHUB, LINKEDIN, MAIL, MEDIUM } from "@/constant/urls";
+import { SKILL_ELEMENTS, ABOUT_TEXT } from "@/constant/index";
 
 export default function About() {
   const _skillsList = () => {
@@ -68,7 +62,7 @@ export default function About() {
               alt="github icon"
               width={50}
               height={50}
-              onClick={() => window.open(GITHUB)}
+              onClick={() => window.open(GITHUB.PROFILE)}
               className="hover:cursor-pointer"
             />
 
