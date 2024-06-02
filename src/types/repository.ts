@@ -1,4 +1,4 @@
-export type RepositoryData = {
+export type ProjectData = {
   id: number;
   node_id: string;
   name: string;
