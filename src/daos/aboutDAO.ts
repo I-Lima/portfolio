@@ -9,7 +9,10 @@ class aboutDAO {
 
   async getAllAboutData() {
     const snapshot = await getDocs(this.collectionRef);
-    return snapshot.docs.map((doc) => ({ id: doc.id, data: doc.data() }));
+    return snapshot.docs.map((doc) => {
+      const data = doc.data();
+      return data ? { id: doc.id, ...data } : null;
+    });
   }
 }
 
