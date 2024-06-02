@@ -1,11 +1,11 @@
 import Tag from "@/components/Tag";
 import ProjectsServices from "@/services/projectsServices";
-import { RepositoryData } from "@/types/urls";
+import { ProjectData } from "@/types/repository";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
 const ServerListProjects = () => {
-  const [dataProject, setDataProject] = useState<RepositoryData[]>([]);
+  const [dataProject, setDataProject] = useState<ProjectData[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
   const projectsServices = new ProjectsServices();
