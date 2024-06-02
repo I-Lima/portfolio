@@ -15,9 +15,7 @@ export default function About() {
         <SectionTitle title="About" />
       </div>
 
-      <div>
-        {_renderComponent()}
-      </div>
+      <div>{_renderComponent()}</div>
     </div>
   );
 }

@@ -1,6 +1,5 @@
 import { Experience } from "../types/constants";
 
-
 export const EXPERIENCE_LIST: Experience[] = [
   {
     enterprise: "FFIT - Inovações e Tecnologia (Home Office)",

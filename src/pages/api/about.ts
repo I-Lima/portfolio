@@ -8,7 +8,8 @@ export default async function handler(
 ) {
   switch (req.method) {
     case "GET":
-      await aboutDAO.getAllAboutData()
+      await aboutDAO
+        .getAllAboutData()
         .then((success) => {
           return responseBuilder(
             { status: 200, success: true, data: success[0] },

@@ -22,7 +22,7 @@ const ServerListAbout = () => {
         setIsLoading(false);
       }
     };
-  
+
     loadData();
   }, []);
 
@@ -31,19 +31,18 @@ const ServerListAbout = () => {
       <div className="flex flex-row w-screen gap-20">
         <div className="animate-pulse flex flex-col mt-4 transition-transform w-2/3 justify-start">
           <div className="flex flex-row items-center ">
-            <div className="bg-customGray h-16 w-1/2 mr-24" /> 
-            <div 
-              className="bg-customGray mt-4" 
-              style={{ 
-                borderRadius: dimensions.width / 2, 
-                width: dimensions.width / 7, 
+            <div className="bg-customGray h-16 w-1/2 mr-24" />
+            <div
+              className="bg-customGray mt-4"
+              style={{
+                borderRadius: dimensions.width / 2,
+                width: dimensions.width / 7,
                 height: dimensions.width / 7,
-              }} 
+              }}
             />
-
           </div>
 
-          <div className="bg-customGray h-48 w-/4 mt-8" />  
+          <div className="bg-customGray h-48 w-/4 mt-8" />
 
           <div className="mt-4 flex flex-row gap-4">
             <div className="bg-customGray h-8 w-8 rounded-3xl" />
@@ -82,15 +81,14 @@ const ServerListAbout = () => {
     if (isError) return _renderError();
 
     return (dataAbout?.description || []).map((line, index) => (
-        <p
-          className="mb-4 text-lg text-justify"
-          key={index}
-          style={{ marginBottom: "10px", whiteSpace: "pre-line" }}
-        >
-          {line}
-        </p>
-      )
-    );
+      <p
+        className="mb-4 text-lg text-justify"
+        key={index}
+        style={{ marginBottom: "10px", whiteSpace: "pre-line" }}
+      >
+        {line}
+      </p>
+    ));
   };
 
   const _skillsList = () => {
@@ -113,9 +111,7 @@ const ServerListAbout = () => {
             <Photo />
           </div>
 
-          <div className="flex flex-col">
-            { _description() }
-          </div>
+          <div className="flex flex-col">{_description()}</div>
 
           <div className="mt-20 grid grid-cols-4 gap-0 max-w-sm">
             <Image
@@ -160,12 +156,12 @@ const ServerListAbout = () => {
           <h2 className="text-4xl font-bold underline">My Skills</h2>
 
           <div className="flex flex-wrap items-center justify-start mt-8 gap-4 ">
-            { _skillsList() }
+            {_skillsList()}
           </div>
         </div>
       </div>
-    )
-  }
-}
+    );
+  };
+};
 
 export default ServerListAbout;

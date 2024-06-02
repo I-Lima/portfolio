@@ -1,10 +1,10 @@
 export type aboutSkillProps = {
-  name: string,
-  url: string,
-}
+  name: string;
+  url: string;
+};
 
 export type aboutProps = {
-  id: string,
-  description: string[],
-  skills: aboutSkillProps[],
-}
+  id: string;
+  description: string[];
+  skills: aboutSkillProps[];
+};
