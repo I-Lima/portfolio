@@ -22,6 +22,5 @@ export const parseDateString = (dateString: string | null) => {
     nov: 10,
     dec: 11,
   };
-  
   return new Date(parseInt(year, 10), months[month.toLowerCase()]);
 };
