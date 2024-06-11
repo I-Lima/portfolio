@@ -3,5 +3,5 @@ export type dataProps = {
   message?: string;
   success: boolean;
   error?: string;
-  data?: Array<object> | object;
+  data?: Array<object> | object | null;
 };
