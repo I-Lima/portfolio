@@ -145,8 +145,8 @@ const ServerListExperiences = () => {
         );
       })}
 
-      <div className="flex flex-wrap justify-start px-96">
-        <ButtonMore onClick={() => {}} />
+      <div className="flex flex-wrap justify-start px-50">
+        <ButtonMore href="/experiences" />
       </div>
     </div>
   );
