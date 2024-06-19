@@ -80,11 +80,20 @@ class ExperienceServices {
       (data as dataProps).data,
       "output",
     );
-    const newSortedDocuments = sortedDocuments.map((item) => {
-      const historyArray = Object.keys(item.history).map((key) =>
-        JSON.parse(key),
+
+    const newSortedDocuments = sortedDocuments.map((document) => {
+      const historyArray = Object.values(document.history);
+      const orderedHistory = _.orderBy(
+        historyArray,
+        (item) => parseDateString(item.output),
+        ["desc"],
       );
-      return { ...item, history: historyArray as experienceHistoryProps[] };
+
+      const updatedHistory = orderedHistory.map((item) => {
+        return { ...item, output: item.output || "currently" };
+      });
+
+      return { ...document, history: updatedHistory };
     });
 
     return newSortedDocuments as experienceProps[];
