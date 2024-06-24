@@ -3,12 +3,7 @@ import { IoFilter } from "react-icons/io5";
 import { IoIosArrowDown } from "react-icons/io";
 import { filterItem } from "@/app/experiences/page";
 import { useExperienceStore } from "@/hooks/stateHooks";
-
-export interface FilterProps {
-  data: filterItem[];
-}
-
-export type selectedOptions = { [key: string]: string[] };
+import { FilterProps } from "@/types/filter";
 
 export default function Filter({ data }: FilterProps) {
   const [dataFilter, setDataFilter] = useState<filterItem[]>([]);
