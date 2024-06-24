@@ -10,7 +10,7 @@ import Projects from "@/components/Home/Projects";
 export default function Home() {
   return (
     <main className="flex min-h-screen min-w-screen flex-col items-center">
-      <div className="flex flex-col h-screen max-w-screen max-h-screen pt-24">
+      <div className="flex flex-col h-screen max-w-screen pt-24">
         <Banner />
 
         <div className="flex flex-col items-center mt-20">
