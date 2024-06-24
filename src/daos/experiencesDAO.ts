@@ -10,7 +10,7 @@ class experiencesDAO {
   /**
    * Retrieves all experiences data from the Firestore collection.
    *
-   * @return {Promise<Experience[]>} An array of experiences, where each experience is an object
+   * @return {Promise<experienceProps[]>} An array of experiences, where each experience is an object
    * containing the experience ID and its data.
    */
   async getAllExperiencesData() {
