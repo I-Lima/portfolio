@@ -1,6 +1,6 @@
 import { getExperienceData } from "@/Repositories/experienceRepository";
 import { dataProps } from "@/types/api";
-import { experienceHistoryProps, experienceProps } from "@/types/dao";
+import { experienceHistoryProps, experienceProps } from "@/types/experiences";
 import { parseDateString } from "@/utils/general";
 import to from "await-to-js";
 import _ from "lodash";
