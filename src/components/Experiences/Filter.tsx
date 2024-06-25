@@ -1,20 +1,14 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { IoFilter } from "react-icons/io5";
 import { IoIosArrowDown } from "react-icons/io";
-import { filterItem } from "@/app/experiences/page";
 import { useExperienceStore } from "@/hooks/stateHooks";
-import { FilterProps } from "@/types/filter";
 
-export default function Filter({ data }: FilterProps) {
-  const [dataFilter, setDataFilter] = useState<filterItem[]>([]);
+export default function Filter() {
   const [open, setOpen] = useState(false);
   const [openItems, setOpenItems] = useState<number[]>([]);
+  const filterData = useExperienceStore((state) => state.filterData);
   const setFilterData = useExperienceStore((state) => state.setFilter);
   const filter = useExperienceStore((state) => state.filter);
-
-  useEffect(() => {
-    setDataFilter(data);
-  }, [data]);
 
   const _handleOpen = () => setOpen(!open);
 
@@ -75,22 +69,29 @@ export default function Filter({ data }: FilterProps) {
   };
 
   const _renderList = () => {
-    return dataFilter.map((item, i) => (
-      <div key={i}>
-        <div
-          className="px-4 py-2 cursor-pointer flex flex-row w-full justify-between hover:bg-customBlue hover:bg-opacity-20 shadow-lg"
-          onClick={() => _handleItemClick(i)}
-        >
-          <p className="text-black text-xl">{item.value}</p>
-          <IoIosArrowDown size={30} color="black" />
-        </div>
-        {openItems.includes(i) && (
-          <div className="flex flex-col max-h-52 overflow-y-auto">
-            {_renderOptions(item.data, item.value)}
+    if (filterData.length === 0) return null;
+
+    return (
+      <div>
+        {filterData.map((item, i) => (
+          <div key={i}>
+            <div
+              className="px-4 py-2 cursor-pointer flex flex-row w-full justify-between hover:bg-customBlue hover:bg-opacity-20 shadow-lg"
+              onClick={() => _handleItemClick(i)}
+            >
+              <p className="text-black text-xl">{item.value}</p>
+              <IoIosArrowDown size={30} color="black" />
+            </div>
+
+            {openItems.includes(i) && (
+              <div className="flex flex-col max-h-52 overflow-y-auto">
+                {_renderOptions(item.data, item.value)}
+              </div>
+            )}
           </div>
-        )}
+        ))}
       </div>
-    ));
+    );
   };
 
   return (

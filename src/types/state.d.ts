@@ -1,9 +1,10 @@
 import { experienceProps } from "./dao";
-import { selectedOptions } from "../components/Experiences/Filter";
+import { selectedOptionsProps } from "./filter";
 
 export type ExperienceState = {
   experienceData: experienceProps[];
-  filter: selectedOptions;
+  filterData: filterItem[];
+  filter: selectedOptionsProps;
   setExperienceData: (data: experienceProps[]) => void;
-  setFilter: (dataFilter: selectedOptions) => void;
+  setFilter: (dataFilter: selectedOptionsProps) => void;
 };
