@@ -69,16 +69,25 @@ const ServerExperiences = () => {
     return (
       <>
         <div className="flex flex-col w-full justify-start items-start h-screen">
-          <div className="animate-pulse mt-4 transition-transform bg-customGray h-16 w-3/5" />
+          <div className="animate-pulse mt-4 transition-transform bg-customGray h-16 w-2/4" />
 
-          <div className="flex flex-row justify-between mt-8">
-            <div className="flex flex-col mt-6">
+          <div className="flex w-full mt-8">
+            <div className="flex flex-col w-full">
+              <div className="animate-pulse mt-4 transition-transform bg-customGray h-10 w-2/5" />
               <div className="animate-pulse mt-4 transition-transform bg-customGray h-10 w-1/5" />
 
-              <div></div>
+              <div className="animate-pulse transition-transform bg-customGray h-48 w-3/5 mt-8" />
             </div>
 
-            <div className="flex flex-col mt-6"></div>
+            <div className="flex flex-col w-1/2">
+              <div className="animate-pulse transition-transform bg-customGray h-12 w-32 mt-8" />
+
+              <div className="animate-pulse transition-transform flex flex-row mt-8 gap-4">
+                <div className="bg-customGray h-12 w-32 rounded" />
+                <div className="bg-customGray h-12 w-32 rounded" />
+                <div className="bg-customGray h-12 w-32 rounded" />
+              </div>
+            </div>
           </div>
         </div>
       </>
