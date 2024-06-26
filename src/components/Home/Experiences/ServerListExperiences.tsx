@@ -1,4 +1,4 @@
-import { experienceHistoryProps, experienceProps } from "@/types/dao";
+import { experienceHistoryProps, experienceProps } from "@/types/experiences";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import { dimensions } from "@/utils/layout";
