@@ -3,8 +3,12 @@ import { selectedOptionsProps } from "./filter";
 
 export type ExperienceState = {
   experienceData: experienceProps[];
+  filteredExperienceData: experienceProps[];
   filterData: filterItem[];
   filter: selectedOptionsProps;
+  query: string;
   setExperienceData: (data: experienceProps[]) => void;
-  setFilter: (dataFilter: selectedOptionsProps) => void;
+  setFilterData: (data: setFilterDataProps) => void;
+  setFilter: (filter: selectedOptionsProps) => void;
+  setQuery: (query: string) => void;
 };

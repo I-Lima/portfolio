@@ -6,9 +6,9 @@ import { useExperienceStore } from "@/hooks/stateHooks";
 export default function Filter() {
   const [open, setOpen] = useState(false);
   const [openItems, setOpenItems] = useState<number[]>([]);
-  const filterData = useExperienceStore((state) => state.filterData);
-  const setFilterData = useExperienceStore((state) => state.setFilter);
-  const filter = useExperienceStore((state) => state.filter);
+  const { filterData, filter, setFilter } = useExperienceStore(
+    (state) => state,
+  );
 
   const _handleOpen = () => setOpen(!open);
 
@@ -51,7 +51,7 @@ export default function Filter() {
       };
     }
 
-    setFilterData(newFilter);
+    setFilter(newFilter);
   };
 
   const _renderOptions = (item: string[], topic: string) => {

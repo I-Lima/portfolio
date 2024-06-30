@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import experienceServices from "@/services/experienceServices";
-import { experienceHistoryProps, experienceProps } from "@/types/experiences";
+import { experienceHistoryProps } from "@/types/experiences";
 import { dimensions } from "@/utils/layout";
 import Image from "next/image";
 import Tag from "@/components/Tag";
@@ -10,21 +10,15 @@ import { useExperienceStore } from "@/hooks/stateHooks";
 const ServerExperiences = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
-  const [filteredData, setFilteredData] = useState<experienceProps[]>([]);
-  const filter = useExperienceStore((state) => state.filter);
-  const experienceData = useExperienceStore((state) => state.experienceData);
-  const setExperienceData = useExperienceStore(
-    (state) => state.setExperienceData,
+  const { setExperienceData, filteredExperienceData } = useExperienceStore(
+    (state) => state,
   );
 
   useEffect(() => {
     const loadData = async () => {
       try {
         const data = await experienceServices.getAllExperienceData();
-        if (data) {
-          setExperienceData(data);
-          setFilteredData(data);
-        }
+        if (data) setExperienceData(data);
       } catch (error) {
         setIsError(true);
       } finally {
@@ -34,36 +28,6 @@ const ServerExperiences = () => {
 
     loadData();
   }, []);
-
-  useEffect(() => {
-    function filterExperiences() {
-      if (!filter) return setFilteredData(experienceData);
-
-      const filteredExperiences = experienceData.map((experience) => {
-        const newHistory = experience.history.filter(
-          (historyItem: experienceHistoryProps) => {
-            const hasSkill = filter.skill
-              ? filter.skill.some((skill) => historyItem.tags.includes(skill))
-              : true;
-            const hasType = filter.type
-              ? filter.type.includes(historyItem.type)
-              : true;
-
-            return hasSkill && hasType;
-          },
-        );
-
-        if (newHistory.length > 0) {
-          return { ...experience, history: newHistory };
-        } else {
-          return null;
-        }
-      });
-
-      setFilteredData(filteredExperiences);
-    }
-    filterExperiences();
-  }, [filter]);
 
   const _renderLoading = () => {
     return (
@@ -154,12 +118,12 @@ const ServerExperiences = () => {
     });
   };
 
-  if (isError || !filteredData) return _renderError();
+  if (isError || !filteredExperienceData) return _renderError();
   if (isLoading) return _renderLoading();
 
   return (
     <div>
-      {filteredData.map((item, i) => {
+      {filteredExperienceData.map((item, i) => {
         if (!item) return null;
 
         return (
