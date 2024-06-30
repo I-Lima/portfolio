@@ -1,4 +1,4 @@
-import { experienceHistoryProps, experienceProps } from "@/types/dao";
+import { experienceHistoryProps, experienceProps } from "@/types/experiences";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import { dimensions } from "@/utils/layout";
@@ -145,8 +145,8 @@ const ServerListExperiences = () => {
         );
       })}
 
-      <div className="flex flex-wrap justify-start px-96">
-        <ButtonMore onClick={() => {}} />
+      <div className="flex flex-wrap justify-start px-50">
+        <ButtonMore href="/experiences" />
       </div>
     </div>
   );
