@@ -2,6 +2,7 @@
 import SectionTitle from "@/components/Home/SectionTitle";
 import ServerExperiences from "./ServerExperiences";
 import Filter from "@/components/Experiences/Filter";
+import Search from "@/components/Experiences/Search";
 
 export default function Experiences() {
   const _renderList = ServerExperiences();
@@ -14,8 +15,14 @@ export default function Experiences() {
       <div className="flex flex-row items-start justify-between pr-12">
         <SectionTitle title="Experiences" />
 
-        <div>
-          <Filter />
+        <div className="flex flex-row gap-4">
+          <div>
+            <Search />
+          </div>
+
+          <div>
+            <Filter />
+          </div>
         </div>
       </div>
 
