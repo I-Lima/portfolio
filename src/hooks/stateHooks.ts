@@ -113,7 +113,8 @@ const filterResults = ({ set, get }: filterResultsProps): void => {
       } else {
         return null;
       }
-    });
+    })
+    .filter((result): result is experienceProps => result !== null);
 
   set({ filteredExperienceData: filteredResults });
 };
