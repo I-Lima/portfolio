@@ -1,6 +1,6 @@
 import { getAboutData } from "@/Repositories/aboutRepository";
 import { dataProps } from "@/types/api";
-import { aboutProps } from "@/types/dao";
+import { aboutProps } from "@/types/about";
 import to from "await-to-js";
 
 class AboutServices {

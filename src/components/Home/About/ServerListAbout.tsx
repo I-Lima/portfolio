@@ -1,5 +1,5 @@
 import aboutServices from "@/services/aboutServices";
-import { aboutProps } from "@/types/dao";
+import { aboutProps } from "@/types/about";
 import Image from "next/image";
 import { GITHUB, LINKEDIN, MAIL, MEDIUM } from "@/constant/urls";
 import Photo from "../Photo";
