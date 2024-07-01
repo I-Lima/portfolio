@@ -1,4 +1,4 @@
-import { experienceProps } from "./dao";
+import { experienceProps } from "./experiences";
 import { selectedOptionsProps } from "./filter";
 
 export type ExperienceState = {
