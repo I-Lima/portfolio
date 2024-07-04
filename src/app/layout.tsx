@@ -3,6 +3,7 @@ import { Gentium_Book_Plus } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { ThemeProvider } from "@/context/ThemeContext";
 
 const gentiumBookPlus = Gentium_Book_Plus({
   weight: ["400", "700"],
@@ -26,7 +27,7 @@ export default function RootLayout({
       <body className={gentiumBookPlus.className}>
         <Navbar />
 
-        <main>{children}</main>
+        <ThemeProvider>{children}</ThemeProvider>
 
         <Footer />
       </body>
