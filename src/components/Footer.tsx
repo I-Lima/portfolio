@@ -45,7 +45,7 @@ export default function Footer() {
         />
       </div>
 
-      <div className="flex flex-row gap-2">
+      <div className="flex flex-row gap-2 text-white">
         <p className="text-center self-center">Developed by </p>
 
         <Image src="logoWithStroke.svg" width={100} height={50} alt="logo" />
