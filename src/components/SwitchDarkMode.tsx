@@ -11,7 +11,7 @@ function SwitchDarkMode() {
   const handleToggle = () => {
     setIsDark(!isDark);
     setTheme(isDark ? "light" : "dark");
-  }
+  };
 
   useEffect(() => {
     setIsDark(theme === "dark");
@@ -23,11 +23,12 @@ function SwitchDarkMode() {
 
       <div
         onClick={handleToggle}
-        className={`w-16 h-8 flex items-center border-black border-2 bg-white rounded-full p-1 cursor-pointer transition-colors duration-300 ${isDark ? 'bg-green-500' : ''}`}
+        className={`w-16 h-8 flex items-center border-black border-2 bg-white rounded-full p-1 cursor-pointer transition-colors duration-300 ${isDark ? "bg-green-500" : ""}`}
       >
         <div
-          className={`bg-black w-6 h-6 rounded-full shadow-md transform transition-transform duration-300 ${isDark ? 'translate-x-7' : ''
-            }`}
+          className={`bg-black w-6 h-6 rounded-full shadow-md transform transition-transform duration-300 ${
+            isDark ? "translate-x-7" : ""
+          }`}
         ></div>
       </div>
 

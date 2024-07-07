@@ -11,7 +11,7 @@ export default function Navbar() {
         </a>
       </div>
 
-      <div className="hidden md:flex dark:text-customGray text-black" >
+      <div className="hidden md:flex dark:text-customGray text-black">
         <a href="#about" className="ml-4 text-xl">
           About
         </a>

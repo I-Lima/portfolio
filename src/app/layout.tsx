@@ -24,7 +24,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={gentiumBookPlus.className + " bg-bgWhite dark:bg-bgBlack"}>
+      <body
+        className={gentiumBookPlus.className + " bg-bgWhite dark:bg-bgBlack"}
+      >
         <Providers>
           <Navbar />
           {children}
