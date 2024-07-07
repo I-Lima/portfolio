@@ -1,6 +1,7 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
+  darkMode: "class",
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -11,8 +12,10 @@ const config: Config = {
       customBlue: "#0AC8FF",
       customGreen: "#00D0D0",
       customGray: "#CDCDCD",
+      bgBlack: "#000814",
       black: "#000",
       white: "#FFF",
+      bgWhite: "#f8f8ff",
     },
     fontFamily: {
       "gentium-book-plus": ["--font-gentium-book-plus"],
