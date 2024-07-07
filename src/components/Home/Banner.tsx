@@ -1,4 +1,5 @@
 "use client";
+
 import Image from "next/image";
 import { dimensions } from "../../utils/layout";
 
@@ -13,7 +14,7 @@ export default function Banner() {
       />
 
       <div
-        className="absolute bg-black p-6 rounded-xl"
+        className="absolute bg-bgWhite dark:bg-bgBlack p-6 rounded-xl"
         style={{
           height: dimensions.height / 2.45,
           width: dimensions.width / 2.13,

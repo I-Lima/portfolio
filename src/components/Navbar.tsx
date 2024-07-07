@@ -1,22 +1,24 @@
+"use client";
+
 import Image from "next/image";
 
 export default function Navbar() {
   return (
-    <nav className="px-12 py-4 mb-12 bg-black z-50 fixed mx-auto flex items-center justify-between w-full">
+    <nav className="px-12 py-4 mb-12 bg-bgWhite dark:bg-bgBlack z-50 fixed mx-auto flex items-center justify-between w-full">
       <div>
         <a href="/">
           <Image src="logo.svg" alt="website logo" width={100} height={80} />
         </a>
       </div>
 
-      <div className="hidden md:flex">
-        <a href="#about" className="text-customGray ml-4 text-xl">
+      <div className="hidden md:flex dark:text-customGray text-black" >
+        <a href="#about" className="ml-4 text-xl">
           About
         </a>
-        <a href="#experiences" className="text-customGray ml-4 text-xl">
+        <a href="#experiences" className="ml-4 text-xl">
           Experiences
         </a>
-        <a href="#projects" className="text-customGray ml-4 text-xl">
+        <a href="#projects" className=" ml-4 text-xl">
           Projects
         </a>
       </div>

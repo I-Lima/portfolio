@@ -1,12 +1,11 @@
 "use client";
 
-import Image from "next/image";
 import Banner from "@/components/Home/Banner";
-import { dimensions } from "../utils/layout";
 import About from "@/components/Home/About";
 import Experiences from "@/components/Home/Experiences";
 import Projects from "@/components/Home/Projects";
 import SwitchDarkMode from "@/components/SwitchDarkMode";
+import { FaArrowDown } from "react-icons/fa";
 
 export default function Home() {
   return (
@@ -24,12 +23,10 @@ export default function Home() {
               More Information
             </p>
 
-            <Image
-              src="arrow.svg"
-              alt="arrow icon"
-              width={dimensions.width / 80}
-              height={dimensions.width / 80}
-            />
+            <div className="flex flex-col items-center">
+              <div className="h-8 border-2 border-dashed w-1" />
+              <FaArrowDown className="text-black dark:text-white text-3xl" />
+            </div>
           </div>
         </div>
       </div>
