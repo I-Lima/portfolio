@@ -3,6 +3,7 @@ import { Gentium_Book_Plus } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { Providers } from "@/context/Provider";
 
 const gentiumBookPlus = Gentium_Book_Plus({
   weight: ["400", "700"],
@@ -22,13 +23,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={gentiumBookPlus.className}>
-        <Navbar />
-
-        <main>{children}</main>
-
-        <Footer />
+    <html lang="en" suppressHydrationWarning>
+      <body
+        className={gentiumBookPlus.className + " bg-bgWhite dark:bg-bgBlack"}
+      >
+        <Providers>
+          <Navbar />
+          {children}
+          <Footer />
+        </Providers>
       </body>
     </html>
   );

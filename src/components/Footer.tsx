@@ -1,4 +1,5 @@
 "use client";
+
 import { GITHUB, LINKEDIN, MAIL, MEDIUM } from "@/constant/urls";
 import Image from "next/image";
 
@@ -6,7 +7,7 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <div className="w-screen max-w-screen bg-customBlue h-56 items-center flex flex-col justify-center gap-12 mt-32">
+    <div className="w-screen max-w-screen bg-customBlue h-56 items-center flex flex-col justify-center gap-12">
       <div className="flex flex-row gap-6 max-w-sm">
         <Image
           src="linkedin_icon_transparent.svg"
@@ -45,7 +46,7 @@ export default function Footer() {
         />
       </div>
 
-      <div className="flex flex-row gap-2">
+      <div className="flex flex-row gap-2 text-white">
         <p className="text-center self-center">Developed by </p>
 
         <Image src="logoWithStroke.svg" width={100} height={50} alt="logo" />

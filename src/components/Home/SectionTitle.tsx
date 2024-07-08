@@ -7,7 +7,7 @@ export default function SectionTitle({ title }: Readonly<{ title: string }>) {
         <h2 className="text-4xl invisible">{title}</h2>
       </div>
 
-      <div className="absolute flex p-4 rounded-lg bg-black">
+      <div className="absolute flex p-4 rounded-lg bg-bgWhite dark:bg-bgBlack">
         <h2 className="text-4xl">{title}</h2>
       </div>
     </div>
