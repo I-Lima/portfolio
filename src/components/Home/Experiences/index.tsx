@@ -8,7 +8,7 @@ export default function Experiences() {
   return (
     <div
       id="experiences"
-      className="flex flex-col h-screen max-w-screen w-full px-12 mb-32"
+      className="flex flex-col max-w-screen w-full px-12 mb-32"
     >
       <div className="flex flex-col items-start">
         <SectionTitle title="Experiences" />

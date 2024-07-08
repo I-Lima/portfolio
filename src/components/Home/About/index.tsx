@@ -9,7 +9,7 @@ export default function About() {
   return (
     <div
       id="about"
-      className="flex flex-col h-screen max-w-screen w-screen px-12 py-8 mb-20"
+      className="flex flex-col max-w-screen w-screen px-12 py-8 mb-20"
     >
       <div className="flex flex-col items-start">
         <SectionTitle title="About" />

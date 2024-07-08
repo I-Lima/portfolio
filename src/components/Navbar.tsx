@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Navbar() {
   return (
@@ -12,15 +13,15 @@ export default function Navbar() {
       </div>
 
       <div className="hidden md:flex dark:text-customGray text-black">
-        <a href="#about" className="ml-4 text-xl">
+        <Link href="/#about" className="ml-4 text-xl" passHref>
           About
-        </a>
-        <a href="#experiences" className="ml-4 text-xl">
+        </Link>
+        <Link href="/#experiences" className="ml-4 text-xl">
           Experiences
-        </a>
-        <a href="#projects" className=" ml-4 text-xl">
+        </Link>
+        <Link href="/#projects" className=" ml-4 text-xl">
           Projects
-        </a>
+        </Link>
       </div>
 
       <div className="md:hidden">
