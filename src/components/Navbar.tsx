@@ -14,7 +14,7 @@ export default function Navbar() {
 
       <div className="hidden md:flex dark:text-customGray text-black">
         <Link href="/#about" className="ml-4 text-xl" passHref>
-           About
+          About
         </Link>
         <Link href="/#experiences" className="ml-4 text-xl">
           Experiences
