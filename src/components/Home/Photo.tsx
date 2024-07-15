@@ -1,9 +1,19 @@
 "use client";
+
+import { useEffect } from "react";
 import Image from "next/image";
-import { dimensions } from "../../utils/layout";
 import { PHOTO } from "@/constant/urls";
+const dimensions = {
+  height: 0,
+  width: 0,
+};
 
 export default function Photo() {
+  useEffect(() => {
+    dimensions.height = window.innerHeight;
+    dimensions.width = window.innerWidth;
+  }, []);
+
   return (
     <div className="mb-16 relative flex items-center justify-center">
       <div

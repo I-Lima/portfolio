@@ -1,10 +1,13 @@
+import React, { useEffect, useState } from "react";
 import { experienceHistoryProps, experienceProps } from "@/types/experiences";
 import Image from "next/image";
-import React, { useEffect, useState } from "react";
-import { dimensions } from "@/utils/layout";
 import experienceServices from "@/services/experienceServices";
 import Tag from "@/components/Tag";
 import ButtonMore from "../ButtonMore";
+const dimensions = {
+  height: 0,
+  width: 0,
+};
 
 const ServerListExperiences = () => {
   const [dataExperience, setDataExperience] = useState<experienceProps[]>();
@@ -22,6 +25,9 @@ const ServerListExperiences = () => {
         setIsLoading(false);
       }
     };
+
+    dimensions.height = window.innerHeight;
+    dimensions.width = window.innerWidth;
 
     loadData();
   }, []);
