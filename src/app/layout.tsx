@@ -26,6 +26,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body
         className={gentiumBookPlus.className + " bg-bgWhite dark:bg-bgBlack"}
+        style={{ overflowX: "hidden" }}
       >
         <Providers>
           <Navbar />

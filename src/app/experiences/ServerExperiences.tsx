@@ -84,21 +84,21 @@ const ServerExperiences = () => {
       const tagArray = item.tags || [];
 
       return (
-        <div key={i} className="flex flex-col mt-4 mb-16 w-full pr-16">
+        <div key={i} className="flex flex-col mt-4 mb-16">
           <div className="flex flex-row justify-between">
-            <div className="flex flex-col justify-between">
+            <div className="flex flex-col justify-between max-w-xl">
               <div>
                 <p className="text-2xl font-bold">{item.role}</p>
               </div>
 
               <div className="text-xl font-bold mt-1">{`(${item.entrance} - ${item.output})`}</div>
 
-              <div className="mt-4 text-justify text-lg max-w-3xl">
+              <div className="mt-4 text-justify text-lg">
                 {item.description}
               </div>
             </div>
 
-            <div className="flex flex-col max-w-xl items-start justify-start w-full">
+            <div className="flex flex-col max-w-xl items-start justify-start">
               <p className="border-b-2 text-2xl w-14">Skills</p>
 
               <div className="flex flex-wrap gap-4 mt-4 px-4">
