@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 
 export default function Banner() {
@@ -16,22 +16,9 @@ export default function Banner() {
     });
   }, []);
 
-  return (
-    <div className="mb-16 relative flex items-center justify-center">
-      <Image
-        src="background_blue.svg"
-        alt="background image"
-        width={dimensions.width / 2}
-        height={dimensions.height / 2}
-      />
-
-      <div
-        className="absolute bg-bgWhite dark:bg-bgBlack p-6 rounded-xl"
-        style={{
-          height: dimensions.height / 2.45,
-          width: dimensions.width / 2.13,
-        }}
-      >
+  function _renderMainComponent() {
+    return (
+      <>
         <div className="flex flex-row items-center justify-start">
           <h1 className="pr-6 text-4xl">Hi</h1>
           <Image
@@ -50,6 +37,18 @@ export default function Banner() {
             <p className="font-bold ml-2 text-5xl">mobile developer</p>
           </div>
         </div>
+      </>
+    );
+  }
+
+  return (
+    <div className="mb-16 relative flex items-center justify-center">
+      <div className="flex items-center bg-customBlue rounded-xl rotate-2">
+        <div className="mx-20 my-16">{_renderMainComponent()}</div>
+      </div>
+
+      <div className="absolute bg-bgWhite dark:bg-black rounded-xl border-white">
+        <div className="mx-16 my-12">{_renderMainComponent()}</div>
       </div>
     </div>
   );

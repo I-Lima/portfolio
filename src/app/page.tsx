@@ -9,7 +9,7 @@ import { FaArrowDown } from "react-icons/fa";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen min-w-screen flex-col items-center">
+    <main className="flex min-h-screen max-w-screen flex-col items-center">
       <div className="flex flex-col h-screen max-w-screen pt-24">
         <div className="flex justify-end w-screen pr-20">
           <SwitchDarkMode />
