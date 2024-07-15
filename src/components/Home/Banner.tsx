@@ -1,9 +1,21 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import Image from "next/image";
-import { dimensions } from "../../utils/layout";
 
 export default function Banner() {
+  const [dimensions, setDimensions] = useState({
+    height: 700,
+    width: 800,
+  });
+
+  useEffect(() => {
+    setDimensions({
+      height: window.innerHeight,
+      width: window.innerWidth,
+    });
+  }, []);
+
   return (
     <div className="mb-16 relative flex items-center justify-center">
       <Image

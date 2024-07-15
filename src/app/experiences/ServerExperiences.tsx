@@ -1,11 +1,14 @@
 import { useEffect, useState } from "react";
 import experienceServices from "@/services/experienceServices";
 import { experienceHistoryProps } from "@/types/experiences";
-import { dimensions } from "@/utils/layout";
 import Image from "next/image";
 import Tag from "@/components/Tag";
 import ButtonCustom from "@/components/Experiences/Button";
 import { useExperienceStore } from "@/hooks/stateHooks";
+const dimensions = {
+  height: 0,
+  width: 0,
+};
 
 const ServerExperiences = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -25,6 +28,9 @@ const ServerExperiences = () => {
         setIsLoading(false);
       }
     };
+
+    dimensions.height = window.innerHeight;
+    dimensions.width = window.innerWidth;
 
     loadData();
   }, []);

@@ -1,10 +1,13 @@
+import React, { useEffect, useState } from "react";
 import aboutServices from "@/services/aboutServices";
 import { aboutProps } from "@/types/about";
 import Image from "next/image";
 import { GITHUB, LINKEDIN, MAIL, MEDIUM } from "@/constant/urls";
 import Photo from "../Photo";
-import React, { useEffect, useState } from "react";
-import { dimensions } from "@/utils/layout";
+const dimensions = {
+  height: 0,
+  width: 0,
+};
 
 const ServerListAbout = () => {
   const [dataAbout, setDataAbout] = useState<aboutProps>();
@@ -22,6 +25,9 @@ const ServerListAbout = () => {
         setIsLoading(false);
       }
     };
+
+    dimensions.height = window.innerHeight;
+    dimensions.width = window.innerWidth;
 
     loadData();
   }, []);
