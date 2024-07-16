@@ -19,11 +19,11 @@ export default function Home() {
           <Banner />
 
           <div className="flex flex-col items-center mt-20">
-            <p className="text-3xl mb-2 pb-1" style={{ borderBottomWidth: 1 }}>
+            <p className="text-3xl mb-5 pb-1" style={{ borderBottomWidth: 1 }}>
               More Information
             </p>
 
-            <div className="flex flex-col items-center">
+            <div className="flex flex-col items-center motion-safe:animate-bounce">
               <div className="h-8 border-2 border-dashed w-1" />
               <FaArrowDown className="text-black dark:text-white text-3xl" />
             </div>

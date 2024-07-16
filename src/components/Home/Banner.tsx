@@ -26,6 +26,7 @@ export default function Banner() {
             alt="hand icon"
             width={dimensions.width / 34}
             height={dimensions.width / 34}
+            className="animate-wave"
           />
         </div>
 
