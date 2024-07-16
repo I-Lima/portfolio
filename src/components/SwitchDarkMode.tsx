@@ -23,10 +23,10 @@ function SwitchDarkMode() {
 
       <div
         onClick={handleToggle}
-        className={`w-16 h-8 flex items-center border-black border-2 bg-white rounded-full p-1 cursor-pointer transition-colors duration-300 ${isDark ? "bg-green-500" : ""}`}
+        className="w-16 h-8 flex items-center border-black border-2 bg-white rounded-full p-1 cursor-pointer"
       >
         <div
-          className={`bg-black w-6 h-6 rounded-full shadow-md transform transition-transform duration-300 ${
+          className={`bg-black w-6 h-6 rounded-full shadow-md transform transition-transform duration-300 ease-linear ${
             isDark ? "translate-x-7" : ""
           }`}
         ></div>

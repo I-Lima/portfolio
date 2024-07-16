@@ -5,21 +5,31 @@ import Link from "next/link";
 
 export default function Navbar() {
   return (
-    <nav className="px-12 py-4 mb-12 bg-bgWhite dark:bg-bgBlack z-50 fixed mx-auto flex items-center justify-between w-full">
+    <nav className="px-12 py-2 mb-12 bg-bgWhite dark:bg-bgBlack z-50 fixed mx-auto flex items-center justify-between w-full">
       <div>
         <a href="/">
           <Image src="logo.svg" alt="website logo" width={100} height={80} />
         </a>
       </div>
 
-      <div className="hidden md:flex dark:text-customGray text-black">
-        <Link href="/#about" className="ml-4 text-xl" passHref>
+      <div className="hidden md:flex dark:text-customGray text-black text-xl">
+        <Link
+          href="/#about"
+          className="ml-2 p-4 hover:bg-customBlue/[.80] hover:text-white transition duration-300 ease-in-out"
+          passHref
+        >
           About
         </Link>
-        <Link href="/#experiences" className="ml-4 text-xl">
+        <Link
+          href="/#experiences"
+          className="ml-2 p-4 hover:bg-customBlue/[.80] hover:text-white transition duration-300 ease-in-out"
+        >
           Experiences
         </Link>
-        <Link href="/#projects" className=" ml-4 text-xl">
+        <Link
+          href="/#projects"
+          className=" ml-2 p-4 hover:bg-customBlue/[.80] hover:text-white transition duration-300 ease-in-out"
+        >
           Projects
         </Link>
       </div>

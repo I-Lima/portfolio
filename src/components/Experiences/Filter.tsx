@@ -83,11 +83,11 @@ export default function Filter() {
               <IoIosArrowDown size={30} color="black" />
             </div>
 
-            {openItems.includes(i) && (
-              <div className="flex flex-col max-h-52 overflow-y-auto">
-                {_renderOptions(item.data, item.value)}
-              </div>
-            )}
+            <div
+              className={`flex flex-col overflow-y-auto transition duration-150 ease-in ${openItems.includes(i) ? "max-h-52 opacity-100" : "max-h-0 opacity-0"}`}
+            >
+              {_renderOptions(item.data, item.value)}
+            </div>
           </div>
         ))}
       </div>
@@ -97,18 +97,18 @@ export default function Filter() {
   return (
     <div className="flex flex-col h-full">
       <div
-        className="flex flex-row border-2 rounded-xl px-4 py-2 gap-4"
+        className="flex flex-row border-2 rounded-xl px-4 py-2 gap-4 hover:cursor-pointer border-black dark:border-white hover:bg-bgWhite hover:text-black dark:hover:bg-bgWhite dark:hover:text-black"
         onClick={_handleOpen}
       >
         <IoFilter size={30} />
         <p className="text-xl">Filter</p>
       </div>
 
-      {open && (
-        <div className="absolute mt-14 w-48 bg-white rounded-md z-10">
-          {_renderList()}
-        </div>
-      )}
+      <div
+        className={`absolute mt-14 w-48 bg-white rounded-md z-10 transition duration-150 ease-in ${open ? "max-h-screen opacity-100" : "max-h-0 opacity-0"}`}
+      >
+        {_renderList()}
+      </div>
     </div>
   );
 }
