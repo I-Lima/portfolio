@@ -31,9 +31,21 @@ const config: Config = {
           "0%, 100%": { transform: "rotate(0deg)" },
           "50%": { transform: "rotate(15deg)" },
         },
+        "text-slide": {
+          "0%, 33.33%": {
+            transform: "translateY(0%)",
+          },
+          "40%, 66.66%": {
+            transform: "translateY(-25%)",
+          },
+          "73.330%, 100%": {
+            transform: "translateY(-50%)",
+          },
+        },
       },
       animation: {
         wave: "wave 1s infinite",
+        "text-slide": "text-slide 8s cubic-bezier(0.83, 0, 0.17, 1) infinite",
       },
     },
   },

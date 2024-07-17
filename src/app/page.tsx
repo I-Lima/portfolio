@@ -1,6 +1,6 @@
 "use client";
 
-import Banner from "@/components/Home/Banner";
+import Banner from "@/components/Home/Banner/index";
 import About from "@/components/Home/About";
 import Experiences from "@/components/Home/Experiences";
 import Projects from "@/components/Home/Projects";
