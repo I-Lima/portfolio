@@ -3,7 +3,6 @@ import { experienceHistoryProps, experienceProps } from "@/types/experiences";
 import Image from "next/image";
 import experienceServices from "@/services/experienceServices";
 import Tag from "@/components/Tag";
-import ButtonMore from "../ButtonMore";
 const dimensions = {
   height: 0,
   width: 0,
@@ -150,10 +149,6 @@ const ServerListExperiences = () => {
           </div>
         );
       })}
-
-      <div className="flex flex-wrap justify-start px-50">
-        <ButtonMore href="/experiences" />
-      </div>
     </div>
   );
 };

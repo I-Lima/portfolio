@@ -1,9 +1,13 @@
 "use client";
+
 import SectionTitle from "../SectionTitle";
 import ServerListExperiences from "./ServerListExperiences";
+import ButtonMore from "../ButtonMore";
+import { useRouter } from "next/navigation";
 
 export default function Experiences() {
   const _renderList = ServerListExperiences();
+  const route = useRouter();
 
   return (
     <div
@@ -14,7 +18,13 @@ export default function Experiences() {
         <SectionTitle title="Experiences" />
       </div>
 
-      <div className="flex flex-col gap-8 justify-center">{_renderList}</div>
+      <div className="flex flex-col gap-8 justify-center">
+        {_renderList}
+
+        <div className="flex flex-wrap justify-start px-50">
+          <ButtonMore onClick={() => route.push("/experiences")} />
+        </div>
+      </div>
     </div>
   );
 }
