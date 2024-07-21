@@ -12,7 +12,7 @@ export default function About() {
         <SectionTitle title="About" />
       </div>
 
-      <div className="md:px-8">{_renderComponent}</div>
+      <div className="md:px-8 lg:px-0">{_renderComponent}</div>
     </div>
   );
 }

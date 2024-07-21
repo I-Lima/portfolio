@@ -19,9 +19,10 @@ export default function Search() {
     <form onSubmit={(e) => e.preventDefault()} className="relative">
       <div className="flex justify-end items-center">
         <button
-          className="flex bg-customBlue w-10 h-10 items-center justify-center rounded-3xl z-10"
+          className="flex bg-customBlue w-10 h-10 items-center justify-center rounded-3xl z-10 lg:absolute lg:mr-1"
           type="button"
           onClick={toggleInputVisibility}
+          aria-label="search button"
         >
           <FaSearch size={26} className="text-black" />
         </button>
@@ -37,7 +38,7 @@ export default function Search() {
           autoComplete="off"
           onChange={_handleInputChange}
           value={query}
-          style={{ zIndex: isInputVisible ? "1" : "-1" }}
+          style={{ zIndex: isInputVisible ? "1 lg:0" : "-1 lg:0" }}
         />
       </div>
     </form>

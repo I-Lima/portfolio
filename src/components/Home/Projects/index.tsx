@@ -13,7 +13,12 @@ export default function Projects() {
         <SectionTitle title="Projects" />
       </div>
 
-      <div className="flex flex-col max-w-screen gap-16 px-2 justify-center items-center">
+      <div
+        className="
+          flex flex-col max-w-screen gap-16 px-2 justify-center items-center
+          lg:flex-row lg:items-start lg:my-12
+        "
+      >
         {_renderList()}
       </div>
 

@@ -9,11 +9,12 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   const _toggleMenu = () => {
+    console.log("CLICOU");
     setIsOpen(!isOpen);
   };
 
   return (
-    <nav className="px-4 py-4 bg-bgWhite dark:bg-bgBlack z-50 fixed mx-auto flex items-center justify-between w-full">
+    <nav className="px-4 py-4 bg-bgWhite dark:bg-bgBlack z-50 fixed mx-auto flex items-center justify-between w-full lg:py-2 lg:px-8">
       <div>
         <a href="/">
           <Image src="logo.svg" alt="website logo" width={100} height={80} />
@@ -48,7 +49,11 @@ export default function Navbar() {
         </div>
 
         <div className="md:hidden">
-          <button className="text-black dark:text-white" onClick={_toggleMenu}>
+          <button
+            className="text-black dark:text-white"
+            onClick={_toggleMenu}
+            aria-label="Open Menu"
+          >
             <svg
               className="w-6 h-6"
               fill="none"
@@ -65,7 +70,7 @@ export default function Navbar() {
       </div>
 
       <div
-        className={`absolute top-16 right-4 bg-bgWhite rounded-md shadow-lg py-1 z-50 w-48 transition duration-150 ease-in ${isOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0"}`}
+        className={`absolute top-16 right-4 bg-bgWhite rounded-md shadow-lg py-1 z-50 w-48 transition duration-150 ease-in lg:hidden ${isOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0"}`}
       >
         <Link
           href="/#about"

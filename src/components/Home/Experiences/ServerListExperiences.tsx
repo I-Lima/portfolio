@@ -100,14 +100,24 @@ const ServerListExperiences = () => {
       return (
         <div
           key={i}
-          className="flex flex-col justify-center mt-6 md:flex-row md:w-full"
+          className="
+            flex flex-col justify-center mt-6
+            md:flex-row md:w-full
+            lg:mt-12
+          "
         >
-          <div className="hidden md:flex md:w-1/4">
+          <div className="hidden md:flex md:w-1/4 lg:w-fit">
             <p className="text-customGray">{`(${historyItem.entrance} - ${historyItem.output})`}</p>
           </div>
 
-          <div className="flex flex-col md:w-3/4">
-            <div className="flex flex-col px-1">
+          <div
+            className="
+              flex flex-col
+              md:w-3/4
+              lg:max-w-xl
+            "
+          >
+            <div className="flex flex-col px-1 lg:px-4">
               <div className="flex flex-col w-full justify-between mb-2">
                 <p className="flex-wrap text-xl mb-1 font-bold">
                   {historyItem.role}
@@ -116,11 +126,11 @@ const ServerListExperiences = () => {
                 <p className="text-customGray sm:hidden">{`(${historyItem.entrance} - ${historyItem.output})`}</p>
               </div>
 
-              <p className="flex flex-wrap text-justify text-lg px-1">
+              <p className="flex flex-wrap text-justify text-lg px-1 lg:px-2">
                 {historyItem.description}
               </p>
 
-              <div className="flex flex-wrap gap-2 mt-4 px-4 justify-start mb-2">
+              <div className="flex flex-wrap gap-2 mt-4 px-4 justify-start mb-2 lg:gap-4">
                 {tagArray.map((tag, index) => (
                   <Tag key={index} tag={tag} />
                 ))}
@@ -140,8 +150,14 @@ const ServerListExperiences = () => {
       {dataExperience.map((item, i) => {
         return (
           <div key={i} className="flex justify-center">
-            <div className="flex flex-col">
-              <h3 className="text-2xl border-b-2 pb-1 text-center font-bold md:text-3xl">
+            <div className="flex flex-col lg:max-w-3xl">
+              <h3
+                className="
+                  text-2xl border-b-2 pb-1 text-center font-bold
+                  md:text-3xl
+                  lg:text-4xl
+                "
+              >
                 {item.enterprise}
               </h3>
 

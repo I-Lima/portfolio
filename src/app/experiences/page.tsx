@@ -10,7 +10,7 @@ export default function Experiences() {
   return (
     <div
       id="experiences"
-      className="flex flex-col h-full min-h-screen max-w-screen w-full pt-24 px-6"
+      className="flex flex-col h-full min-h-screen max-w-screen w-full pt-24 px-6 lg:px-12"
     >
       <div className="flex flex-row items-start justify-between pr-12">
         <SectionTitle title="Experiences" />
@@ -26,7 +26,9 @@ export default function Experiences() {
         <Filter />
       </div>
 
-      <div className="flex flex-col gap-8 justify-center">{_renderList}</div>
+      <div className="flex flex-col gap-8 justify-center lg:px-10">
+        {_renderList}
+      </div>
     </div>
   );
 }
