@@ -41,7 +41,7 @@ const ServerExperiences = () => {
         <div className="flex flex-col w-full justify-start items-start h-screen">
           <div className="animate-pulse mt-4 transition-transform bg-customGray h-16 w-2/4" />
 
-          <div className="flex w-full mt-8">
+          <div className="flex flex-col w-full mt-8 lg:flex-row">
             <div className="flex flex-col w-full">
               <div className="animate-pulse mt-4 transition-transform bg-customGray h-10 w-2/5" />
               <div className="animate-pulse mt-4 transition-transform bg-customGray h-10 w-1/5" />

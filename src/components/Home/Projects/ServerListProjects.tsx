@@ -27,7 +27,7 @@ const ServerListProjects = () => {
 
   const _renderLoading = () => {
     return (
-      <div className="flex flex-row w-screen gap-20">
+      <div className="flex flex-col w-full gap-20 items-center lg:flex-row lg:w-screen">
         <div className="animate-pulse flex flex-col mt-4 transition-transform w-2/3 justify-start">
           <div className="bg-customGray h-8 w-1/4" />
           <div className="bg-customGray h-32 w-/4 mt-4" />

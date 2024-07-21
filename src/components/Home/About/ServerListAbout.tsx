@@ -34,7 +34,7 @@ const ServerListAbout = () => {
 
   const _renderLoading = () => {
     return (
-      <div className="flex flex-row w-screen gap-20">
+      <div className="flex flex-col w-screen gap-20 md:flex-row">
         <div className="animate-pulse flex flex-col mt-4 transition-transform w-2/3 justify-start">
           <div className="flex flex-row items-center ">
             <div className="bg-customGray h-16 w-1/2 mr-24" />

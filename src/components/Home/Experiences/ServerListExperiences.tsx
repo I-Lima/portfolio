@@ -34,7 +34,7 @@ const ServerListExperiences = () => {
   const _renderLoading = () => {
     return (
       <>
-        <div className="flex flex-col w-full justify-center items-center">
+        <div className="flex flex-col w-md justify-center items-center lg:w-full">
           <div className="animate-pulse flex flex-col mt-4 transition-transform bg-customGray h-16 w-3/5" />
 
           <div className="animate-pulse flex flex-col mt-6 transition-transform w-full items-center">
@@ -45,7 +45,7 @@ const ServerListExperiences = () => {
 
             <div className="mt-4 flex flex-row bg-customGray h-56 w-2/5 justify-center" />
 
-            <div className="mt-4 flex flex-row gap-4">
+            <div className="mt-4 flex flex-row gap-4 max-w-80 lg:w-full">
               <div className="bg-customGray h-10 w-20 rounded" />
               <div className="bg-customGray h-10 w-20 rounded" />
               <div className="bg-customGray h-10 w-20 rounded" />
@@ -65,7 +65,7 @@ const ServerListExperiences = () => {
 
             <div className="mt-4 flex flex-row bg-customGray h-56 w-2/5 justify-center" />
 
-            <div className="mt-4 flex flex-row gap-4">
+            <div className="mt-4 flex flex-row gap-4 max-w-80 lg:w-full">
               <div className="bg-customGray h-10 w-20 rounded" />
               <div className="bg-customGray h-10 w-20 rounded" />
               <div className="bg-customGray h-10 w-20 rounded" />
