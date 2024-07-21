@@ -15,13 +15,13 @@ export default function Experiences() {
       <div className="flex flex-row items-start justify-between pr-12">
         <SectionTitle title="Experiences" />
 
-        <div className="hidden md:flex flex-row gap-4">
+        <div className="hidden lg:flex flex-row gap-4">
           <Search />
           <Filter />
         </div>
       </div>
 
-      <div className="flex md:hidden flex-row justify-end items-center mb-12 gap-4">
+      <div className="flex lg:hidden flex-row justify-end items-center mb-12 gap-4">
         <Search />
         <Filter />
       </div>

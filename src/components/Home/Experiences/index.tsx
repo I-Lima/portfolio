@@ -15,7 +15,7 @@ export default function Experiences() {
         <SectionTitle title="Experiences" />
       </div>
 
-      <div className="flex flex-col gap-8 justify-center">
+      <div className="flex flex-col gap-8 justify-center md:px-8">
         {_renderList}
 
         <div className="flex flex-wrap justify-start px-50">

@@ -29,7 +29,7 @@ export default function Search() {
         <input
           className={`h-12 bg-white rounded-2xl pl-4 text-black transition-all duration-500 ease-in-out absolute right-0 ${
             isInputVisible ? "opacity-100 w-96" : "opacity-0 w-0"
-          } md:relative md:w-96 md:opacity-100`}
+          } lg:relative lg:w-96 lg:opacity-100`}
           placeholder="Search by enterprise, role or description..."
           type="text"
           name="search"

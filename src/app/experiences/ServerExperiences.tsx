@@ -86,12 +86,11 @@ const ServerExperiences = () => {
       return (
         <div key={i} className="flex flex-col mt-2 mb-16">
           <div className="flex flex-col justify-between gap-6">
-            <div className="flex flex-col justify-between max-w-xl">
-              <div>
+            <div className="flex flex-col justify-between max-w-xl md:max-w-full">
+              <div className="flex flex-col">
                 <p className="text-2xl font-bold">{item.role}</p>
+                <div className="text-xl font-bold mt-1">{`(${item.entrance} - ${item.output})`}</div>
               </div>
-
-              <div className="text-xl font-bold mt-1">{`(${item.entrance} - ${item.output})`}</div>
 
               <div className="mt-4 text-justify text-lg">
                 {item.description}
@@ -134,7 +133,7 @@ const ServerExperiences = () => {
 
         return (
           <div key={i} className="flex flex-col w-full pt-4 pb-6 mb-8">
-            <div className="flex flex-row justify-between w-full items-center">
+            <div className="flex flex-row justify-between w-full items-center md:justify-start md:gap-10">
               <h3 className="text-2xl border-b-2 font-bold max-w-sm">
                 {item.enterprise}
               </h3>

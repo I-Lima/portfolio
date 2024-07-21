@@ -98,12 +98,15 @@ const ServerListExperiences = () => {
       const tagArray = historyItem.tags || [];
 
       return (
-        <div key={i} className="flex flex-col justify-center mt-6">
-          <div>
-            <p className="text-customGray hidden sm:visible">{`(${historyItem.entrance} - ${historyItem.output})`}</p>
+        <div
+          key={i}
+          className="flex flex-col justify-center mt-6 md:flex-row md:w-full"
+        >
+          <div className="hidden md:flex md:w-1/4">
+            <p className="text-customGray">{`(${historyItem.entrance} - ${historyItem.output})`}</p>
           </div>
 
-          <div className="flex flex-col">
+          <div className="flex flex-col md:w-3/4">
             <div className="flex flex-col px-1">
               <div className="flex flex-col w-full justify-between mb-2">
                 <p className="flex-wrap text-xl mb-1 font-bold">
@@ -138,7 +141,7 @@ const ServerListExperiences = () => {
         return (
           <div key={i} className="flex justify-center">
             <div className="flex flex-col">
-              <h3 className="text-2xl border-b-2 pb-1 text-center font-bold">
+              <h3 className="text-2xl border-b-2 pb-1 text-center font-bold md:text-3xl">
                 {item.enterprise}
               </h3>
 

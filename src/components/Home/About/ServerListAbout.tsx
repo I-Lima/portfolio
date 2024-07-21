@@ -101,7 +101,9 @@ const ServerListAbout = () => {
     if (isError) return _renderError();
 
     return (dataAbout?.skills || []).map((skill, i) => (
-      <Image key={i} src={skill.url} width={36} height={36} alt="my skills" />
+      <div key={i} className="relative h-8 w-8 md:h-10 md:w-10">
+        <Image src={skill.url} layout="fill" alt="my skills" />
+      </div>
     ));
   };
 
@@ -110,8 +112,8 @@ const ServerListAbout = () => {
   return (
     <div className="flex flex-col justify-center w-full gap-4">
       <div className="flex flex-col">
-        <div className="flex flex-row items-center justify-between">
-          <h2 className="text-3xl mb-4">{"I'm Ingrid Lima"}</h2>
+        <div className="flex flex-row items-center justify-between md:max-w-md">
+          <h2 className="text-3xl mb-4 md:text-4xl">{"I'm Ingrid Lima"}</h2>
 
           <Photo />
         </div>
@@ -169,7 +171,7 @@ const ServerListAbout = () => {
         </div>
       </div>
 
-      <div className="flex flex-col max-w-xl justify-start mt-10">
+      <div className="flex flex-col max-w-xl justify-start mt-10 md:max-w-full">
         <h2 className="text-3xl font-bold underline">My Skills</h2>
         <div className="flex flex-wrap items-center justify-start mt-8 gap-4 ml-4">
           {_skillsList()}

@@ -73,7 +73,7 @@ const ServerListProjects = () => {
 
       return (
         <div key={i} className="flex flex-col max-w-sm flex-wrap">
-          <h3 className="text-xl border-b-2">{item.name}</h3>
+          <h3 className="text-xl border-b-2 md:text-2xl">{item.name}</h3>
 
           <div className="mt-4 border-white border-b-2 rounded-lg pb-3 justify-center items-center">
             <p className="text-lg text-justify">{item.description}</p>
