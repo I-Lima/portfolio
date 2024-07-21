@@ -10,23 +10,23 @@ export default function Experiences() {
   return (
     <div
       id="experiences"
-      className="flex flex-col h-full max-w-screen w-full pt-24 mb-32 px-12"
+      className="flex flex-col h-full min-h-screen max-w-screen w-full pt-24 px-6 lg:px-12"
     >
       <div className="flex flex-row items-start justify-between pr-12">
         <SectionTitle title="Experiences" />
 
-        <div className="flex flex-row gap-4">
-          <div>
-            <Search />
-          </div>
-
-          <div>
-            <Filter />
-          </div>
+        <div className="hidden lg:flex flex-row gap-4">
+          <Search />
+          <Filter />
         </div>
       </div>
 
-      <div className="flex flex-col gap-8 justify-center px-10">
+      <div className="flex lg:hidden flex-row justify-end items-center mb-12 gap-4">
+        <Search />
+        <Filter />
+      </div>
+
+      <div className="flex flex-col gap-8 justify-center lg:px-10">
         {_renderList}
       </div>
     </div>

@@ -34,7 +34,7 @@ const ServerListExperiences = () => {
   const _renderLoading = () => {
     return (
       <>
-        <div className="flex flex-col w-full justify-center items-center">
+        <div className="flex flex-col w-md justify-center items-center lg:w-full">
           <div className="animate-pulse flex flex-col mt-4 transition-transform bg-customGray h-16 w-3/5" />
 
           <div className="animate-pulse flex flex-col mt-6 transition-transform w-full items-center">
@@ -45,7 +45,7 @@ const ServerListExperiences = () => {
 
             <div className="mt-4 flex flex-row bg-customGray h-56 w-2/5 justify-center" />
 
-            <div className="mt-4 flex flex-row gap-4">
+            <div className="mt-4 flex flex-row gap-4 max-w-80 lg:w-full">
               <div className="bg-customGray h-10 w-20 rounded" />
               <div className="bg-customGray h-10 w-20 rounded" />
               <div className="bg-customGray h-10 w-20 rounded" />
@@ -65,7 +65,7 @@ const ServerListExperiences = () => {
 
             <div className="mt-4 flex flex-row bg-customGray h-56 w-2/5 justify-center" />
 
-            <div className="mt-4 flex flex-row gap-4">
+            <div className="mt-4 flex flex-row gap-4 max-w-80 lg:w-full">
               <div className="bg-customGray h-10 w-20 rounded" />
               <div className="bg-customGray h-10 w-20 rounded" />
               <div className="bg-customGray h-10 w-20 rounded" />
@@ -98,24 +98,39 @@ const ServerListExperiences = () => {
       const tagArray = historyItem.tags || [];
 
       return (
-        <div key={i} className="flex flex-row justify-center mt-12">
-          <div>
+        <div
+          key={i}
+          className="
+            flex flex-col justify-center mt-6
+            md:flex-row md:w-full
+            lg:mt-12
+          "
+        >
+          <div className="hidden md:flex md:w-1/4 lg:w-fit">
             <p className="text-customGray">{`(${historyItem.entrance} - ${historyItem.output})`}</p>
           </div>
 
-          <div className="flex flex-col max-w-xl">
-            <div className="flex flex-col px-4">
-              <div className="flex flex-row">
-                <p className="flex-wrap text-2xl mb-2 font-bold">
+          <div
+            className="
+              flex flex-col
+              md:w-3/4
+              lg:max-w-xl
+            "
+          >
+            <div className="flex flex-col px-1 lg:px-4">
+              <div className="flex flex-col w-full justify-between mb-2">
+                <p className="flex-wrap text-xl mb-1 font-bold">
                   {historyItem.role}
                 </p>
+
+                <p className="text-customGray sm:hidden">{`(${historyItem.entrance} - ${historyItem.output})`}</p>
               </div>
 
-              <p className="flex flex-wrap text-justify text-lg px-2">
+              <p className="flex flex-wrap text-justify text-lg px-1 lg:px-2">
                 {historyItem.description}
               </p>
 
-              <div className="flex flex-wrap gap-4 mt-4 px-4 justify-start">
+              <div className="flex flex-wrap gap-2 mt-4 px-4 justify-start mb-2 lg:gap-4">
                 {tagArray.map((tag, index) => (
                   <Tag key={index} tag={tag} />
                 ))}
@@ -135,12 +150,16 @@ const ServerListExperiences = () => {
       {dataExperience.map((item, i) => {
         return (
           <div key={i} className="flex justify-center">
-            <div className="flex flex-col max-w-3xl">
-              <div className={"w-full border-b-2 justify-center"}>
-                <h3 className="text-4xl pb-2 text-center font-bold">
-                  {item.enterprise}
-                </h3>
-              </div>
+            <div className="flex flex-col lg:max-w-3xl">
+              <h3
+                className="
+                  text-2xl border-b-2 pb-1 text-center font-bold
+                  md:text-3xl
+                  lg:text-4xl
+                "
+              >
+                {item.enterprise}
+              </h3>
 
               <div className="flex flex-col px-4">
                 {_renderList(item.history)}

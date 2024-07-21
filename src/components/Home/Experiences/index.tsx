@@ -10,15 +10,12 @@ export default function Experiences() {
   const route = useRouter();
 
   return (
-    <div
-      id="experiences"
-      className="flex flex-col max-w-screen w-full px-12 mb-32"
-    >
+    <div id="experiences" className="flex flex-col max-w-screen w-full mb-20">
       <div className="flex flex-col items-start">
         <SectionTitle title="Experiences" />
       </div>
 
-      <div className="flex flex-col gap-8 justify-center">
+      <div className="flex flex-col gap-8 justify-center md:px-8">
         {_renderList}
 
         <div className="flex flex-wrap justify-start px-50">

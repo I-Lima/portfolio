@@ -27,7 +27,7 @@ const ServerListProjects = () => {
 
   const _renderLoading = () => {
     return (
-      <div className="flex flex-row w-screen gap-20">
+      <div className="flex flex-col w-full gap-20 items-center lg:flex-row lg:w-screen">
         <div className="animate-pulse flex flex-col mt-4 transition-transform w-2/3 justify-start">
           <div className="bg-customGray h-8 w-1/4" />
           <div className="bg-customGray h-32 w-/4 mt-4" />
@@ -72,13 +72,19 @@ const ServerListProjects = () => {
       const tagArray = item.topics;
 
       return (
-        <div key={i} className="flex flex-col max-w-lg">
-          <h3 className=" text-xl border-b-2">{item.name}</h3>
+        <div
+          key={i}
+          className="
+            flex flex-col max-w-sm flex-wrap
+            lg:max-w-lg
+          "
+        >
+          <h3 className="text-xl border-b-2 md:text-2xl">{item.name}</h3>
 
-          <div className="mt-4 border-white border-b-2 rounded-lg pb-3 px-2">
+          <div className="mt-4 border-white border-b-2 rounded-lg pb-3 justify-center items-center lg:px-2">
             <p className="text-lg text-justify">{item.description}</p>
 
-            <div className="flex flex-wrap mt-4 gap-4">
+            <div className="flex flex-wrap mt-4 gap-2 lg:gap-4">
               {tagArray.map((item, i2) => {
                 return <Tag key={i2} tag={item} />;
               })}

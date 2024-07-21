@@ -19,20 +19,20 @@ function SwitchDarkMode() {
 
   return (
     <div className="flex flex-row gap-1 items-center">
-      <MdSunny size={36} className="text-black" />
+      <MdSunny className="text-black w-8 h-8" />
 
       <div
         onClick={handleToggle}
-        className="w-16 h-8 flex items-center border-black border-2 bg-white rounded-full p-1 cursor-pointer"
+        className="w-12 h-6 flex items-center border-black border-2 bg-white rounded-full p-1 cursor-pointer"
       >
         <div
-          className={`bg-black w-6 h-6 rounded-full shadow-md transform transition-transform duration-300 ease-linear ${
-            isDark ? "translate-x-7" : ""
+          className={`bg-black w-4 h-4 rounded-full shadow-md transform transition-transform duration-300 ease-linear ${
+            isDark ? "translate-x-5" : ""
           }`}
         ></div>
       </div>
 
-      <MdDarkMode size={36} className="text-white" />
+      <MdDarkMode className="text-white w-8 h-8" />
     </div>
   );
 }

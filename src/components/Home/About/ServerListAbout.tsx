@@ -34,7 +34,7 @@ const ServerListAbout = () => {
 
   const _renderLoading = () => {
     return (
-      <div className="flex flex-row w-screen gap-20">
+      <div className="flex flex-col w-screen gap-20 md:flex-row">
         <div className="animate-pulse flex flex-col mt-4 transition-transform w-2/3 justify-start">
           <div className="flex flex-row items-center ">
             <div className="bg-customGray h-16 w-1/2 mr-24" />
@@ -90,7 +90,7 @@ const ServerListAbout = () => {
       <p
         className="mb-4 text-lg text-justify"
         key={index}
-        style={{ marginBottom: "10px", whiteSpace: "pre-line" }}
+        style={{ whiteSpace: "pre-line" }}
       >
         {line}
       </p>
@@ -101,58 +101,116 @@ const ServerListAbout = () => {
     if (isError) return _renderError();
 
     return (dataAbout?.skills || []).map((skill, i) => (
-      <Image key={i} src={skill.url} width={50} height={50} alt="my skills" />
+      <div key={i} className="relative h-8 w-8 md:h-10 md:w-10 lg:w-12 lg:h-12">
+        <Image src={skill.url} layout="fill" alt="my skills" />
+      </div>
     ));
   };
 
   if (isLoading) return _renderLoading();
 
   return (
-    <div className="flex flex-row justify-between px-12 gap-4">
-      <div className="flex-1 flex-col max-w-4xl mr-10">
-        <div className="flex flex-row items-center justify-start">
-          <h2 className="text-4xl mr-24 mb-4">{"I'm Ingrid Lima"}</h2>
+    <div
+      className="
+        flex flex-col justify-center w-full gap-10
+        lg:flex-row lg:justify-between lg:px-6
+      "
+    >
+      <div
+        className="
+          flex flex-col
+          lg:max-w-4xl lg:flex-1 lg:mr-10
+        "
+      >
+        <div
+          className="
+            flex flex-row items-center justify-between
+            md:max-w-md
+            lg:max-w-xl
+          "
+        >
+          <h2
+            className="
+              text-3xl mb-4
+              md:text-4xl
+            "
+          >
+            {"I'm Ingrid Lima"}
+          </h2>
+
           <Photo />
         </div>
-        <div className="flex flex-col">{_description()}</div>
-        <div className="mt-20 grid grid-cols-4 gap-0 max-w-sm">
-          <Image
-            src="linkedin_icon.svg"
-            alt="linkedin icon"
-            width={50}
-            height={50}
+
+        <div>{_description()}</div>
+
+        <div className="mt-10 grid grid-cols-4 gap-0 max-w-sm">
+          <button
+            className="relative w-12 h-12 bg-bgBlack rounded-full"
             onClick={() => window.open(LINKEDIN)}
-            className="hover:cursor-pointer"
-          />
-          <Image
-            src="github_icon.svg"
-            alt="github icon"
-            width={50}
-            height={50}
+          >
+            <Image
+              src="linkedin_icon_transparent.svg"
+              alt="linkedin icon"
+              layout="fill"
+              objectFit="cover"
+            />
+          </button>
+
+          <button
+            className="relative w-12 h-12 bg-bgBlack rounded-full"
             onClick={() => window.open(GITHUB.PROFILE)}
-            className="hover:cursor-pointer"
-          />
-          <Image
-            src="medium_icon.svg"
-            alt="medium icon"
-            width={50}
-            height={50}
+          >
+            <Image
+              src="github_icon_transparent.svg"
+              alt="github icon"
+              layout="fill"
+              objectFit="cover"
+            />
+          </button>
+
+          <button
+            className="relative w-12 h-12 bg-bgBlack rounded-full"
             onClick={() => window.open(MEDIUM)}
-            className="hover:cursor-pointer"
-          />
-          <Image
-            src="mail_icon.svg"
-            alt="mail icon"
-            width={50}
-            height={50}
+          >
+            <Image
+              src="medium_icon_transparent.svg"
+              alt="medium icon"
+              layout="fill"
+              objectFit="cover"
+            />
+          </button>
+
+          <button
+            className="relative w-12 h-12 bg-bgBlack rounded-full"
             onClick={() => window.open(MAIL)}
-            className="hover:cursor-pointer"
-          />
+          >
+            <Image
+              src="mail_icon_transparent.svg"
+              alt="mail icon"
+              layout="fill"
+              objectFit="cover"
+            />
+          </button>
         </div>
       </div>
-      <div className="flex-1 flex-col max-w-2xl justify-start">
-        <h2 className="text-4xl font-bold underline">My Skills</h2>
-        <div className="flex flex-wrap items-center justify-start mt-8 gap-4 ">
+
+      <div
+        className="
+          flex flex-col max-w-xl justify-start mt-10
+          md:max-w-full
+          lg:max-w-2xl lg:flex-1
+        "
+      >
+        <h2
+          className="
+            text-3xl font-bold underline
+            lg:text-4xl
+          "
+        >
+          My Skills
+        </h2>
+
+        <div className="flex flex-wrap items-center justify-start mt-8 gap-4 ml-4">
           {_skillsList()}
         </div>
       </div>

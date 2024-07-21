@@ -41,7 +41,7 @@ const ServerExperiences = () => {
         <div className="flex flex-col w-full justify-start items-start h-screen">
           <div className="animate-pulse mt-4 transition-transform bg-customGray h-16 w-2/4" />
 
-          <div className="flex w-full mt-8">
+          <div className="flex flex-col w-full mt-8 lg:flex-row">
             <div className="flex flex-col w-full">
               <div className="animate-pulse mt-4 transition-transform bg-customGray h-10 w-2/5" />
               <div className="animate-pulse mt-4 transition-transform bg-customGray h-10 w-1/5" />
@@ -84,24 +84,23 @@ const ServerExperiences = () => {
       const tagArray = item.tags || [];
 
       return (
-        <div key={i} className="flex flex-col mt-4 mb-16">
-          <div className="flex flex-row justify-between">
-            <div className="flex flex-col justify-between max-w-xl">
-              <div>
+        <div key={i} className="flex flex-col mt-2 mb-16 lg:mt-4">
+          <div className="flex flex-col justify-between gap-6 lg:flex-row">
+            <div className="flex flex-col justify-between max-w-xl md:max-w-full lg:max-w-3xl">
+              <div className="flex flex-col">
                 <p className="text-2xl font-bold">{item.role}</p>
+                <div className="text-xl font-bold mt-1">{`(${item.entrance} - ${item.output})`}</div>
               </div>
-
-              <div className="text-xl font-bold mt-1">{`(${item.entrance} - ${item.output})`}</div>
 
               <div className="mt-4 text-justify text-lg">
                 {item.description}
               </div>
             </div>
 
-            <div className="flex flex-col max-w-xl items-start justify-start">
-              <p className="border-b-2 text-2xl w-14">Skills</p>
+            <div className="flex flex-col items-start justify-start lg:max-w-xl">
+              <p className="border-b-2 text-2xl lg:w-14">Skills</p>
 
-              <div className="flex flex-wrap gap-4 mt-4 px-4">
+              <div className="flex flex-wrap gap-4 mt-4 px-4 lg:px-6">
                 {tagArray.map((tag, index) => (
                   <Tag key={index} tag={tag} />
                 ))}
@@ -133,25 +132,29 @@ const ServerExperiences = () => {
         if (!item) return null;
 
         return (
-          <div key={i} className="pt-4 pb-6 flex flex-col mb-12">
-            <div className="justify-start flex flex-row">
-              <h3 className="text-4xl border-b-2 font-bold">
+          <div key={i} className="flex flex-col w-full pt-4 pb-6 mb-8 lg:mb-12">
+            <div
+              className="
+                flex flex-row justify-between w-full items-center
+                md:justify-start md:gap-10
+                lg:justify-start
+              "
+            >
+              <h3 className="text-2xl border-b-2 font-bold max-w-sm lg:text-4xl lg:max-w-fit">
                 {item.enterprise}
               </h3>
 
               {item.company_website && (
-                <div className="ml-8">
-                  <ButtonCustom
-                    title="Company website"
-                    onClick={() =>
-                      item.company_website && window.open(item.company_website)
-                    }
-                  />
-                </div>
+                <ButtonCustom
+                  title="Company website"
+                  onClick={() =>
+                    item.company_website && window.open(item.company_website)
+                  }
+                />
               )}
             </div>
 
-            <div className="mt-6">{_renderList(item.history)}</div>
+            <div className="mt-2 lg:mt-6">{_renderList(item.history)}</div>
           </div>
         );
       })}

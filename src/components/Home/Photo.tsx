@@ -1,40 +1,39 @@
 "use client";
 
-import { useEffect } from "react";
 import Image from "next/image";
 import { PHOTO } from "@/constant/urls";
-const dimensions = {
-  height: 0,
-  width: 0,
-};
 
 export default function Photo() {
-  useEffect(() => {
-    dimensions.height = window.innerHeight;
-    dimensions.width = window.innerWidth;
-  }, []);
-
   return (
-    <div className="mb-16 relative flex items-center justify-center">
+    <div
+      className="
+        relative flex items-center justify-center
+        mb-16
+      "
+    >
       <div
-        className="bg-customBlue mr-4 mt-4"
-        style={{
-          width: dimensions.width / 7,
-          height: dimensions.width / 7,
-          borderRadius: dimensions.width / 14,
-        }}
+        className="
+          bg-customBlue w-36 h-36 mr-2 mt-2 rounded-full
+          md:w-40 md:h-40
+          lg:w-44 lg:h-44
+        "
       />
 
-      <Image
-        src={PHOTO}
-        alt="developer photo"
-        width={dimensions.width / 8}
-        height={dimensions.width / 8}
-        style={{
-          position: "absolute",
-          borderRadius: 125,
-        }}
-      />
+      <div
+        className="
+          absolute w-32 h-32
+          md:w-36 md:h-36
+          lg:w-40 lg:h-40
+        "
+      >
+        <Image
+          src={PHOTO}
+          alt="developer photo"
+          layout="fill"
+          objectFit="cover"
+          className="rounded-full"
+        />
+      </div>
     </div>
   );
 }
