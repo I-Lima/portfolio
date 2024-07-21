@@ -98,24 +98,26 @@ const ServerListExperiences = () => {
       const tagArray = historyItem.tags || [];
 
       return (
-        <div key={i} className="flex flex-row justify-center mt-12">
+        <div key={i} className="flex flex-col justify-center mt-6">
           <div>
-            <p className="text-customGray">{`(${historyItem.entrance} - ${historyItem.output})`}</p>
+            <p className="text-customGray hidden sm:visible">{`(${historyItem.entrance} - ${historyItem.output})`}</p>
           </div>
 
-          <div className="flex flex-col max-w-xl">
-            <div className="flex flex-col px-4">
-              <div className="flex flex-row">
-                <p className="flex-wrap text-2xl mb-2 font-bold">
+          <div className="flex flex-col">
+            <div className="flex flex-col px-1">
+              <div className="flex flex-col w-full justify-between mb-2">
+                <p className="flex-wrap text-xl mb-1 font-bold">
                   {historyItem.role}
                 </p>
+
+                <p className="text-customGray sm:hidden">{`(${historyItem.entrance} - ${historyItem.output})`}</p>
               </div>
 
-              <p className="flex flex-wrap text-justify text-lg px-2">
+              <p className="flex flex-wrap text-justify text-lg px-1">
                 {historyItem.description}
               </p>
 
-              <div className="flex flex-wrap gap-4 mt-4 px-4 justify-start">
+              <div className="flex flex-wrap gap-2 mt-4 px-4 justify-start mb-2">
                 {tagArray.map((tag, index) => (
                   <Tag key={index} tag={tag} />
                 ))}
@@ -135,12 +137,10 @@ const ServerListExperiences = () => {
       {dataExperience.map((item, i) => {
         return (
           <div key={i} className="flex justify-center">
-            <div className="flex flex-col max-w-3xl">
-              <div className={"w-full border-b-2 justify-center"}>
-                <h3 className="text-4xl pb-2 text-center font-bold">
-                  {item.enterprise}
-                </h3>
-              </div>
+            <div className="flex flex-col">
+              <h3 className="text-2xl border-b-2 pb-1 text-center font-bold">
+                {item.enterprise}
+              </h3>
 
               <div className="flex flex-col px-4">
                 {_renderList(item.history)}

@@ -15,26 +15,23 @@ export default function Photo() {
   }, []);
 
   return (
-    <div className="mb-16 relative flex items-center justify-center">
+    <div className="relative flex items-center justify-center mb-16">
       <div
-        className="bg-customBlue mr-4 mt-4"
+        className="bg-customBlue w-36 h-36 mr-2 mt-2"
         style={{
-          width: dimensions.width / 7,
-          height: dimensions.width / 7,
-          borderRadius: dimensions.width / 14,
+          borderRadius: "50%",
         }}
       />
 
-      <Image
-        src={PHOTO}
-        alt="developer photo"
-        width={dimensions.width / 8}
-        height={dimensions.width / 8}
-        style={{
-          position: "absolute",
-          borderRadius: 125,
-        }}
-      />
+      <div className="absolute w-32 h-32">
+        <Image
+          src={PHOTO}
+          alt="developer photo"
+          layout="fill"
+          objectFit="cover"
+          style={{ borderRadius: "50%" }}
+        />
+      </div>
     </div>
   );
 }

@@ -10,10 +10,7 @@ export default function Experiences() {
   const route = useRouter();
 
   return (
-    <div
-      id="experiences"
-      className="flex flex-col max-w-screen w-full px-12 mb-32"
-    >
+    <div id="experiences" className="flex flex-col max-w-screen w-full mb-20">
       <div className="flex flex-col items-start">
         <SectionTitle title="Experiences" />
       </div>

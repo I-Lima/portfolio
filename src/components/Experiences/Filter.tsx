@@ -97,15 +97,19 @@ export default function Filter() {
   return (
     <div className="flex flex-col h-full">
       <div
-        className="flex flex-row border-2 rounded-xl px-4 py-2 gap-4 hover:cursor-pointer border-black dark:border-white hover:bg-bgWhite hover:text-black dark:hover:bg-bgWhite dark:hover:text-black"
+        className="hidden md:flex flex-row border-2 rounded-xl px-4 py-2 gap-4 hover:cursor-pointer border-black dark:border-white hover:bg-bgWhite hover:text-black dark:hover:bg-bgWhite dark:hover:text-black"
         onClick={_handleOpen}
       >
         <IoFilter size={30} />
         <p className="text-xl">Filter</p>
       </div>
 
+      <div className="md:hidden" onClick={_handleOpen}>
+        <IoFilter size={40} />
+      </div>
+
       <div
-        className={`absolute mt-14 w-48 bg-white rounded-md z-10 transition duration-150 ease-in ${open ? "max-h-screen opacity-100" : "max-h-0 opacity-0"}`}
+        className={`absolute mt-14 right-4 w-48 bg-bgWhite rounded-md z-10 transition duration-150 ease-in ${open ? "max-h-screen opacity-100" : "max-h-0 opacity-0"}`}
       >
         {_renderList()}
       </div>

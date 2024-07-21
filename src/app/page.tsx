@@ -4,18 +4,13 @@ import Banner from "@/components/Home/Banner/index";
 import About from "@/components/Home/About";
 import Experiences from "@/components/Home/Experiences";
 import Projects from "@/components/Home/Projects";
-import SwitchDarkMode from "@/components/SwitchDarkMode";
 import { FaArrowDown } from "react-icons/fa";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen max-w-screen flex-col items-center">
+    <main className="flex min-h-screen max-w-screen flex-col items-center justify-center px-6">
       <div className="flex flex-col h-screen max-w-screen pt-24">
-        <div className="flex justify-end w-screen pr-20">
-          <SwitchDarkMode />
-        </div>
-
-        <div>
+        <div className="flex flex-col items-center justify-center h-full">
           <Banner />
 
           <div className="flex flex-col items-center mt-20">

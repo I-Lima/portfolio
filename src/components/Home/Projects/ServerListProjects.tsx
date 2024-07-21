@@ -72,13 +72,13 @@ const ServerListProjects = () => {
       const tagArray = item.topics;
 
       return (
-        <div key={i} className="flex flex-col max-w-lg">
-          <h3 className=" text-xl border-b-2">{item.name}</h3>
+        <div key={i} className="flex flex-col max-w-sm flex-wrap">
+          <h3 className="text-xl border-b-2">{item.name}</h3>
 
-          <div className="mt-4 border-white border-b-2 rounded-lg pb-3 px-2">
+          <div className="mt-4 border-white border-b-2 rounded-lg pb-3 justify-center items-center">
             <p className="text-lg text-justify">{item.description}</p>
 
-            <div className="flex flex-wrap mt-4 gap-4">
+            <div className="flex flex-wrap mt-4 gap-2">
               {tagArray.map((item, i2) => {
                 return <Tag key={i2} tag={item} />;
               })}

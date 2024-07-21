@@ -9,41 +9,53 @@ export default function Footer() {
   return (
     <div className="w-screen max-w-screen bg-customBlue h-56 items-center flex flex-col justify-center gap-12">
       <div className="flex flex-row gap-6 max-w-sm">
-        <Image
-          src="linkedin_icon_transparent.svg"
-          alt="linkedin icon"
-          width={50}
-          height={50}
+        <button
+          className="relative w-12 h-12"
           onClick={() => window.open(LINKEDIN)}
-          className="hover:cursor-pointer"
-        />
+        >
+          <Image
+            src="linkedin_icon_transparent.svg"
+            alt="linkedin icon"
+            layout="fill"
+            objectFit="cover"
+          />
+        </button>
 
-        <Image
-          src="github_icon_transparent.svg"
-          alt="github icon"
-          width={50}
-          height={50}
+        <button
+          className="relative w-12 h-12"
           onClick={() => window.open(GITHUB.PROFILE)}
-          className="hover:cursor-pointer"
-        />
+        >
+          <Image
+            src="github_icon_transparent.svg"
+            alt="github icon"
+            layout="fill"
+            objectFit="cover"
+          />
+        </button>
 
-        <Image
-          src="medium_icon_transparent.svg"
-          alt="medium icon"
-          width={50}
-          height={50}
+        <button
+          className="relative w-12 h-12"
           onClick={() => window.open(MEDIUM)}
-          className="hover:cursor-pointer"
-        />
+        >
+          <Image
+            src="medium_icon_transparent.svg"
+            alt="medium icon"
+            layout="fill"
+            objectFit="cover"
+          />
+        </button>
 
-        <Image
-          src="mail_icon_transparent.svg"
-          alt="mail icon"
-          width={50}
-          height={50}
+        <button
+          className="relative w-12 h-12"
           onClick={() => window.open(MAIL)}
-          className="hover:cursor-pointer"
-        />
+        >
+          <Image
+            src="mail_icon_transparent.svg"
+            alt="mail icon"
+            layout="fill"
+            objectFit="cover"
+          />
+        </button>
       </div>
 
       <div className="flex flex-row gap-2 text-white">
