@@ -1,36 +1,66 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+[Read this page in English](./README-en.md)
 
-## Getting Started
+# Portfólio
 
-First, run the development server:
+## Sumário
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- [Portfólio](#portfólio)
+  - [Sumário](#sumário)
+  - [Descrição](#descrição)
+    - [Protótipo](#protótipo)
+    - [Flowchart](#flowchart)
+  - [Requisitos](#requisitos)
+  - [Passo-a-passo para executar](#passo-a-passo-para-executar)
+  - [Tecnologias utilizadas](#tecnologias-utilizadas)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Descrição
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+O projeto teve como objetivo criar um site de portfólio dinâmico, utilizando o Firestore do Firebase como banco de dados.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Para garantir a qualidade do código, utilizei o GitHub Actions para automatizar as verificações do ESLint em cada pull request aberto.
 
-## Learn More
+O desenvolvimento do projeto foi guiado por um protótipo detalhado e um flowchart.
 
-To learn more about Next.js, take a look at the following resources:
+### Protótipo
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Acesse o protótipo: [Link de acesso](https://www.figma.com/design/4E7TKK9CLy4jS5J5pd5VpD/Portfolio?node-id=0-1&t=E6cr032aNHNbb5xO-1)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### Flowchart
 
-## Deploy on Vercel
+Acesse o flowchart: [Link de acesso](https://www.figma.com/board/aY1I3HjaBjeczUBDP71taQ/Portf%C3%B3lio---Flowchart?node-id=0-1&t=E6cr032aNHNbb5xO-1)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Requisitos
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- Nodejs 18.17.1
+
+## Passo-a-passo para executar
+
+1. Clone o repositório `https://github.com/I-Lima/portfolio-Nextjs.git`
+2. Importe o projeto na sua IDE preferida
+3. Execute o seguinte comando para instalar as bibliotecas:
+
+    ```bash
+    yarn
+    #ou
+    npm i
+    ```
+
+4. Execute o seguinte comando para rodar a aplicação:
+
+      ```bash
+      yarn dev
+      #ou
+      npm run dev
+      ```
+
+5. Acessa pela URL `http://localhost:3000/`
+
+## Tecnologias utilizadas
+
+- Nextjs
+- Tailwind CSS
+- TypeScript
+- Firebase
+- Github Actions
+- Eslint
+- Zustand
