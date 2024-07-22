@@ -29,7 +29,7 @@ export default function Banner() {
             <div className="flex flex-row">
               <p>{"I'm"}</p>
 
-              <p className="font-bold ml-2 text-4xl">Ingrid Lima</p>
+              <p className="font-bold ml-2">Ingrid Lima</p>
             </div>
 
             <div className="flex flex-col items-start md:flex-row md:items-center ">
@@ -82,7 +82,7 @@ export default function Banner() {
 
               <p
                 className="
-                  font-bold ml-2 text-4xl
+                  font-bold ml-2
                   lg:text-6xl
                 "
               >
@@ -95,14 +95,14 @@ export default function Banner() {
 
               <div
                 className="
-                  inline-flex flex-col items-start justify-start max-h-10 overflow-hidden
+                  inline-flex flex-col items-start justify-start max-h-8 overflow-hidden
                   md:min-w-[200px] md:ml-2
                   lg:min-w-[380px] lg:max-h-12
                 "
               >
                 <ul
                   className="
-                    block animate-text-slide text-left font-bold leading-tight [&_li]:block text-3xl
+                    block animate-text-slide text-left font-bold leading-tight [&_li]:block text-2xl
                     lg:text-4xl
                   "
                 >
