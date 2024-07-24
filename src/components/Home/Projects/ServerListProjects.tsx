@@ -72,12 +72,13 @@ const ServerListProjects = () => {
       const tagArray = item.topics;
 
       return (
-        <div
+        <button
           key={i}
           className="
             flex flex-col max-w-sm flex-wrap
             lg:max-w-lg
           "
+          onClick={() => window.open(item.html_url)}
         >
           <h3 className="text-xl border-b-2 md:text-2xl">{item.name}</h3>
 
@@ -90,7 +91,7 @@ const ServerListProjects = () => {
               })}
             </div>
           </div>
-        </div>
+        </button>
       );
     });
   };
