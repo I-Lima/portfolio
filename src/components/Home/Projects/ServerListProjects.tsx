@@ -75,14 +75,14 @@ const ServerListProjects = () => {
         <button
           key={i}
           className="
-            flex flex-col max-w-sm flex-wrap
+            flex flex-col max-w-sm flex-wrap border-[1px] rounded-lg p-4 border-white/50 shadow-lg shadow-customGray/10 transition-transform duration-100 hover:scale-105
             lg:max-w-lg
           "
           onClick={() => window.open(item.html_url)}
         >
           <h3 className="text-xl border-b-2 md:text-2xl">{item.name}</h3>
 
-          <div className="mt-4 border-white border-b-2 rounded-lg pb-3 justify-center items-center lg:px-2">
+          <div className="mt-4 justify-center items-center lg:px-2">
             <p className="text-lg text-justify">{item.description}</p>
 
             <div className="flex flex-wrap mt-4 gap-2 lg:gap-4">
