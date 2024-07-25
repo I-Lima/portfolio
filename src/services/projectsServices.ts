@@ -15,9 +15,9 @@ export default class ProjectsServices {
     const dataReturn = projectData.reduce((found, item) => {
       if (item.topics.includes("pinned")) found.push(item);
 
-      found = _.orderBy(found, ["updated_at"], ["asc"]);
+      found = _.orderBy(found, ["updated_at"], ["desc"]);
 
-      return found.slice(0, 2);
+      return found;
     }, [] as ProjectData[]);
 
     return dataReturn;
