@@ -15,8 +15,8 @@ export default function Projects() {
 
       <div
         className="
-          flex flex-col max-w-screen gap-16 px-2 justify-center items-center
-          lg:flex-row lg:items-start lg:my-12
+          grid justify-center gap-6
+          lg:px-4 lg:ap-4 lg:items-start lg:grid-cols-2
         "
       >
         {_renderList()}
