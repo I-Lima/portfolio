@@ -80,7 +80,9 @@ const ServerListProjects = () => {
           "
           onClick={() => window.open(item.html_url)}
         >
-          <h3 className="flex flex-row text-xl border-b-2 md:text-2xl">{item.name}</h3>
+          <h3 className="flex flex-row text-xl border-b-2 md:text-2xl">
+            {item.name}
+          </h3>
 
           <div className="mt-4 justify-center items-center lg:px-2">
             <p className="text-lg text-justify px-4">{item.description}</p>
