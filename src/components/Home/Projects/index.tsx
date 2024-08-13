@@ -15,8 +15,9 @@ export default function Projects() {
 
       <div
         className="
-          grid justify-center gap-6
+          grid justify-items-center gap-6
           lg:px-4 lg:ap-4 lg:items-start lg:grid-cols-2
+          2xl:grid-cols-3
         "
       >
         {_renderList()}
