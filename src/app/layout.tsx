@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Providers } from "@/context/Provider";
+import { Analytics } from "@vercel/analytics/react";
 
 const gentiumBookPlus = Gentium_Book_Plus({
   weight: ["400", "700"],
@@ -33,6 +34,7 @@ export default function RootLayout({
           {children}
           <Footer />
         </Providers>
+        <Analytics />
       </body>
     </html>
   );
