@@ -2,7 +2,6 @@ import { getAboutData } from "@/Repositories/aboutRepository";
 import { dataProps } from "@/types/api";
 import { aboutProps } from "@/types/about";
 import to from "await-to-js";
-import { sortBy } from "lodash";
 
 class AboutServices {
   async getAboutData(): Promise<aboutProps | null> {
@@ -15,13 +14,16 @@ class AboutServices {
       Basic: 1,
     };
 
-    const {languages} = (data as dataProps).data as aboutProps;
+    const { languages } = (data as dataProps).data as aboutProps;
 
     const sortedLanguages = [...languages].sort(
-      (a, b) => fluencyOrder[b.level] - fluencyOrder[a.level]
+      (a, b) => fluencyOrder[b.level] - fluencyOrder[a.level],
     );
 
-    return {...(data as dataProps).data as aboutProps, languages: sortedLanguages };
+    return {
+      ...((data as dataProps).data as aboutProps),
+      languages: sortedLanguages,
+    };
   }
 }
 

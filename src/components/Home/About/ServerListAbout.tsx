@@ -112,8 +112,15 @@ const ServerListAbout = () => {
 
     return (dataAbout?.languages || []).map((skill, i) => (
       <div key={i} className="flex flex-row gap-3">
-        <Image src={"/" + skill.name + ".png"} width={32} height={32} alt="language flag" />
-        <text className="lg:text-lg font-bold">{skill.name} - {skill.level}</text>
+        <Image
+          src={"/" + skill.name + ".png"}
+          width={32}
+          height={32}
+          alt="language flag"
+        />
+        <text className="lg:text-lg font-bold">
+          {skill.name} - {skill.level}
+        </text>
       </div>
     ));
   };
@@ -209,8 +216,8 @@ const ServerListAbout = () => {
         <div
           className="
             flex flex-col max-w-xl justify-start mt-10
-            md:max-w-full
-            lg:max-w-lg lg:flex-1
+            lg:flex-1
+            lg:max-w-2xl
           "
         >
           <h2
@@ -222,7 +229,13 @@ const ServerListAbout = () => {
             My Skills
           </h2>
 
-          <div className="flex flex-wrap items-center justify-start mt-8 gap-4 ml-4">
+          <div
+            className="
+              flex flex-wrap items-center justify-start mt-8 gap-4 ml-4
+              md:max-w-sm
+              lg:max-w-full
+            "
+          >
             {_skillsList()}
           </div>
         </div>
