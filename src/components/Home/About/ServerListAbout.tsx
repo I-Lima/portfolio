@@ -107,19 +107,37 @@ const ServerListAbout = () => {
     ));
   };
 
+  const _languagesList = () => {
+    if (isError) return _renderError();
+
+    return (dataAbout?.languages || []).map((skill, i) => (
+      <div key={i} className="flex flex-row gap-3">
+        <Image
+          src={"/" + skill.name + ".png"}
+          width={32}
+          height={32}
+          alt="language flag"
+        />
+        <text className="lg:text-lg font-bold">
+          {skill.name} - {skill.level}
+        </text>
+      </div>
+    ));
+  };
+
   if (isLoading) return _renderLoading();
 
   return (
     <div
       className="
-        flex flex-col justify-center w-full gap-10
+        flex flex-col justify-center w-full gap-2
         lg:flex-row lg:justify-between lg:px-6
       "
     >
       <div
         className="
           flex flex-col
-          lg:max-w-4xl lg:flex-1 lg:mr-10
+          lg:max-w-7xl lg:flex-1 lg:mr-10
         "
       >
         <div
@@ -194,24 +212,53 @@ const ServerListAbout = () => {
         </div>
       </div>
 
-      <div
-        className="
-          flex flex-col max-w-xl justify-start mt-10
-          md:max-w-full
-          lg:max-w-2xl lg:flex-1
-        "
-      >
-        <h2
+      <div className="flex flex-col gap-10">
+        <div
           className="
-            text-3xl font-bold underline
-            lg:text-4xl
+            flex flex-col max-w-xl justify-start mt-10
+            lg:flex-1
+            lg:max-w-2xl
           "
         >
-          My Skills
-        </h2>
+          <h2
+            className="
+              text-3xl font-bold underline
+              lg:text-4xl
+            "
+          >
+            My Skills
+          </h2>
 
-        <div className="flex flex-wrap items-center justify-start mt-8 gap-4 ml-4">
-          {_skillsList()}
+          <div
+            className="
+              flex flex-wrap items-center justify-start mt-8 gap-4 ml-4
+              md:max-w-sm
+              lg:max-w-full
+            "
+          >
+            {_skillsList()}
+          </div>
+        </div>
+
+        <div
+          className="
+            flex flex-col max-w-xl justify-start mt-10
+            md:max-w-full
+            lg:max-w-2xl lg:flex-1
+          "
+        >
+          <h2
+            className="
+              text-3xl font-bold underline
+              lg:text-4xl
+            "
+          >
+            My Languages
+          </h2>
+
+          <div className="flex flex-col items-start justify-start mt-8 gap-4 ml-4">
+            {_languagesList()}
+          </div>
         </div>
       </div>
     </div>
