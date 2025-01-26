@@ -1,5 +1,9 @@
 export type aboutProps = {
   section: string;
+  msgError: string;
+  name: string;
+  skills: string;
+  languages: string;
 };
 export type bannerProps = {
   hi: string;
@@ -12,19 +16,25 @@ export type contactProps = {
 };
 export type experiencesProps = {
   section: string;
+  more: string;
 };
 export type homeProps = {
   moreInfo: string;
 };
 export type projectsProps = {
   section: string;
+  more: string;
+};
+export type footerProps = {
+  developedBy: string;
 };
 
 export type dictionariesProps = {
   about: aboutProps;
   banner: bannerProps;
   contact: contactProps;
-  Experiences: experiencesProps;
+  experiences: experiencesProps;
   home: homeProps;
   projects: projectsProps;
+  footer: footerProps;
 };

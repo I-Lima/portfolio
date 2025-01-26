@@ -1,7 +1,10 @@
 {
   "about": {
     "section": "About",
-     "msgError": "An error has occurred. Try later"
+     "msgError": "An error has occurred. Try later",
+     "name": "My name is",
+     "skills": "My Skills",
+     "languages": "My Languages"
   },
   "banner": {
     "hi": "Hi",
@@ -12,13 +15,18 @@
     "section": "Contact",
     "description": "If you have an interesting project or an innovative idea, I’d be happy to chat with you. I’m always looking for new connections and opportunities to collaborate on creative and challenging projects."
   },
-  "Experiences": {
-    "section": "Experiences"
+  "experiences": {
+    "section": "Experiences",
+    "more": "More"
   },
   "home": {
     "moreInfo": "More Information"
   },
   "projects": {
-    "section": "Projects"
+    "section": "Projects",
+    "more": "More"
+  },
+  "footer": {
+    "developedBy": "Developed by"
   }
 }

@@ -2,9 +2,14 @@
 
 import { GITHUB, LINKEDIN, MAIL, MEDIUM } from "@/constant/urls";
 import Image from "next/image";
+import { useDictionary } from "@/context/DictionaryContext";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
+  const { dictionary: dictionaries } = useDictionary();
+  const dictionary = dictionaries?.footer;
+
+  if (!dictionary) return null;
 
   return (
     <div className="w-screen max-w-screen bg-customBlue h-56 items-center flex flex-col justify-center gap-12">
@@ -59,7 +64,7 @@ export default function Footer() {
       </div>
 
       <div className="flex flex-row gap-2 text-white">
-        <p className="text-center self-center">Developed by </p>
+        <p className="text-center self-center">{dictionary.developedBy} </p>
 
         <Image src="logoWithStroke.svg" width={100} height={50} alt="logo" />
 

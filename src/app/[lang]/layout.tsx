@@ -38,7 +38,7 @@ export default function RootLayout({
         className={gentiumBookPlus.className + " bg-bgWhite dark:bg-bgBlack"}
         style={{ overflowX: "hidden" }}
       >
-        <Providers>
+        <Providers lang={lang}>
           <Navbar />
           {children}
           <Footer />

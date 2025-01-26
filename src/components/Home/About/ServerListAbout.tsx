@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import aboutServices from "@/services/aboutServices";
 import { aboutProps } from "@/types/about";
+import { aboutProps as aboutPropsDictionary } from "@/types/dictionaries";
 import Image from "next/image";
 import { GITHUB, LINKEDIN, MAIL, MEDIUM } from "@/constant/urls";
 import Photo from "../../ui/Photo";
@@ -9,7 +10,7 @@ const dimensions = {
   width: 0,
 };
 
-const ServerListAbout = () => {
+const ServerListAbout = (dictionary: aboutPropsDictionary) => {
   const [dataAbout, setDataAbout] = useState<aboutProps>();
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
@@ -78,7 +79,7 @@ const ServerListAbout = () => {
       <div className="flex flex-col items-start justify-center">
         <Image src="/gifs/error.gif" alt="error gif" width={300} height={300} />
 
-        <p>An error has occurred. Try later</p>
+        <p>{dictionary.msgError}</p>
       </div>
     );
   };
@@ -153,7 +154,7 @@ const ServerListAbout = () => {
               md:text-4xl
             "
           >
-            {"I'm Ingrid Lima"}
+            {dictionary.name} Ingrid Lima
           </h2>
 
           <Photo />
@@ -226,7 +227,7 @@ const ServerListAbout = () => {
               lg:text-4xl
             "
           >
-            My Skills
+            {dictionary.skills}
           </h2>
 
           <div
@@ -253,7 +254,7 @@ const ServerListAbout = () => {
               lg:text-4xl
             "
           >
-            My Languages
+            {dictionary.languages}
           </h2>
 
           <div className="flex flex-col items-start justify-start mt-8 gap-4 ml-4">

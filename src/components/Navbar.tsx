@@ -4,9 +4,13 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import SwitchDarkMode from "./SwitchDarkMode";
+import { useDictionary } from "@/context/DictionaryContext";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const { dictionary } = useDictionary();
+
+  if (!dictionary) return null;
 
   const _toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -31,25 +35,25 @@ export default function Navbar() {
             className="ml-2 p-4 hover:bg-customBlue/[.80] hover:text-white transition duration-300 ease-in-out"
             passHref
           >
-            About
+            {dictionary.about.section}
           </Link>
           <Link
             href="/#experiences"
             className="ml-2 p-4 hover:bg-customBlue/[.80] hover:text-white transition duration-300 ease-in-out"
           >
-            Experiences
+            {dictionary.experiences.section}
           </Link>
           <Link
             href="/#projects"
             className=" ml-2 p-4 hover:bg-customBlue/[.80] hover:text-white transition duration-300 ease-in-out"
           >
-            Projects
+            {dictionary.projects.section}
           </Link>
           <Link
             href="/#contact"
             className="ml-2 p-4 hover:bg-customBlue/[.80] hover:text-white transition duration-300 ease-in-out"
           >
-            Contact
+            {dictionary.contact.section}
           </Link>
         </div>
 
@@ -83,22 +87,28 @@ export default function Navbar() {
           passHref
           onClick={_toggleMenu}
         >
-          About
+          {dictionary.about.section}
         </Link>
-
         <Link
           href="/#experiences"
           className="block px-4 py-2 text-black border-b-2 border-customGray"
           onClick={_toggleMenu}
         >
-          Experiences
+          {dictionary.experiences.section}
+        </Link>
+        <Link
+          href="/#projects"
+          className="block px-4 py-2 text-black border-b-2 border-customGray"
+          onClick={_toggleMenu}
+        >
+          {dictionary.projects.section}
         </Link>
         <Link
           href="/#projects"
           className="block px-4 py-2 text-black"
           onClick={_toggleMenu}
         >
-          Projects
+          {dictionary.contact.section}
         </Link>
       </div>
     </nav>
