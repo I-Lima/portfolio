@@ -1,4 +1,4 @@
-import Tag from "@/components/Tag";
+import Tag from "@/components/ui/Tag";
 import ProjectsServices from "@/services/projectsServices";
 import { ProjectData } from "@/types/repository";
 import Image from "next/image";

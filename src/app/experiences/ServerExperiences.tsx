@@ -2,8 +2,8 @@ import { useEffect, useState } from "react";
 import experienceServices from "@/services/experienceServices";
 import { experienceHistoryProps } from "@/types/experiences";
 import Image from "next/image";
-import Tag from "@/components/Tag";
-import ButtonCustom from "@/components/Experiences/Button";
+import Tag from "@/components/ui/Tag";
+import ButtonCustom from "@/components/ui/Button";
 import { useExperienceStore } from "@/hooks/stateHooks";
 const dimensions = {
   height: 0,
