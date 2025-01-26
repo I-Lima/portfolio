@@ -1,8 +1,8 @@
 "use client";
-import SectionTitle from "@/components/Home/SectionTitle";
+import SectionTitle from "@/components/ui/SectionTitle";
 import ServerExperiences from "./ServerExperiences";
-import Filter from "@/components/Experiences/Filter";
-import Search from "@/components/Experiences/Search";
+import Filter from "@/components/ui/Filter";
+import Search from "@/components/ui/Search";
 
 export default function Experiences() {
   const _renderList = ServerExperiences();

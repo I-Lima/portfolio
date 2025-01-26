@@ -9,7 +9,6 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   const _toggleMenu = () => {
-    console.log("CLICOU");
     setIsOpen(!isOpen);
   };
 
@@ -45,6 +44,12 @@ export default function Navbar() {
             className=" ml-2 p-4 hover:bg-customBlue/[.80] hover:text-white transition duration-300 ease-in-out"
           >
             Projects
+          </Link>
+          <Link
+            href="/#contact"
+            className="ml-2 p-4 hover:bg-customBlue/[.80] hover:text-white transition duration-300 ease-in-out"
+          >
+            Contact
           </Link>
         </div>
 

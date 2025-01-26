@@ -5,6 +5,7 @@ import About from "@/components/Home/About";
 import Experiences from "@/components/Home/Experiences";
 import Projects from "@/components/Home/Projects";
 import { FaArrowDown } from "react-icons/fa";
+import Contact from "@/components/Home/Contact";
 
 export default function Home() {
   return (
@@ -31,6 +32,8 @@ export default function Home() {
       <Experiences />
 
       <Projects />
+
+      <Contact />
     </main>
   );
 }

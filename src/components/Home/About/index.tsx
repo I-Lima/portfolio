@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import SectionTitle from "../SectionTitle";
+import SectionTitle from "../../ui/SectionTitle";
 import ServerListAbout from "./ServerListAbout";
 
 export default function About() {
