@@ -1,7 +1,7 @@
 "use client";
 
-import SectionTitle from "../SectionTitle";
-import ButtonMore from "../ButtonMore";
+import SectionTitle from "../../ui/SectionTitle";
+import ButtonMore from "../../ui/ButtonMore";
 import ServerListProjects from "./ServerListProjects";
 import { GITHUB } from "@/constant/urls";
 export default function Projects() {

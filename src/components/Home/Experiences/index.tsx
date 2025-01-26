@@ -1,8 +1,8 @@
 "use client";
 
-import SectionTitle from "../SectionTitle";
+import SectionTitle from "../../ui/SectionTitle";
 import ServerListExperiences from "./ServerListExperiences";
-import ButtonMore from "../ButtonMore";
+import ButtonMore from "../../ui/ButtonMore";
 import { useRouter } from "next/navigation";
 
 export default function Experiences() {

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { experienceHistoryProps, experienceProps } from "@/types/experiences";
 import Image from "next/image";
 import experienceServices from "@/services/experienceServices";
-import Tag from "@/components/Tag";
+import Tag from "@/components/ui/Tag";
 const dimensions = {
   height: 0,
   width: 0,
