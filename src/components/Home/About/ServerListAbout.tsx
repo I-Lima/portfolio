@@ -168,7 +168,7 @@ const ServerListAbout = (dictionary: aboutPropsDictionary) => {
             onClick={() => window.open(LINKEDIN)}
           >
             <Image
-              src="linkedin_icon_transparent.svg"
+              src="images/linkedin_icon_transparent.svg"
               alt="linkedin icon"
               layout="fill"
               objectFit="cover"
@@ -180,7 +180,7 @@ const ServerListAbout = (dictionary: aboutPropsDictionary) => {
             onClick={() => window.open(GITHUB.PROFILE)}
           >
             <Image
-              src="github_icon_transparent.svg"
+              src="images/github_icon_transparent.svg"
               alt="github icon"
               layout="fill"
               objectFit="cover"
@@ -192,7 +192,7 @@ const ServerListAbout = (dictionary: aboutPropsDictionary) => {
             onClick={() => window.open(MEDIUM)}
           >
             <Image
-              src="medium_icon_transparent.svg"
+              src="images/medium_icon_transparent.svg"
               alt="medium icon"
               layout="fill"
               objectFit="cover"
@@ -204,7 +204,7 @@ const ServerListAbout = (dictionary: aboutPropsDictionary) => {
             onClick={() => window.open(MAIL)}
           >
             <Image
-              src="mail_icon_transparent.svg"
+              src="images/mail_icon_transparent.svg"
               alt="mail icon"
               layout="fill"
               objectFit="cover"

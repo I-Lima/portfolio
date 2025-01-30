@@ -19,7 +19,7 @@ export default function Footer() {
           onClick={() => window.open(LINKEDIN)}
         >
           <Image
-            src="linkedin_icon_transparent.svg"
+            src="images/linkedin_icon_transparent.svg"
             alt="linkedin icon"
             layout="fill"
             objectFit="cover"
@@ -31,7 +31,7 @@ export default function Footer() {
           onClick={() => window.open(GITHUB.PROFILE)}
         >
           <Image
-            src="github_icon_transparent.svg"
+            src="images/github_icon_transparent.svg"
             alt="github icon"
             layout="fill"
             objectFit="cover"
@@ -43,7 +43,7 @@ export default function Footer() {
           onClick={() => window.open(MEDIUM)}
         >
           <Image
-            src="medium_icon_transparent.svg"
+            src="images/medium_icon_transparent.svg"
             alt="medium icon"
             layout="fill"
             objectFit="cover"
@@ -55,7 +55,7 @@ export default function Footer() {
           onClick={() => window.open(MAIL)}
         >
           <Image
-            src="mail_icon_transparent.svg"
+            src="images/mail_icon_transparent.svg"
             alt="mail icon"
             layout="fill"
             objectFit="cover"
@@ -66,7 +66,12 @@ export default function Footer() {
       <div className="flex flex-row gap-2 text-white">
         <p className="text-center self-center">{dictionary.developedBy} </p>
 
-        <Image src="logoWithStroke.svg" width={100} height={50} alt="logo" />
+        <Image
+          src="images/logoWithStroke.svg"
+          width={100}
+          height={50}
+          alt="logo"
+        />
 
         <p className="text-center self-center">© {currentYear}</p>
       </div>

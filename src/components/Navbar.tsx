@@ -20,7 +20,12 @@ export default function Navbar() {
     <nav className="px-4 py-4 bg-bgWhite dark:bg-bgBlack z-50 fixed mx-auto flex items-center justify-between w-full lg:py-2 lg:px-8">
       <div>
         <a href="/">
-          <Image src="logo.svg" alt="website logo" width={100} height={80} />
+          <Image
+            src="images/logo.svg"
+            alt="website logo"
+            width={100}
+            height={80}
+          />
         </a>
       </div>
 
