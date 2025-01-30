@@ -35,7 +35,7 @@ const ServerListAbout = (dictionary: aboutPropsDictionary) => {
 
   const _renderLoading = () => {
     return (
-      <div className="flex flex-col w-screen gap-20 md:flex-row">
+      <div className="flex flex-col w-screen gap-20 lg:flex-row">
         <div className="animate-pulse flex flex-col mt-4 transition-transform w-2/3 justify-start">
           <div className="flex flex-row items-center ">
             <div className="bg-customGray h-16 w-1/2 mr-24" />
@@ -58,16 +58,31 @@ const ServerListAbout = (dictionary: aboutPropsDictionary) => {
           </div>
         </div>
 
-        <div className="animate-pulse flex flex-col mt-4 transition-transform w-2/3 justify-start">
-          <div className="bg-customGray h-8 w-56" />
+        <div className="flex flex-col md:flex-row md:justify-between">
+          <div className="animate-pulse flex flex-col mt-4 transition-transform w-2/3 justify-start">
+            <div className="bg-customGray h-8 w-56" />
 
-          <div className="mt-4 flex flex-row gap-4">
-            <div className="bg-customGray h-20 w-20 rounded" />
-            <div className="bg-customGray h-20 w-20 rounded" />
-            <div className="bg-customGray h-20 w-20 rounded" />
-            <div className="bg-customGray h-20 w-20 rounded" />
-            <div className="bg-customGray h-20 w-20 rounded" />
-            <div className="bg-customGray h-20 w-20 rounded" />
+            <div className="mt-4 flex flex-row gap-4 md:flex-wrap md:max-w-md">
+              <div className="bg-customGray h-16 w-16 rounded lg:h-20 lg:w-20" />
+              <div className="bg-customGray h-16 w-16 rounded lg:h-20 lg:w-20" />
+              <div className="bg-customGray h-16 w-16 rounded lg:h-20 lg:w-20" />
+              <div className="bg-customGray h-16 w-16 rounded lg:h-20 lg:w-20" />
+              <div className="bg-customGray h-16 w-16 rounded lg:h-20 lg:w-20" />
+            </div>
+          </div>
+
+          <div className="animate-pulse flex flex-col mt-4 transition-transform w-2/3 justify-start">
+            <div className="bg-customGray h-8 w-56" />
+
+            <div className="mt-4 flex flex-col gap-4 md:flex-wrap">
+              {[...Array(3)].map((_, i) => (
+                <div key={i} className="flex flex-row gap-2 align-center">
+                  <div className="bg-customGray h-4 w-16" />
+                  <div className="bg-customGray h-1 w-2 rounded self-center" />
+                  <div className="bg-customGray h-4 w-20" />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
@@ -102,7 +117,7 @@ const ServerListAbout = (dictionary: aboutPropsDictionary) => {
     if (isError) return _renderError();
 
     return (dataAbout?.skills || []).map((skill, i) => (
-      <div key={i} className="relative h-8 w-8 md:h-10 md:w-10 lg:w-12 lg:h-12">
+      <div key={i} className="relative h-8 w-8 md:h-11 md:w-11 lg:w-12 lg:h-12">
         <Image src={skill.url} layout="fill" alt="my skills" />
       </div>
     ));
@@ -119,7 +134,7 @@ const ServerListAbout = (dictionary: aboutPropsDictionary) => {
           height={32}
           alt="language flag"
         />
-        <text className="lg:text-lg font-bold">
+        <text className="text-md lg:text-lg font-bold">
           {skill.name} - {skill.level}
         </text>
       </div>
@@ -138,14 +153,12 @@ const ServerListAbout = (dictionary: aboutPropsDictionary) => {
       <div
         className="
           flex flex-col
-          lg:max-w-7xl lg:flex-1 lg:mr-10
+          lg:max-w-4xl lg:flex-1 lg:mr-10
         "
       >
         <div
           className="
-            flex flex-row items-center justify-between
-            md:max-w-md
-            lg:max-w-xl
+            flex flex-row items-center justify-between w-full
           "
         >
           <h2
@@ -213,12 +226,19 @@ const ServerListAbout = (dictionary: aboutPropsDictionary) => {
         </div>
       </div>
 
-      <div className="flex flex-col gap-10">
+      <div
+        className="
+          flex flex-col gap-10 w-full
+          md:flex-row md:justify-between
+          lg:max-w-lg  lg:flex-1
+          xl:max-w-xl xl:mr-10
+        "
+      >
         <div
           className="
-            flex flex-col max-w-xl justify-start mt-10
+            flex flex-col justify-start mt-10
+            md:max-w-md
             lg:flex-1
-            lg:max-w-2xl
           "
         >
           <h2
@@ -233,7 +253,6 @@ const ServerListAbout = (dictionary: aboutPropsDictionary) => {
           <div
             className="
               flex flex-wrap items-center justify-start mt-8 gap-4 ml-4
-              md:max-w-sm
               lg:max-w-full
             "
           >
@@ -243,9 +262,9 @@ const ServerListAbout = (dictionary: aboutPropsDictionary) => {
 
         <div
           className="
-            flex flex-col max-w-xl justify-start mt-10
+            flex flex-col justify-start mt-10
             md:max-w-full
-            lg:max-w-2xl lg:flex-1
+            lg:flex-1
           "
         >
           <h2

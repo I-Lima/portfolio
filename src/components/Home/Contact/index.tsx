@@ -42,7 +42,7 @@ export default function Contact() {
           {dictionary.description}
         </p>
 
-        <div className="flex flex-col gap-4 mt-24 lg:flex-row lg:gap-12">
+        <div className="flex flex-col gap-4 mt-24 md:flex-row md:gap-12">
           {_renderCardComponent(
             <div className="flex flex-col items-center">
               <Image
