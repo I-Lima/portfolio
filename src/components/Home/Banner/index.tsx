@@ -1,6 +1,7 @@
 "use client";
 
 import { useDictionary } from "@/context/DictionaryContext";
+import { bannerProps } from "@/types/dictionaries";
 import Image from "next/image";
 
 export default function Banner() {
@@ -9,7 +10,7 @@ export default function Banner() {
 
   if (!dictionary) return null;
 
-  function _renderMainComponent() {
+  function _renderMainComponent(dictionary: bannerProps) {
     return (
       <>
         <div
@@ -65,7 +66,9 @@ export default function Banner() {
       "
     >
       <div className="flex items-center bg-customBlue rounded-xl rotate-2">
-        <div className="mx-18 my-2 invisible">{_renderMainComponent()}</div>
+        <div className="mx-18 my-2 invisible">
+          {_renderMainComponent(dictionary)}
+        </div>
       </div>
 
       <div className="absolute bg-bgWhite dark:bg-black rounded-xl border-white">
