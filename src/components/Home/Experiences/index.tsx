@@ -3,7 +3,6 @@
 import SectionTitle from "../../ui/SectionTitle";
 import ServerListExperiences from "./ServerListExperiences";
 import ButtonMore from "../../ui/ButtonMore";
-import { useRouter } from "next/navigation";
 import { useDictionary } from "@/context/DictionaryContext";
 
 export default function Experiences() {
@@ -12,7 +11,6 @@ export default function Experiences() {
   if (!dictionary) return null;
 
   const _renderList = ServerListExperiences();
-  const route = useRouter();
 
   return (
     <div id="experiences" className="flex flex-col max-w-screen w-full mb-20">
@@ -24,10 +22,7 @@ export default function Experiences() {
         {_renderList}
 
         <div className="flex flex-wrap justify-start px-50">
-          <ButtonMore
-            onClick={() => route.push("/experiences")}
-            text={dictionary.more}
-          />
+          <ButtonMore projects text={dictionary.more} />
         </div>
       </div>
     </div>

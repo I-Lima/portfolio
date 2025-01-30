@@ -8,43 +8,34 @@ import Negotiator from "negotiator";
 
 const PUBLIC_FILE = /\.(.*)$/;
 
-function getLocale(request: NextRequest): string | undefined {
+function getLocale(request: NextRequest): string {
   const negotiatorHeaders: Record<string, string> = {};
   request.headers.forEach((value, key) => (negotiatorHeaders[key] = value));
 
   const locales: string[] = i18n.locales;
-
   const languages = new Negotiator({ headers: negotiatorHeaders }).languages(
     locales,
   );
 
-  const locale = matchLocale(languages, locales, i18n.defaultLocale);
-
-  return locale;
+  return matchLocale(languages, locales, i18n.defaultLocale);
 }
 
 export function middleware(request: NextRequest) {
   const pathname = request.nextUrl.pathname;
 
-  if (PUBLIC_FILE.test(request.nextUrl.pathname)) {
+  if (PUBLIC_FILE.test(pathname)) {
     return;
   }
 
-  const pathnameIsMissingLocale = i18n.locales.every(
-    (locale) =>
-      !pathname.startsWith(`/${locale}/`) && pathname !== `/${locale}`,
-  );
+  const pathnameParts = pathname.split("/").filter(Boolean);
+  const firstPart = pathnameParts[0];
 
-  if (pathnameIsMissingLocale) {
-    const locale = getLocale(request);
-
-    return NextResponse.redirect(
-      new URL(
-        `/${locale}${pathname.startsWith("/") ? "" : "/"}${pathname}`,
-        request.url,
-      ),
-    );
+  if (i18n.locales.includes(firstPart)) {
+    return NextResponse.next();
   }
+
+  const locale = getLocale(request) || i18n.defaultLocale;
+  return NextResponse.redirect(new URL(`/${locale}`, request.url));
 }
 
 export const config = {
