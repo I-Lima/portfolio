@@ -1,22 +1,26 @@
 import React, { useEffect, useState } from "react";
-import { experienceHistoryProps, experienceProps } from "@/types/experiences";
+import { experienceHistoryReturnProps, experienceReturnProps } from "@/types/experiences";
 import Image from "next/image";
 import experienceServices from "@/services/experienceServices";
 import Tag from "@/components/ui/Tag";
+import { useDictionary } from "@/context/DictionaryContext";
 const dimensions = {
   height: 0,
   width: 0,
 };
 
 const ServerListExperiences = () => {
-  const [dataExperience, setDataExperience] = useState<experienceProps[]>();
+  const [dataExperience, setDataExperience] = useState<experienceReturnProps[]>();
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
+  const { lang, dictionary: dictionaries } = useDictionary();
+  const dictionary = dictionaries?.experiences;
+  if (!dictionary) return null;
 
   useEffect(() => {
     const loadData = async () => {
       try {
-        const data = await experienceServices.getPreviewExperiencesData();
+        const data = await experienceServices.getPreviewExperiencesData(lang, dictionary);
         if (data) setDataExperience(data);
       } catch (error) {
         setIsError(true);
@@ -93,7 +97,7 @@ const ServerListExperiences = () => {
     );
   };
 
-  const _renderList = (history: experienceHistoryProps[]) => {
+  const _renderList = (history: experienceHistoryReturnProps[]) => {
     return history.map((historyItem, i) => {
       const tagArray = historyItem.tags || [];
 

@@ -17,6 +17,7 @@ export type contactProps = {
 export type experiencesProps = {
   section: string;
   more: string;
+  currently: string;
 };
 export type homeProps = {
   moreInfo: string;
@@ -24,6 +25,7 @@ export type homeProps = {
 export type projectsProps = {
   section: string;
   more: string;
+  msgError: string;
 };
 export type footerProps = {
   developedBy: string;

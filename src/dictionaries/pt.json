@@ -17,14 +17,16 @@
   },
   "experiences": {
     "section": "Experiências",
-    "more": "Saber mais"
+    "more": "Saber mais",
+    "currently": "Atualmente"
   },
   "home": {
     "moreInfo": "Mais Informações"
   },
   "projects": {
     "section": "Projetos",
-    "more": "Saber mais"
+    "more": "Saber mais",
+    "msgError": "Ocorreu um erro. Tente novamente mais tarde"
   },
   "footer": {
     "developedBy": "Desenvolvido por"
