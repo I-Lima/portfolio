@@ -3,24 +3,26 @@ import { experienceHistoryReturnProps, experienceReturnProps } from "@/types/exp
 import Image from "next/image";
 import experienceServices from "@/services/experienceServices";
 import Tag from "@/components/ui/Tag";
-import { useDictionary } from "@/context/DictionaryContext";
+import { dictionariesProps } from "@/types/dictionaries";
 const dimensions = {
   height: 0,
   width: 0,
 };
 
-const ServerListExperiences = () => {
+type Props = {
+  dictionary: dictionariesProps["experiences"];
+  lang: Language;
+}
+
+const ServerListExperiences = ({dictionary, lang}: Props) => {
   const [dataExperience, setDataExperience] = useState<experienceReturnProps[]>();
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
-  const { lang, dictionary: dictionaries } = useDictionary();
-  const dictionary = dictionaries?.experiences;
-  if (!dictionary) return null;
 
   useEffect(() => {
     const loadData = async () => {
       try {
-        const data = await experienceServices.getPreviewExperiencesData(lang, dictionary);
+        const data = await experienceServices.getPreviewExperiencesData({lang, dictionary});
         if (data) setDataExperience(data);
       } catch (error) {
         setIsError(true);

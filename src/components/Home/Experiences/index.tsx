@@ -6,11 +6,11 @@ import ButtonMore from "../../ui/ButtonMore";
 import { useDictionary } from "@/context/DictionaryContext";
 
 export default function Experiences() {
-  const { dictionary: dictionaries } = useDictionary();
+  const { dictionary: dictionaries, lang } = useDictionary();
   const dictionary = dictionaries?.experiences;
   if (!dictionary) return null;
 
-  const _renderList = ServerListExperiences();
+  const _renderList = ServerListExperiences({dictionary, lang});
 
   return (
     <div id="experiences" className="flex flex-col max-w-screen w-full mb-20">
