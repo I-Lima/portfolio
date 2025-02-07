@@ -1,24 +1,30 @@
 import React, { useEffect, useState } from "react";
 import aboutServices from "@/services/aboutServices";
-import { aboutProps } from "@/types/about";
-import { aboutProps as aboutPropsDictionary } from "@/types/dictionaries";
+import { aboutReturnProps } from "@/types/about";
+import { dictionariesProps } from "@/types/dictionaries";
 import Image from "next/image";
 import { GITHUB, LINKEDIN, MAIL, MEDIUM } from "@/constant/urls";
 import Photo from "../../ui/Photo";
+import { Language } from "@/types/experiences";
 const dimensions = {
   height: 0,
   width: 0,
 };
 
-const ServerListAbout = (dictionary: aboutPropsDictionary) => {
-  const [dataAbout, setDataAbout] = useState<aboutProps>();
+interface Props {
+  dictionary: dictionariesProps["about"],
+  lang: Language
+}
+
+const ServerListAbout = ({ dictionary, lang}: Props) => {
+  const [dataAbout, setDataAbout] = useState<aboutReturnProps>();
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
 
   useEffect(() => {
     const loadData = async () => {
       try {
-        const data = await aboutServices.getAboutData();
+        const data = await aboutServices.getAboutData(lang);
         if (data) setDataAbout(data);
       } catch (error) {
         setIsError(true);

@@ -6,6 +6,12 @@ import { parseDateString } from "@/utils/general";
 import to from "await-to-js";
 import _ from "lodash";
 
+
+type PreviewProps = {
+  lang: Language;
+  dictionary: experiencesProps;
+}
+
 class ExperienceServices {
   /**
    * Retrieves a preview of experience data by fetching the experience data from the server,
@@ -14,9 +20,10 @@ class ExperienceServices {
    * @return {Promise<experienceReturnProps[] | null>} An array of experience data objects with formatted history.
    * If there is an error or no data is returned from the server, null is returned.
    */
-  async getPreviewExperiencesData(lang: Language, dictionary: experiencesProps): Promise<experienceReturnProps[] | null> {
+  async getPreviewExperiencesData(props: PreviewProps): Promise<experienceReturnProps[] | null> {
     const [error, data] = await to(getExperienceData());
     if (error || !data) return null;
+    const {lang, dictionary} = props;
 
     const sortedDocuments: experienceProps[] = _.orderBy(
       (data as dataProps).data,

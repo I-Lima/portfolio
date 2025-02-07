@@ -1,3 +1,5 @@
+import { Language } from "./experiences";
+
 export type aboutSkillProps = {
   name: string;
   url: string;
@@ -9,6 +11,15 @@ export type aboutLanguageProps = {
 };
 
 export type aboutProps = {
+  id: string;
+  descriptions: {
+    translations: Record<Language, string[]>;
+  };
+  skills: aboutSkillProps[];
+  language: Record<Language, aboutLanguageProps[]>
+};
+
+export type aboutReturnProps = {
   id: string;
   description: string[];
   skills: aboutSkillProps[];

@@ -1,33 +1,33 @@
-export type aboutProps = {
+type aboutProps = {
   section: string;
   msgError: string;
   name: string;
   skills: string;
   languages: string;
 };
-export type bannerProps = {
+type bannerProps = {
   hi: string;
   myName: string;
   iAm: string;
 };
-export type contactProps = {
+type contactProps = {
   section: string;
   description: string;
 };
-export type experiencesProps = {
+type experiencesProps = {
   section: string;
   more: string;
   currently: string;
 };
-export type homeProps = {
+type homeProps = {
   moreInfo: string;
 };
-export type projectsProps = {
+type projectsProps = {
   section: string;
   more: string;
   msgError: string;
 };
-export type footerProps = {
+type footerProps = {
   developedBy: string;
 };
 

@@ -5,11 +5,11 @@ import ServerListAbout from "./ServerListAbout";
 import { useDictionary } from "@/context/DictionaryContext";
 
 export default function About() {
-  const { dictionary: dictionaries } = useDictionary();
+  const { dictionary: dictionaries, lang } = useDictionary();
   const dictionary = dictionaries?.about;
   if (!dictionary) return null;
 
-  const _renderComponent = ServerListAbout(dictionary);
+  const _renderComponent = ServerListAbout({dictionary, lang});
 
   return (
     <div id="about" className="flex flex-col max-w-screen w-full py-8 mb-20">
