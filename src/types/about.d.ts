@@ -8,6 +8,8 @@ export type aboutSkillProps = {
 export type aboutLanguageProps = {
   name: string;
   level: string;
+  icon: string;
+  order: number;
 };
 
 export type aboutProps = {

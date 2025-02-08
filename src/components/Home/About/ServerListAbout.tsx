@@ -135,7 +135,7 @@ const ServerListAbout = ({ dictionary, lang}: Props) => {
     return (dataAbout?.languages || []).map((skill, i) => (
       <div key={i} className="flex flex-row gap-3">
         <Image
-          src={"/" + skill.name + ".png"}
+          src={"/images/" + skill.icon + ".png"}
           width={32}
           height={32}
           alt="language flag"
