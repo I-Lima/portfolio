@@ -140,9 +140,9 @@ const ServerListAbout = ({ dictionary, lang }: Props) => {
           height={32}
           alt="language flag"
         />
-        <text className="text-md lg:text-lg font-bold">
+        <p className="text-md lg:text-lg font-bold">
           {skill.name} - {skill.level}
-        </text>
+        </p>
       </div>
     ));
   };

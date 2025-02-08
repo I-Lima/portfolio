@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import {
   experienceHistoryReturnProps,
   experienceReturnProps,
+  Language,
 } from "@/types/experiences";
 import Image from "next/image";
 import experienceServices from "@/services/experienceServices";

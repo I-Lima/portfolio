@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import experienceServices from "@/services/experienceServices";
-import { experienceHistoryProps } from "@/types/experiences";
+import { experienceHistoryReturnProps } from "@/types/experiences";
 import Image from "next/image";
 import Tag from "@/components/ui/Tag";
 import ButtonCustom from "@/components/ui/Button";
@@ -79,7 +79,7 @@ const ServerExperiences = () => {
     );
   };
 
-  const _renderList = (data: experienceHistoryProps[]) => {
+  const _renderList = (data: experienceHistoryReturnProps[]) => {
     return data.map((item, i) => {
       const tagArray = item.tags || [];
 

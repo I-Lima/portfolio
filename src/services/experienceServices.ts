@@ -98,7 +98,7 @@ class ExperienceServices {
     const [error, data] = await to(getExperienceData());
     if (error) return null;
 
-    const sortedDocuments: experienceProps[] = _.orderBy(
+    const sortedDocuments: experienceReturnProps[] = _.orderBy(
       (data as dataProps).data,
       "output",
     );
@@ -118,7 +118,7 @@ class ExperienceServices {
       return { ...document, history: updatedHistory };
     });
 
-    return newSortedDocuments as experienceProps[];
+    return newSortedDocuments as experienceReturnProps[];
   }
 }
 
