@@ -1,16 +1,20 @@
 import { getExperienceData } from "@/Repositories/experienceRepository";
 import { dataProps } from "@/types/api";
 import { experiencesProps } from "@/types/dictionaries";
-import { experienceHistoryReturnProps, experienceProps, experienceReturnProps, Language, languageProps } from "@/types/experiences";
+import {
+  experienceHistoryReturnProps,
+  experienceProps,
+  experienceReturnProps,
+  Language,
+} from "@/types/experiences";
 import { parseDateString } from "@/utils/general";
 import to from "await-to-js";
 import _ from "lodash";
 
-
 type PreviewProps = {
   lang: Language;
   dictionary: experiencesProps;
-}
+};
 
 class ExperienceServices {
   /**
@@ -20,17 +24,19 @@ class ExperienceServices {
    * @return {Promise<experienceReturnProps[] | null>} An array of experience data objects with formatted history.
    * If there is an error or no data is returned from the server, null is returned.
    */
-  async getPreviewExperiencesData(props: PreviewProps): Promise<experienceReturnProps[] | null> {
+  async getPreviewExperiencesData(
+    props: PreviewProps,
+  ): Promise<experienceReturnProps[] | null> {
     const [error, data] = await to(getExperienceData());
     if (error || !data) return null;
-    const {lang, dictionary} = props;
+    const { lang, dictionary } = props;
 
     const sortedDocuments: experienceProps[] = _.orderBy(
       (data as dataProps).data,
       "output",
     );
 
-    const newSortedDocuments = sortedDocuments.map((document, index) => {
+    const newSortedDocuments = sortedDocuments.map((document) => {
       const historyArray = Object.values(document.history);
       const orderedHistory = _.orderBy(
         historyArray,
@@ -42,8 +48,10 @@ class ExperienceServices {
         return {
           ...item,
           output: item.output || dictionary.currently,
-          role: item.translations[lang].role || item.translations['en'].role,
-          description: item.translations[lang].description || item.translations['en'].description
+          role: item.translations[lang].role || item.translations["en"].role,
+          description:
+            item.translations[lang].description ||
+            item.translations["en"].description,
         };
       });
 
@@ -63,10 +71,12 @@ class ExperienceServices {
       ] as experienceReturnProps[];
     }
 
-    const dataReturn: experienceReturnProps[] = [{
-      ...newSortedDocuments[0],
+    const dataReturn: experienceReturnProps[] = [
+      {
+        ...newSortedDocuments[0],
         history: [firstHistory[0]],
-      }];
+      },
+    ];
 
     if (newSortedDocuments[1]) {
       dataReturn.push({

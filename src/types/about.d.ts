@@ -18,7 +18,7 @@ export type aboutProps = {
     translations: Record<Language, string[]>;
   };
   skills: aboutSkillProps[];
-  language: Record<Language, aboutLanguageProps[]>
+  language: Record<Language, aboutLanguageProps[]>;
 };
 
 export type aboutReturnProps = {

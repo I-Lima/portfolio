@@ -3,7 +3,7 @@ import { LANGUAGES } from "@/constant/language";
 type languageProps = {
   role: string;
   description: string;
-}
+};
 
 export type Language = (typeof LANGUAGES)[number];
 

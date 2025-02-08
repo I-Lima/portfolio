@@ -12,11 +12,11 @@ const dimensions = {
 };
 
 interface Props {
-  dictionary: dictionariesProps["about"],
-  lang: Language
+  dictionary: dictionariesProps["about"];
+  lang: Language;
 }
 
-const ServerListAbout = ({ dictionary, lang}: Props) => {
+const ServerListAbout = ({ dictionary, lang }: Props) => {
   const [dataAbout, setDataAbout] = useState<aboutReturnProps>();
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);

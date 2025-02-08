@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { experienceHistoryReturnProps, experienceReturnProps } from "@/types/experiences";
+import {
+  experienceHistoryReturnProps,
+  experienceReturnProps,
+} from "@/types/experiences";
 import Image from "next/image";
 import experienceServices from "@/services/experienceServices";
 import Tag from "@/components/ui/Tag";
@@ -12,17 +15,21 @@ const dimensions = {
 type Props = {
   dictionary: dictionariesProps["experiences"];
   lang: Language;
-}
+};
 
-const ServerListExperiences = ({dictionary, lang}: Props) => {
-  const [dataExperience, setDataExperience] = useState<experienceReturnProps[]>();
+const ServerListExperiences = ({ dictionary, lang }: Props) => {
+  const [dataExperience, setDataExperience] =
+    useState<experienceReturnProps[]>();
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
 
   useEffect(() => {
     const loadData = async () => {
       try {
-        const data = await experienceServices.getPreviewExperiencesData({lang, dictionary});
+        const data = await experienceServices.getPreviewExperiencesData({
+          lang,
+          dictionary,
+        });
         if (data) setDataExperience(data);
       } catch (error) {
         setIsError(true);
