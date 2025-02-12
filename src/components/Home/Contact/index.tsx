@@ -46,7 +46,7 @@ export default function Contact() {
           {_renderCardComponent(
             <div className="flex flex-col items-center">
               <Image
-                src="images/linkedin_bgd.svg"
+                src="/images/linkedin_bgd.svg"
                 alt="linkedin icon"
                 width={60}
                 height={60}
@@ -60,7 +60,7 @@ export default function Contact() {
           {_renderCardComponent(
             <div className="flex flex-col items-center">
               <Image
-                src="images/mail_icon_2.svg"
+                src="/images/mail_icon_2.svg"
                 alt="Mail icon"
                 width={60}
                 height={60}

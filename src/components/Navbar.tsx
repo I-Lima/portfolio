@@ -21,7 +21,7 @@ export default function Navbar() {
       <div>
         <a href="/">
           <Image
-            src="images/logo.svg"
+            src="/images/logo.svg"
             alt="website logo"
             width={100}
             height={80}

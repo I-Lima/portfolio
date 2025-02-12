@@ -24,7 +24,7 @@ export default function Banner() {
             <h1 className="pr-6">{dictionary.hi}</h1>
             <div className="relative w-8 h-8">
               <Image
-                src="hand.svg"
+                src="/images/hand.svg"
                 alt="hand icon"
                 className="animate-wave"
                 layout="fill"
