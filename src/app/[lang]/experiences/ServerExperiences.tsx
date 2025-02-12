@@ -21,7 +21,10 @@ const ServerExperiences = (dictionary: dictionariesProps, lang: string) => {
   useEffect(() => {
     const loadData = async () => {
       try {
-        const data = await experienceServices.getAllExperienceData({dictionary: dictionary["experiences"], lang: lang});
+        const data = await experienceServices.getAllExperienceData({
+          dictionary: dictionary["experiences"],
+          lang: lang,
+        });
         if (data) setExperienceData(data);
       } catch (error) {
         setIsError(true);

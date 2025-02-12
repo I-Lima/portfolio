@@ -4,7 +4,11 @@ import { IoIosArrowDown } from "react-icons/io";
 import { useExperienceStore } from "@/hooks/stateHooks";
 import { dictionariesProps } from "@/types/dictionaries";
 
-export default function Filter({ dictionary }: { dictionary: dictionariesProps["filter"] }) {
+export default function Filter({
+  dictionary,
+}: {
+  dictionary: dictionariesProps["filter"];
+}) {
   const [open, setOpen] = useState(false);
   const [openItems, setOpenItems] = useState<number[]>([]);
   const { filterData, filter, setFilter } = useExperienceStore(

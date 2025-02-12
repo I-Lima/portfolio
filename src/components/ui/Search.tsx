@@ -3,10 +3,10 @@ import { useState } from "react";
 import { FaSearch } from "react-icons/fa";
 
 interface searchProps {
-  placeholder: string
+  placeholder: string;
 }
 
-export default function Search({placeholder}: searchProps) {
+export default function Search({ placeholder }: searchProps) {
   const { query, setQuery } = useExperienceStore((state) => state);
   const [isInputVisible, setIsInputVisible] = useState(false);
 

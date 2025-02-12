@@ -37,7 +37,7 @@ type searchProps = {
 };
 type filterProps = {
   filter: string;
-}
+};
 
 export type dictionariesProps = {
   about: aboutProps;

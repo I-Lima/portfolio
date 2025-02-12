@@ -22,7 +22,7 @@ export default function Experiences() {
         <SectionTitle title={dictionary.section} />
 
         <div className="hidden lg:flex flex-row gap-4">
-          <Search placeholder={dictionarySearch.placeholder}  />
+          <Search placeholder={dictionarySearch.placeholder} />
           <Filter dictionary={dictionaries.filter} />
         </div>
       </div>
