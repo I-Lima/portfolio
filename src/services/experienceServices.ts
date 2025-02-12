@@ -11,7 +11,7 @@ import { parseDateString } from "@/utils/general";
 import to from "await-to-js";
 import _ from "lodash";
 
-type PreviewProps = {
+type Props = {
   lang: Language;
   dictionary: experiencesProps;
 };
@@ -25,7 +25,7 @@ class ExperienceServices {
    * If there is an error or no data is returned from the server, null is returned.
    */
   async getPreviewExperiencesData(
-    props: PreviewProps,
+    props: Props,
   ): Promise<experienceReturnProps[] | null> {
     const [error, data] = await to(getExperienceData());
     if (error || !data) return null;
@@ -94,11 +94,11 @@ class ExperienceServices {
    * @return {Promise<experienceProps[] | null>} An array of experience data objects with formatted history.
    * If there is an error or no data is returned from the server, null is returned.
    */
-  async getAllExperienceData() {
+  async getAllExperienceData({ lang, dictionary }: Props) {
     const [error, data] = await to(getExperienceData());
     if (error) return null;
 
-    const sortedDocuments: experienceReturnProps[] = _.orderBy(
+    const sortedDocuments: experienceProps[] = _.orderBy(
       (data as dataProps).data,
       "output",
     );
@@ -112,7 +112,14 @@ class ExperienceServices {
       );
 
       const updatedHistory = orderedHistory.map((item) => {
-        return { ...item, output: item.output || "currently" };
+        return {
+          ...item,
+          output: item.output || dictionary.currently,
+          role: item.translations[lang].role || item.translations["en"].role,
+          description:
+            item.translations[lang].description ||
+            item.translations["en"].description,
+        };
       });
 
       return { ...document, history: updatedHistory };

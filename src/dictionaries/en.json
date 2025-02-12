@@ -18,7 +18,9 @@
   "experiences": {
     "section": "Experiences",
     "more": "More",
-    "currently": "Corrently"
+    "currently": "Corrently",
+    "companyButton": "Company website",
+    "projectButton": "Project website"
   },
   "home": {
     "moreInfo": "More Information"
@@ -30,5 +32,11 @@
   },
   "footer": {
     "developedBy": "Developed by"
+  },
+  "search": {
+    "placeholder": "Search by enterprise, role or description..."
+  },
+  "filter": {
+    "filter": "Filter"
   }
 }

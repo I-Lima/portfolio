@@ -18,6 +18,8 @@ type experiencesProps = {
   section: string;
   more: string;
   currently: string;
+  companyButton: string;
+  projectButton: string;
 };
 type homeProps = {
   moreInfo: string;
@@ -30,6 +32,12 @@ type projectsProps = {
 type footerProps = {
   developedBy: string;
 };
+type searchProps = {
+  placeholder: string;
+};
+type filterProps = {
+  filter: string;
+}
 
 export type dictionariesProps = {
   about: aboutProps;
@@ -39,4 +47,6 @@ export type dictionariesProps = {
   home: homeProps;
   projects: projectsProps;
   footer: footerProps;
+  search: searchProps;
+  filter: filterProps;
 };

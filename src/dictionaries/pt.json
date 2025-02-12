@@ -18,7 +18,9 @@
   "experiences": {
     "section": "Experiências",
     "more": "Saber mais",
-    "currently": "Atualmente"
+    "currently": "Atualmente",
+    "companyButton": "Site da empresa",
+    "projectButton": "Site do projeto"
   },
   "home": {
     "moreInfo": "Mais Informações"
@@ -30,5 +32,11 @@
   },
   "footer": {
     "developedBy": "Desenvolvido por"
+  },
+  "search": {
+    "placeholder": "Busque por empresa, cargo ou descrição..."
+  },
+  "filter": {
+    "filter": "Filtro"
   }
 }
