@@ -37,6 +37,7 @@
     "placeholder": "Busque por empresa, cargo ou descrição..."
   },
   "filter": {
-    "filter": "Filtro"
+    "filter": "Filtro",
+    "type": "tipo"
   }
 }

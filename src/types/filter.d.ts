@@ -1,5 +1,7 @@
+import { Dictionary } from "lodash";
 import { experienceReturnProps } from "./experiences";
 import { ExperienceState } from "./state";
+import { dictionariesProps } from "./dictionaries";
 
 export type filterItem = { value: string; data: Array<string> };
 export type selectedOptionsProps = { [key: string]: string[] };
@@ -18,6 +20,7 @@ type set = {
 export type setFilterDataProps = {
   data: experienceReturnProps[];
   set: set;
+  dictionary: dictionariesProps.filter;
 };
 
 export type filterResultsProps = {

@@ -37,6 +37,7 @@
     "placeholder": "Search by enterprise, role or description..."
   },
   "filter": {
-    "filter": "Filter"
+    "filter": "Filter",
+    "type": "type"
   }
 }

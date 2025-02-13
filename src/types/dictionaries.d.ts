@@ -37,6 +37,7 @@ type searchProps = {
 };
 type filterProps = {
   filter: string;
+  type: string;
 };
 
 export type dictionariesProps = {

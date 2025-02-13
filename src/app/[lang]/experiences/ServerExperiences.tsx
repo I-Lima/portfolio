@@ -25,7 +25,7 @@ const ServerExperiences = (dictionary: dictionariesProps, lang: string) => {
           dictionary: dictionary["experiences"],
           lang: lang,
         });
-        if (data) setExperienceData(data);
+        if (data) setExperienceData(data, dictionary["filter"]);
       } catch (error) {
         setIsError(true);
       } finally {
@@ -102,7 +102,7 @@ const ServerExperiences = (dictionary: dictionariesProps, lang: string) => {
             </div>
 
             <div className="flex flex-col items-start justify-start lg:max-w-xl">
-              <p className="border-b-2 text-2xl">{dictionary.about.skills}</p>
+              <p className="border-b-2 text-2xl">Skills</p>
 
               <div className="flex flex-wrap gap-4 mt-4 px-4 lg:px-6">
                 {tagArray.map((tag, index) => (

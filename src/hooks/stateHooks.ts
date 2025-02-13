@@ -10,6 +10,7 @@ import {
   selectedOptionsProps,
   setFilterDataProps,
 } from "@/types/filter";
+import { dictionariesProps } from "@/types/dictionaries";
 
 export const useExperienceStore = create<ExperienceState>((set, get) => ({
   experienceData: [] as experienceReturnProps[],
@@ -17,8 +18,8 @@ export const useExperienceStore = create<ExperienceState>((set, get) => ({
   filterData: [] as filterItem[],
   filter: {} as selectedOptionsProps,
   query: "",
-  setExperienceData: (data) => setFilterData({ data, set }),
-  setFilterData: (data) => setFilterData({ data, set }),
+  setExperienceData: (data, dictionary) => setFilterData({ data, set, dictionary }),
+  setFilterData: (data, dictionary) => setFilterData({ data, set, dictionary }),
   setFilter: (filter) => {
     set(() => ({ filter }));
     filterResults({ set, get });
@@ -36,7 +37,7 @@ export const useExperienceStore = create<ExperienceState>((set, get) => ({
  * @param {function} set - The function to update the filter and experience data.
  * @return {void} Updates the filter and experience data using the provided set function.
  */
-const setFilterData = ({ data, set }: setFilterDataProps): void => {
+const setFilterData = ({ data, set, dictionary }: setFilterDataProps): void => {
   const tagSet = new Set<string>();
   const typeSet = new Set<string>();
 
@@ -55,7 +56,7 @@ const setFilterData = ({ data, set }: setFilterDataProps): void => {
       data: Array.from(tagSet),
     },
     {
-      value: "type",
+      value: dictionary.type || "type",
       data: Array.from(typeSet),
     },
   ];

@@ -7,8 +7,8 @@ export type ExperienceState = {
   filterData: filterItem[];
   filter: selectedOptionsProps;
   query: string;
-  setExperienceData: (data: experienceReturnProps[]) => void;
-  setFilterData: (data: setFilterDataProps) => void;
+  setExperienceData: (data: experienceReturnProps[], dictionary?: filterProps) => void;
+  setFilterData: (data: setFilterDataProps, dictionary?: filterProps) => void;
   setFilter: (filter: selectedOptionsProps) => void;
   setQuery: (query: string) => void;
 };
