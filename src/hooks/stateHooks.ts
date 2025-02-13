@@ -10,7 +10,6 @@ import {
   selectedOptionsProps,
   setFilterDataProps,
 } from "@/types/filter";
-import { dictionariesProps } from "@/types/dictionaries";
 
 export const useExperienceStore = create<ExperienceState>((set, get) => ({
   experienceData: [] as experienceReturnProps[],
@@ -18,7 +17,8 @@ export const useExperienceStore = create<ExperienceState>((set, get) => ({
   filterData: [] as filterItem[],
   filter: {} as selectedOptionsProps,
   query: "",
-  setExperienceData: (data, dictionary) => setFilterData({ data, set, dictionary }),
+  setExperienceData: (data, dictionary) =>
+    setFilterData({ data, set, dictionary }),
   setFilterData: (data, dictionary) => setFilterData({ data, set, dictionary }),
   setFilter: (filter) => {
     set(() => ({ filter }));

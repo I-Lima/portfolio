@@ -1,4 +1,3 @@
-import { Dictionary } from "lodash";
 import { experienceReturnProps } from "./experiences";
 import { ExperienceState } from "./state";
 import { dictionariesProps } from "./dictionaries";
