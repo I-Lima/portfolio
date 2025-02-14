@@ -40,18 +40,21 @@ class ExperienceServices {
       const historyArray = Object.values(document.history);
       const orderedHistory = _.orderBy(
         historyArray,
-        (item) => parseDateString(item.output),
+        (item) => parseDateString(item.translations["en"].output),
         ["desc"],
       );
 
       const updatedHistory = orderedHistory.map((item) => {
+        const out = (item.translations[lang].output || item.translations["en"].output)
+
         return {
           ...item,
-          output: item.output || dictionary.currently,
+          output: out || dictionary.currently,
           role: item.translations[lang].role || item.translations["en"].role,
           description:
             item.translations[lang].description ||
             item.translations["en"].description,
+          entrance: item.translations[lang].entrance || item.translations["en"].entrance,
         };
       });
 
@@ -107,18 +110,21 @@ class ExperienceServices {
       const historyArray = Object.values(document.history);
       const orderedHistory = _.orderBy(
         historyArray,
-        (item) => parseDateString(item.output),
+        (item) => parseDateString(item.translations["en"].output),
         ["desc"],
       );
 
       const updatedHistory = orderedHistory.map((item) => {
+        const out = (item.translations[lang].output || item.translations["en"].output)
+
         return {
           ...item,
-          output: item.output || dictionary.currently,
+          output: out || dictionary.currently,
           role: item.translations[lang].role || item.translations["en"].role,
           description:
             item.translations[lang].description ||
             item.translations["en"].description,
+          entrance: item.translations[lang].entrance || item.translations["en"].entrance,
         };
       });
 

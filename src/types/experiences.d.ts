@@ -3,6 +3,8 @@ import { LANGUAGES } from "@/constant/language";
 type languageProps = {
   role: string;
   description: string;
+  entrance
+  output
 };
 
 export type Language = (typeof LANGUAGES)[number];
@@ -10,8 +12,6 @@ export type Language = (typeof LANGUAGES)[number];
 export type experienceHistoryProps = {
   translations: Record<Language, languageProps>;
   tags: string[];
-  entrance: string;
-  output: string | null;
   project_website: string | null;
   type: string;
 };
