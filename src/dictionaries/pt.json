@@ -39,5 +39,8 @@
   "filter": {
     "filter": "Filtro",
     "type": "tipo"
+  },
+  "languageSwitch": {
+    "language": "Idioma"
   }
 }

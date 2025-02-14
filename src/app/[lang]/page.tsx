@@ -7,6 +7,7 @@ import Contact from "@/components/Home/Contact";
 import { Locale } from "../../../i18n-config";
 import { getDictionary } from "../../getDictionary";
 import { dictionariesProps } from "@/types/dictionaries";
+import LanguageSwitch from "@/components/ui/LanguageSwitch";
 
 export default async function Home({ params }: { params: { lang: Locale } }) {
   const { lang } = params;
@@ -15,6 +16,10 @@ export default async function Home({ params }: { params: { lang: Locale } }) {
   return (
     <main className="flex min-h-screen max-w-screen flex-col items-center justify-center px-6">
       <div className="flex flex-col h-screen max-w-screen pt-24">
+        <div className="flex w-screen justify-end mr-20 mt-6">
+          <LanguageSwitch lang={lang} dictionary={dictionary["languageSwitch"]} />
+        </div>
+
         <div className="flex flex-col items-center justify-center h-full">
           <Banner />
 

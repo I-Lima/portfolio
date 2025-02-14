@@ -40,6 +40,10 @@ type filterProps = {
   type: string;
 };
 
+type languageSwitchProps = {
+  language: string;
+}
+
 export type dictionariesProps = {
   about: aboutProps;
   banner: bannerProps;
@@ -50,4 +54,5 @@ export type dictionariesProps = {
   footer: footerProps;
   search: searchProps;
   filter: filterProps;
+  languageSwitch: languageSwitchProps
 };
