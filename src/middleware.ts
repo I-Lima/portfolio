@@ -12,7 +12,7 @@ function getLocale(request: NextRequest): string {
 
   const locales: string[] = i18n.locales;
   const languages = new Negotiator({ headers: negotiatorHeaders }).languages(
-    locales,
+    locales
   );
 
   return matchLocale(languages, locales, i18n.defaultLocale);
@@ -32,8 +32,14 @@ export function middleware(request: NextRequest) {
     return NextResponse.next();
   }
 
-  const locale = getLocale(request) || i18n.defaultLocale;
-  return NextResponse.redirect(new URL(`/${locale}`, request.url));
+  const savedLocale = request.cookies.get("language")?.value;
+
+  if (savedLocale && i18n.locales.includes(savedLocale)) {
+    return NextResponse.redirect(new URL(`/${savedLocale}`, request.url));
+  }
+
+  const detectedLocale = getLocale(request) || i18n.defaultLocale;
+  return NextResponse.redirect(new URL(`/${detectedLocale}`, request.url));
 }
 
 export const config = {
