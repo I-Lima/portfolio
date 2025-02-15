@@ -42,7 +42,7 @@ type filterProps = {
 
 type languageSwitchProps = {
   language: string;
-}
+};
 
 export type dictionariesProps = {
   about: aboutProps;
@@ -54,5 +54,5 @@ export type dictionariesProps = {
   footer: footerProps;
   search: searchProps;
   filter: filterProps;
-  languageSwitch: languageSwitchProps
+  languageSwitch: languageSwitchProps;
 };

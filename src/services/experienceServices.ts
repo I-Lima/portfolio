@@ -45,7 +45,8 @@ class ExperienceServices {
       );
 
       const updatedHistory = orderedHistory.map((item) => {
-        const out = (item.translations[lang].output || item.translations["en"].output)
+        const out =
+          item.translations[lang].output || item.translations["en"].output;
 
         return {
           ...item,
@@ -54,7 +55,9 @@ class ExperienceServices {
           description:
             item.translations[lang].description ||
             item.translations["en"].description,
-          entrance: item.translations[lang].entrance || item.translations["en"].entrance,
+          entrance:
+            item.translations[lang].entrance ||
+            item.translations["en"].entrance,
         };
       });
 
@@ -115,7 +118,8 @@ class ExperienceServices {
       );
 
       const updatedHistory = orderedHistory.map((item) => {
-        const out = (item.translations[lang].output || item.translations["en"].output)
+        const out =
+          item.translations[lang].output || item.translations["en"].output;
 
         return {
           ...item,
@@ -124,7 +128,9 @@ class ExperienceServices {
           description:
             item.translations[lang].description ||
             item.translations["en"].description,
-          entrance: item.translations[lang].entrance || item.translations["en"].entrance,
+          entrance:
+            item.translations[lang].entrance ||
+            item.translations["en"].entrance,
         };
       });
 
