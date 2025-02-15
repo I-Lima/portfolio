@@ -84,7 +84,7 @@ export default function Navbar() {
       </div>
 
       <div
-        className={`absolute top-16 right-4 bg-bgWhite rounded-md shadow-lg py-1 z-50 w-48 transition duration-150 ease-in lg:hidden ${isOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0"}`}
+        className={`absolute top-16 right-4 bg-bgWhite rounded-md shadow-lg py-1 z-50 w-48 transition duration-150 ease-in md:hidden ${isOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0 hidden"}`}
       >
         <Link
           href="/#about"
