@@ -8,7 +8,7 @@ import { IoIosArrowDown } from "react-icons/io";
 
 function LanguageSwitch() {
   const [open, setOpen] = useState(false);
-  const {lang, changeLanguage} = useDictionary();
+  const { lang, changeLanguage } = useDictionary();
 
   const _handleOpen = () => setOpen(!open);
 
@@ -30,8 +30,8 @@ function LanguageSwitch() {
           <Image src={imageSrc} alt={item} width={26} height={26} />
         </div>
       );
-    })
-  }
+    });
+  };
 
   return (
     <div className="flex flex-col h-full">
@@ -39,7 +39,12 @@ function LanguageSwitch() {
         className="flex flex-row border-2 rounded-md px-3 py-1 gap-2 hover:cursor-pointer border-customBlue bg-white items-center"
         onClick={() => _handleOpen()}
       >
-        <Image src={src[lang as keyof typeof src]} alt="language flag" width={26} height={26} />
+        <Image
+          src={src[lang as keyof typeof src]}
+          alt="language flag"
+          width={26}
+          height={26}
+        />
         <IoIosArrowDown size={24} color="black" />
       </div>
 
@@ -49,7 +54,7 @@ function LanguageSwitch() {
         {_renderList()}
       </div>
     </div>
-  )
+  );
 }
 
 export default LanguageSwitch;
