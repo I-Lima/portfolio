@@ -144,7 +144,7 @@ const ServerListExperiences = ({ dictionary, lang }: Props) => {
                 {historyItem.description}
               </p>
 
-              <div className="flex flex-wrap gap-2 mt-4 px-4 justify-start mb-2 lg:gap-4">
+              <div className="flex flex-wrap gap-2 mt-4 px-2 justify-start mb-2 lg:gap-4">
                 {tagArray.map((tag, index) => (
                   <Tag key={index} tag={tag} />
                 ))}

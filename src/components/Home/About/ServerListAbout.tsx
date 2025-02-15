@@ -153,7 +153,7 @@ const ServerListAbout = ({ dictionary, lang }: Props) => {
     <div
       className="
         flex flex-col justify-center w-full gap-2
-        lg:flex-row lg:justify-between lg:px-6
+        lg:flex-row lg:justify-around lg:px-6
       "
     >
       <div
@@ -235,9 +235,9 @@ const ServerListAbout = ({ dictionary, lang }: Props) => {
       <div
         className="
           flex flex-col gap-10 w-full
-          md:flex-row md:justify-between
+          md:flex-col md:justify-between
           lg:max-w-lg  lg:flex-1
-          xl:max-w-xl xl:mr-10
+          xl:max-w-xl xl:mr-10 xl:flex-row
         "
       >
         <div

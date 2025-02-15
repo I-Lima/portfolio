@@ -96,7 +96,7 @@ const ServerExperiences = (dictionary: dictionariesProps, lang: string) => {
                 <div className="text-xl font-bold mt-1">{`(${item.entrance} - ${item.output})`}</div>
               </div>
 
-              <div className="mt-4 text-justify text-lg">
+              <div className="mt-4 text-justify text-lg md:pr-4">
                 {item.description}
               </div>
             </div>
