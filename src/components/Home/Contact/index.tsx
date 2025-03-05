@@ -32,7 +32,10 @@ export default function Contact() {
   }
 
   return (
-    <div id="contact" className="flex flex-col max-w-screen w-full py-8 mb-20">
+    <div
+      id="contact"
+      className="flex flex-col max-w-screen w-full py-8 mb-20 px-6"
+    >
       <div className="flex flex-col items-start">
         <SectionTitle title={dictionary.section} />
       </div>

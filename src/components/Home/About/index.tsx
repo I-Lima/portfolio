@@ -12,7 +12,10 @@ export default function About() {
   const _renderComponent = ServerListAbout({ dictionary, lang });
 
   return (
-    <div id="about" className="flex flex-col max-w-screen w-full py-8 mb-20">
+    <div
+      id="about"
+      className="flex flex-col max-w-screen w-full py-8 mb-20 px-6"
+    >
       <div className="flex flex-col items-start">
         <SectionTitle title={dictionary.section} />
       </div>

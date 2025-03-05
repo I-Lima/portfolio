@@ -153,13 +153,14 @@ const ServerListAbout = ({ dictionary, lang }: Props) => {
     <div
       className="
         flex flex-col justify-center w-full gap-2
-        lg:flex-row lg:justify-around lg:px-6
+        lg:flex-row lg:justify-between lg:px-6
       "
     >
       <div
         className="
           flex flex-col
-          lg:max-w-4xl lg:flex-1 lg:mr-10
+          lg:max-w-xl lg:mr-10
+          xl:max-w-2xl
         "
       >
         <div
@@ -235,16 +236,14 @@ const ServerListAbout = ({ dictionary, lang }: Props) => {
       <div
         className="
           flex flex-col gap-10 w-full
-          md:flex-col md:justify-between
-          lg:max-w-lg  lg:flex-1
-          xl:max-w-xl xl:mr-10 xl:flex-row
+          lg:max-w-lg
+          xl:max-w-xl xl:mr-10
         "
       >
         <div
           className="
-            flex flex-col justify-start mt-10
+            flex flex-col justify-start
             md:max-w-md
-            lg:flex-1
           "
         >
           <h2
@@ -270,7 +269,6 @@ const ServerListAbout = ({ dictionary, lang }: Props) => {
           className="
             flex flex-col justify-start mt-10
             md:max-w-full
-            lg:flex-1
           "
         >
           <h2

@@ -14,9 +14,9 @@ export default async function Home({ params }: { params: { lang: Locale } }) {
   const dictionary: dictionariesProps = await getDictionary(lang);
 
   return (
-    <main className="flex min-h-screen max-w-screen flex-col items-center justify-center px-6">
-      <div className="flex flex-col h-screen max-w-screen pt-24">
-        <div className="flex w-screen justify-end mr-20 mt-1 mb-4 md:mt-6">
+    <main className="flex min-h-screen w-full flex-col items-center justify-center">
+      <div className="flex flex-col h-screen w-full pt-24">
+        <div className="flex justify-end mr-8 md:mr-16 mt-1 mb-4 md:mt-6">
           <LanguageSwitch />
         </div>
 
