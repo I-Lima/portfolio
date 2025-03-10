@@ -3,19 +3,26 @@
 import { useDictionary } from "@/context/DictionaryContext";
 import { bannerProps } from "@/types/dictionaries";
 import Image from "next/image";
+import { useState, useEffect } from "react";
 
 export default function Banner() {
   const { dictionary: dictionaries } = useDictionary();
-  const dictionary = dictionaries?.banner;
+  const [dictionary, setDictionary] = useState<bannerProps | null>(null);
+  const [loading, setLoading] = useState(true);
 
-  if (!dictionary) return null;
+  useEffect(() => {
+    if (dictionaries?.banner) {
+      setDictionary(dictionaries.banner);
+      setLoading(false);
+    }
+  }, [dictionaries]);
 
   function _renderMainComponent(dictionary: bannerProps) {
     return (
       <div>
         <div className="flex flex-row items-center justify-start">
           <h1 className="pr-6">{dictionary.hi}</h1>
-          <div className=" relative w-8 h-8 lg:w-12 lg:h-12 ">
+          <div className="relative w-8 h-8 lg:w-12 lg:h-12">
             <Image
               src="/images/hand.svg"
               alt="hand icon"
@@ -29,33 +36,14 @@ export default function Banner() {
           <div className="flex flex-col lg:space-y-2">
             <p>{dictionary.myName}</p>
 
-            <p
-              className="
-                  font-bold
-                  text-4xl
-                  lg:text-6xl
-                "
-            >
-              Ingrid Lima
-            </p>
+            <p className="font-bold text-4xl lg:text-6xl">Ingrid Lima</p>
           </div>
 
-          <div className=" flex flex-col items-start md:flex-row md:items-center lg:items-start">
+          <div className="flex flex-col items-start md:flex-row md:items-center lg:items-start">
             <p className="flex flex-row items-center"> {dictionary.iAm} </p>
 
-            <div
-              className="
-                  inline-flex flex-col items-start justify-start max-h-8 overflow-hidden
-                  md:min-w-[200px] md:ml-2
-                  lg:min-w-[380px] lg:max-h-12
-                "
-            >
-              <ul
-                className="
-                    block animate-text-slide text-left font-bold leading-tight [&_li]:block text-2xl
-                    lg:text-4xl
-                  "
-              >
+            <div className="inline-flex flex-col items-start justify-start max-h-8 overflow-hidden md:min-w-[200px] md:ml-2 lg:min-w-[380px] lg:max-h-12">
+              <ul className="block animate-text-slide text-left font-bold leading-tight [&_li]:block text-2xl lg:text-4xl">
                 <li className="lg:mb-2">Mobile Developer</li>
                 <li className="lg:mb-2">Front-end Developer</li>
                 <li className="lg:mb-2">Full stack Developer</li>
@@ -68,22 +56,31 @@ export default function Banner() {
     );
   }
 
-  return (
-    <div
-      className="
-        mb-16 relative flex items-center justify-center text-3xl
-        lg:text-4xl
+  if (loading) {
+    return (
+      <div
+        className="
+        animate-pulse flex flex-col mt-4 transition-transform bg-customGray h-80 w-80 rounded-xl mb-16
+        md:w-[420px] md:h-96
+        lg:w-[660px] lg:h-[420px]
       "
-    >
+      >
+        <div className="h-6 bg-gray-300 rounded w-1/4"></div>
+      </div>
+    );
+  }
+
+  return (
+    <div className="mb-16 relative flex items-center justify-center text-3xl lg:text-4xl">
       <div className="flex items-center bg-customBlue rounded-xl rotate-2">
         <div className="mx-14 my-14 md:my-24 md:mx-16 lg:mx-26 lg:my-16 invisible">
-          {_renderMainComponent(dictionary)}
+          {_renderMainComponent(dictionary!)}
         </div>
       </div>
 
       <div className="absolute bg-bgWhite dark:bg-black rounded-xl border-white">
         <div className="mx-8 my-10 md:my-20 md:mx-12 lg:mx-26 lg:my-16">
-          {_renderMainComponent(dictionary)}
+          {_renderMainComponent(dictionary!)}
         </div>
       </div>
     </div>
