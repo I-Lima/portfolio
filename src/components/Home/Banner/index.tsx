@@ -58,11 +58,13 @@ export default function Banner() {
 
   if (loading) {
     return (
-      <div className="
+      <div
+        className="
         animate-pulse flex flex-col mt-4 transition-transform bg-customGray h-80 w-80 rounded-xl mb-16
         md:w-[420px] md:h-96
         lg:w-[660px] lg:h-[420px]
-      ">
+      "
+      >
         <div className="h-6 bg-gray-300 rounded w-1/4"></div>
       </div>
     );
