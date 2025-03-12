@@ -13,8 +13,8 @@ function LanguageSwitch() {
   const _handleOpen = () => setOpen(!open);
 
   const src = {
-    en: "/images/English.png",
-    pt: "/images/Portuguese.png",
+    en: "/images/English.webp",
+    pt: "/images/Portuguese.webp",
   };
 
   const _renderList = () => {
