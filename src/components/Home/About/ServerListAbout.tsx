@@ -41,16 +41,16 @@ const ServerListAbout = ({ dictionary, lang }: Props) => {
 
   const _renderLoading = () => {
     return (
-      <div className="flex flex-col w-screen gap-20 lg:flex-row">
-        <div className="animate-pulse flex flex-col mt-4 transition-transform w-2/3 justify-start">
+      <div className="flex flex-col w-screen gap-40 lg:flex-row">
+        <div className="animate-pulse flex flex-col mt-4 transition-transform w-2/5 justify-start">
           <div className="flex flex-row items-center ">
             <div className="bg-customGray h-16 w-1/2 mr-24" />
             <div
               className="bg-customGray mt-4"
               style={{
                 borderRadius: dimensions.width / 2,
-                width: dimensions.width / 7,
-                height: dimensions.width / 7,
+                width: dimensions.width / 9,
+                height: dimensions.width / 9,
               }}
             />
           </div>
@@ -64,11 +64,11 @@ const ServerListAbout = ({ dictionary, lang }: Props) => {
           </div>
         </div>
 
-        <div className="flex flex-col md:flex-row md:justify-between">
+        <div className="flex flex-col">
           <div className="animate-pulse flex flex-col mt-4 transition-transform w-2/3 justify-start">
             <div className="bg-customGray h-8 w-56" />
 
-            <div className="mt-4 flex flex-row gap-4 md:flex-wrap md:max-w-md">
+            <div className="mt-4 flex flex-row gap-4 md:flex-wrap ml-4">
               <div className="bg-customGray h-16 w-16 rounded lg:h-20 lg:w-20" />
               <div className="bg-customGray h-16 w-16 rounded lg:h-20 lg:w-20" />
               <div className="bg-customGray h-16 w-16 rounded lg:h-20 lg:w-20" />
@@ -80,7 +80,7 @@ const ServerListAbout = ({ dictionary, lang }: Props) => {
           <div className="animate-pulse flex flex-col mt-4 transition-transform w-2/3 justify-start">
             <div className="bg-customGray h-8 w-56" />
 
-            <div className="mt-4 flex flex-col gap-4 md:flex-wrap">
+            <div className="mt-4 flex flex-col gap-4 md:flex-wrap ml-4">
               {[...Array(3)].map((_, i) => (
                 <div key={i} className="flex flex-row gap-2 align-center">
                   <div className="bg-customGray h-4 w-16" />

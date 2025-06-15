@@ -9,8 +9,6 @@
   - [Descrição](#descrição)
     - [Protótipo](#protótipo)
     - [Flowchart](#flowchart)
-  - [Requisitos](#requisitos)
-  - [Passo-a-passo para executar](#passo-a-passo-para-executar)
   - [Tecnologias utilizadas](#tecnologias-utilizadas)
 
 ## Descrição
@@ -28,32 +26,6 @@ Acesse o protótipo: [Link de acesso](https://www.figma.com/design/4E7TKK9CLy4jS
 ### Flowchart
 
 Acesse o flowchart: [Link de acesso](https://www.figma.com/board/aY1I3HjaBjeczUBDP71taQ/Portf%C3%B3lio---Flowchart?node-id=0-1&t=E6cr032aNHNbb5xO-1)
-
-## Requisitos
-
-- Nodejs 18.17.1
-
-## Passo-a-passo para executar
-
-1. Clone o repositório `https://github.com/I-Lima/portfolio-Nextjs.git`
-2. Importe o projeto na sua IDE preferida
-3. Execute o seguinte comando para instalar as bibliotecas:
-
-    ```bash
-    yarn
-    #ou
-    npm i
-    ```
-
-4. Execute o seguinte comando para rodar a aplicação:
-
-      ```bash
-      yarn dev
-      #ou
-      npm run dev
-      ```
-
-5. Acessa pela URL `http://localhost:3000/`
 
 ## Tecnologias utilizadas
 

@@ -49,7 +49,7 @@ function LanguageSwitch() {
       </div>
 
       <div
-        className={`absolute mt-14 right-4 w-24 bg-bgWhite rounded-md z-10 transition duration-150 ease-in ${open ? "max-h-screen opacity-100" : "max-h-0 opacity-0"}`}
+        className={`absolute mt-11 w-24 bg-bgWhite rounded-md z-10 transition duration-150 ease-in ${open ? "max-h-screen opacity-100" : "max-h-0 opacity-0"}`}
       >
         {_renderList()}
       </div>
