@@ -15,7 +15,7 @@ export default function Projects() {
   return (
     <div
       id="projects"
-      className="flex flex-col max-w-screen w-full py-8 mb-20 px-6"
+      className="flex flex-col max-w-screen w-full py-8 mb-20"
     >
       <div className="flex flex-col items-start">
         <SectionTitle title={dictionary.section} />
@@ -25,7 +25,7 @@ export default function Projects() {
         className="
           grid justify-items-center gap-6
           md:grid-cols-2
-          lg:px-4 lg:ap-4 lg:items-start lg:grid-cols-2
+          lg:px-8 lg:ap-4 lg:items-start lg:grid-cols-2
           2xl:grid-cols-3
         "
       >

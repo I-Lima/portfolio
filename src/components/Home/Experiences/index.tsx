@@ -15,7 +15,7 @@ export default function Experiences() {
   return (
     <div
       id="experiences"
-      className="flex flex-col max-w-screen w-full mb-20 px-6"
+      className="flex flex-col max-w-screen w-full mb-20"
     >
       <div className="flex flex-col items-start">
         <SectionTitle title={dictionary.section} />
