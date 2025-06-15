@@ -13,10 +13,7 @@ export default function Experiences() {
   const _renderList = ServerListExperiences({ dictionary, lang });
 
   return (
-    <div
-      id="experiences"
-      className="flex flex-col max-w-screen w-full mb-20 px-6"
-    >
+    <div id="experiences" className="flex flex-col max-w-screen w-full mb-20">
       <div className="flex flex-col items-start">
         <SectionTitle title={dictionary.section} />
       </div>
