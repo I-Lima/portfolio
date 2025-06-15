@@ -35,7 +35,10 @@ export default function RootLayout({
   return (
     <html lang={lang} suppressHydrationWarning>
       <body
-        className={gentiumBookPlus.className + " bg-bgWhite dark:bg-bgBlack"}
+        className={
+          gentiumBookPlus.className +
+          " bg-bgWhite dark:bg-bgBlack transition-colors duration-500 "
+        }
         style={{ overflowX: "hidden" }}
       >
         <Providers lang={lang}>
