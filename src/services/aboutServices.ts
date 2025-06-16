@@ -1,4 +1,4 @@
-import { getAboutData } from "@/Repositories/aboutRepository";
+import { getAboutData } from "@/repositories/aboutRepository";
 import { dataProps } from "@/types/api";
 import { aboutProps, aboutReturnProps } from "@/types/about";
 import to from "await-to-js";

@@ -1,4 +1,4 @@
-import { getExperienceData } from "@/Repositories/experienceRepository";
+import { getExperienceData } from "@/repositories/experienceRepository";
 import { dataProps } from "@/types/api";
 import { experiencesProps } from "@/types/dictionaries";
 import {
