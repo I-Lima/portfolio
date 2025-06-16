@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "next lint",
     "test": "jest",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage"
   },
   "dependencies": {
     "@formatjs/intl-localematcher": "^0.5.10",
@@ -48,6 +49,7 @@
     "postcss": "^8",
     "prettier": "^3.2.5",
     "tailwindcss": "^3.3.0",
+    "ts-jest": "^29.4.0",
     "ts-node": "^10.9.2",
     "typescript": "^5"
   }
