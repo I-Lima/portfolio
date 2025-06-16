@@ -75,7 +75,7 @@ describe("ExperienceServices", () => {
       expect(result?.[0].history[0].role).toBe("Desenvolvedor");
     });
 
-    it("retorna null em caso de erro", async () => {
+    it("should return null if the fetch fails", async () => {
       (getExperienceData as jest.Mock).mockRejectedValue(new Error("fail"));
 
       const result = await ExperienceServices.getPreviewExperiencesData({
@@ -88,7 +88,7 @@ describe("ExperienceServices", () => {
   });
 
   describe("getAllExperienceData", () => {
-    it("retorna dados completos de experiência", async () => {
+    it("should return all experience data", async () => {
       (getExperienceData as jest.Mock).mockResolvedValue({
         data: mockExperienceData,
       });
@@ -103,7 +103,7 @@ describe("ExperienceServices", () => {
       expect(result?.[0].history[0].role).toBe("Desenvolvedor");
     });
 
-    it("retorna null se o fetch falhar", async () => {
+    it("should return null if the fetch fails", async () => {
       (getExperienceData as jest.Mock).mockRejectedValue(new Error("fail"));
 
       const result = await ExperienceServices.getAllExperienceData({

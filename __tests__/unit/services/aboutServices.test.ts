@@ -37,7 +37,7 @@ describe("AboutServices.getAboutData", () => {
     jest.clearAllMocks();
   });
 
-  it("retorna os dados processados corretamente para o idioma EN", async () => {
+  it("Should returns the correctly processed data for the EN language", async () => {
     mockedGetAboutData.mockResolvedValue(fakeData);
 
     const result = await AboutServices.getAboutData(LANGUAGES[0]);
@@ -50,7 +50,7 @@ describe("AboutServices.getAboutData", () => {
     ]);
   });
 
-  it("retorna os dados corretamente para o idioma PT", async () => {
+  it("should returns the correctly processed data for the PT language", async () => {
     mockedGetAboutData.mockResolvedValue(fakeData);
 
     const result = await AboutServices.getAboutData(LANGUAGES[1]);
@@ -61,7 +61,7 @@ describe("AboutServices.getAboutData", () => {
     );
   });
 
-  it("retorna null se getAboutData lança erro", async () => {
+  it("should return null if the fetch fails", async () => {
     mockedGetAboutData.mockRejectedValue(new Error("Erro de rede"));
 
     const result = await AboutServices.getAboutData(LANGUAGES[0]);

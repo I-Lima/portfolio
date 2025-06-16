@@ -29,7 +29,7 @@ describe("ProjectsServices", () => {
     jest.clearAllMocks();
   });
 
-  it("retorna apenas projetos com o tópico 'pinned', ordenados por data", async () => {
+  it("should return only pinned projects, ordered by updated_at", async () => {
     (getProjectsData as jest.Mock).mockResolvedValue({
       data: mockProjects,
     });
@@ -42,7 +42,7 @@ describe("ProjectsServices", () => {
     expect(result?.[1].name).toBe("Project A");
   });
 
-  it("retorna null em caso de erro", async () => {
+  it("should return null if the fetch fails", async () => {
     (getProjectsData as jest.Mock).mockRejectedValue(new Error("Fail"));
 
     const service = new ProjectsServices();

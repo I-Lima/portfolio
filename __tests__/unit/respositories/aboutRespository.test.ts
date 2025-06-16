@@ -24,7 +24,7 @@ describe("getAboutData", () => {
     jest.resetAllMocks();
   });
 
-  it("resolve com os dados corretamente", async () => {
+  it("should resolve with the expected data", async () => {
     (global.fetch as jest.Mock).mockResolvedValue({
       json: jest.fn().mockResolvedValue(mockData),
     });
@@ -34,7 +34,7 @@ describe("getAboutData", () => {
     expect(fetch).toHaveBeenCalledWith("/api/about", { method: "GET" });
   });
 
-  it("rejeita se o fetch falhar", async () => {
+  it("should reject with an error", async () => {
     const error = new Error("Failed to fetch");
 
     (global.fetch as jest.Mock).mockRejectedValue(error);
