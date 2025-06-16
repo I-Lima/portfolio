@@ -3,7 +3,7 @@ import { getAboutData as mockGetAboutData } from "@/Repositories/aboutRepository
 import { LANGUAGES } from "@/constant/language";
 import { dataProps } from "@/types/api";
 
-jest.mock("@/repositories/aboutRepository", () => ({
+jest.mock("@/Repositories/aboutRepository", () => ({
   getAboutData: jest.fn(),
 }));
 
