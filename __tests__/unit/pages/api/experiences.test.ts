@@ -1,4 +1,4 @@
-import handler from "@/pages/api/experiences"; // ajuste o caminho conforme sua estrutura
+import handler from "@/pages/api/experiences";
 import experiencesDAO from "@/daos/experiencesDAO";
 import responseBuilder from "@/utils/responseBuilder";
 import { createMocks } from "node-mocks-http";
