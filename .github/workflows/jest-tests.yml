@@ -20,7 +20,7 @@ jobs:
           node-version: '18.20.6'
 
       - name: Install dependencies
-        run: yarn ci
+        run: yarn
 
       - name: Run Jest tests
         run: yarn test -- --coverage
