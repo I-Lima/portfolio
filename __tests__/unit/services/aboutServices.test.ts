@@ -1,5 +1,5 @@
 import AboutServices from "@/services/aboutServices";
-import { getAboutData as mockGetAboutData } from "@/repositories/aboutRepository";
+import { getAboutData as mockGetAboutData } from "@/Repositories/aboutRepository";
 import { LANGUAGES } from "@/constant/language";
 import { dataProps } from "@/types/api";
 

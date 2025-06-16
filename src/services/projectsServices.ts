@@ -1,4 +1,4 @@
-import { getProjectsData } from "@/repositories/projectsRepository";
+import { getProjectsData } from "@/Repositories/projectsRepository";
 import { dataProps } from "@/types/api";
 import { ProjectData } from "@/types/repository";
 import to from "await-to-js";
