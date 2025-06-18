@@ -12,10 +12,10 @@ const config: Config = {
       customBlue: "#0AC8FF",
       customGreen: "#00D0D0",
       customGray: "#CDCDCD",
-      bgBlack: "#000814",
+      bgBlack: "#021025",
       black: "#000",
       white: "#FFF",
-      bgWhite: "#f8f8ff",
+      bgWhite: "#F5F5F5",
     },
     fontFamily: {
       "gentium-book-plus": ["--font-gentium-book-plus"],
