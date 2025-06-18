@@ -48,28 +48,30 @@ export default function Contact() {
         <div className="flex flex-col gap-4 mt-24 md:flex-row md:gap-12">
           {_renderCardComponent(
             <div className="flex flex-col items-center">
-              <Image
-                src="/images/linkedin_bgd.svg"
-                alt="linkedin icon"
-                width={60}
-                height={60}
-                className="mb-4"
-                lazyRoot="true"
-              />
+              <div className="bg-bgBlack p-1 rounded mb-4">
+                <Image
+                  src="/images/linkedin_bgd.svg"
+                  alt="linkedin icon"
+                  width={60}
+                  height={30}
+                  lazyRoot="true"
+                />
+              </div>
               <p className="text-lg text-center max-w-2xl">Ingrid Lima</p>
             </div>,
             () => window.open(LINKEDIN),
           )}
           {_renderCardComponent(
             <div className="flex flex-col items-center">
-              <Image
-                src="/images/mail_icon_2.svg"
-                alt="Mail icon"
-                width={60}
-                height={60}
-                className="mb-4"
-                lazyRoot="true"
-              />
+              <div className="bg-bgBlack px-1 rounded mb-4">
+                <Image
+                  src="/images/mail_icon_2.svg"
+                  alt="Mail icon"
+                  width={60}
+                  height={30}
+                  lazyRoot="true"
+                />
+              </div>
               <p className="text-lg text-center max-w-2xl">
                 ibezerradelima@gmail.com
               </p>
