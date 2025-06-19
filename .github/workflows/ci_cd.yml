@@ -60,7 +60,7 @@ jobs:
   deploy-prod:
     name: Deploy to Vercel
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main'
+    if:  github.event_name == 'push' &&  github.ref == 'refs/heads/main'
 
     steps:
       - name: Checkout code
@@ -85,7 +85,7 @@ jobs:
   deploy-dev:
     name: Deploy to Vercel
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/development'
+    if:  github.event_name == 'push' &&  github.ref == 'refs/heads/development'
 
     steps:
       - name: Checkout code
