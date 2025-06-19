@@ -4,6 +4,7 @@ import ServerExperiences from "./ServerExperiences";
 import Filter from "@/components/ui/Filter";
 import Search from "@/components/ui/Search";
 import { useDictionary } from "@/context/DictionaryContext";
+import BackToTopButton from "@/components/ui/backToTopButton";
 
 export default function Experiences() {
   const { dictionary: dictionaries, lang } = useDictionary();
@@ -35,6 +36,8 @@ export default function Experiences() {
       <div className="flex flex-col gap-8 justify-center lg:px-10">
         {_renderList}
       </div>
+
+      <BackToTopButton />
     </div>
   );
 }
