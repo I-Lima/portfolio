@@ -33,7 +33,7 @@ export default function RootLayout({
   const { lang } = params;
 
   return (
-    <html lang={lang} suppressHydrationWarning>
+    <html lang={lang} suppressHydrationWarning className="scroll-smooth">
       <body
         className={
           gentiumBookPlus.className +

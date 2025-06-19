@@ -8,6 +8,7 @@ import { Locale } from "../../../i18n-config";
 import { getDictionary } from "../../getDictionary";
 import { dictionariesProps } from "@/types/dictionaries";
 import LanguageSwitch from "@/components/ui/LanguageSwitch";
+import BackToTopButton from "@/components/ui/backToTopButton";
 
 export default async function Home({ params }: { params: { lang: Locale } }) {
   const { lang } = params;
@@ -43,6 +44,8 @@ export default async function Home({ params }: { params: { lang: Locale } }) {
       <Projects />
 
       <Contact />
+
+      <BackToTopButton />
     </main>
   );
 }
