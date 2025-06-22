@@ -17,7 +17,7 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="px-4 py-4 bg-bgWhite dark:bg-bgBlack z-50 fixed mx-auto flex items-center justify-between w-full max-w-full lg:py-2 lg:px-8">
+    <nav className="px-4 py-4 bg-bgWhite dark:bg-bgBlack z-50 fixed mx-auto flex items-center justify-between w-full max-w-full lg:py-2 lg:px- border-b border-customGray dark:border-opacity-10 border-opacity-50">
       <div>
         <a href="/">
           <Image

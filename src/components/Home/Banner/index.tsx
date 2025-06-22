@@ -78,7 +78,7 @@ export default function Banner() {
         </div>
       </div>
 
-      <div className="absolute bg-bgWhite dark:bg-black rounded-xl border-white">
+      <div className="absolute bg-bgWhite dark:bg-bgBlack rounded-xl border-white">
         <div className="mx-8 my-10 md:my-20 md:mx-12 lg:mx-26 lg:my-16">
           {_renderMainComponent(dictionary!)}
         </div>
