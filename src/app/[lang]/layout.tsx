@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-sync-scripts */
 import type { Metadata } from "next";
 import { Gentium_Book_Plus } from "next/font/google";
 import "./globals.css";
@@ -34,6 +35,9 @@ export default function RootLayout({
 
   return (
     <html lang={lang} suppressHydrationWarning className="scroll-smooth">
+      <head>
+        <script src="https://mfe.ffit.com.br/public-files/js/ffit-tracker.min.js"></script>
+      </head>
       <body
         className={
           gentiumBookPlus.className +
