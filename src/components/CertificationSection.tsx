@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'motion/react';
 import { Language } from '../types';
 import { CERTIFICATIONS } from '../data/portfolioData';
 import { 
@@ -59,13 +60,25 @@ export const CertificationSection: React.FC<CertificationSectionProps> = ({ curr
     <section id="certificacao" className="py-20 border-t border-white/[0.06] relative bg-[#0a0c12]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <div className="relative rounded-3xl bg-gradient-to-b from-[#121520] to-[#0c0e15] border border-[#09C8FF]/30 p-8 sm:p-12 shadow-2xl overflow-hidden">
+        <motion.div 
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.6 }}
+          className="relative rounded-3xl bg-gradient-to-b from-[#121520] to-[#0c0e15] border border-[#09C8FF]/30 p-8 sm:p-12 shadow-2xl overflow-hidden"
+        >
           
           <div className="absolute top-0 right-0 w-96 h-96 bg-[#09C8FF]/[0.06] blur-[100px] pointer-events-none rounded-full" />
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center relative z-10">
             
-            <div className="lg:col-span-7 space-y-5">
+            <motion.div 
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="lg:col-span-7 space-y-5"
+            >
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#09C8FF]/10 border border-[#09C8FF]/30 text-[#09C8FF] font-mono text-xs font-semibold">
                 <ShieldCheck className="w-4 h-4" />
                 <span>Certificação Internacional Reconhecida</span>
@@ -86,10 +99,17 @@ export const CertificationSection: React.FC<CertificationSectionProps> = ({ curr
                 </span>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                   {cert.skillsCovered.map((skill, idx) => (
-                    <div key={idx} className="flex items-center gap-2 text-xs text-zinc-300">
+                    <motion.div 
+                      key={idx} 
+                      initial={{ opacity: 0, x: -6 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: 0.2 + idx * 0.05 }}
+                      className="flex items-center gap-2 text-xs text-zinc-300"
+                    >
                       <CheckCircle className="w-4 h-4 text-[#09C8FF] shrink-0" />
                       <span>{skill}</span>
-                    </div>
+                    </motion.div>
                   ))}
                 </div>
               </div>
@@ -100,38 +120,43 @@ export const CertificationSection: React.FC<CertificationSectionProps> = ({ curr
                   href={cert.link}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center gap-2 text-xs font-semibold font-mono text-[#09C8FF] hover:text-[#4cd7ff] transition-colors"
+                  className="inline-flex items-center gap-2 text-xs font-semibold font-mono text-[#09C8FF] hover:text-[#4cd7ff] transition-colors active:scale-95"
                 >
                   <span>{currentLang === 'pt' ? 'Verificar Padrão ISTQB' : 'Verify ISTQB Standard'}</span>
                   <ExternalLink className="w-3.5 h-3.5" />
                 </a>
               </div>
-            </div>
+            </motion.div>
 
-            {/* Right Col: Why this matters (Engineering Value Proposition) */}
+            {/* Right Col: QA Principles with staggered animations and hover interactions */}
             <div className="lg:col-span-5 grid grid-cols-1 gap-3">
               {qaPrinciples.map((item, idx) => {
                 const Icon = item.icon;
                 return (
-                  <div
+                  <motion.div
                     key={idx}
-                    className="p-4 rounded-xl bg-zinc-900/60 border border-white/[0.05] hover:border-[#09C8FF]/30 transition-all space-y-1"
+                    initial={{ opacity: 0, x: 20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true, amount: 0.2 }}
+                    transition={{ duration: 0.4, delay: 0.15 + idx * 0.1 }}
+                    whileHover={{ scale: 1.02, x: 4, borderColor: 'rgba(9, 200, 255, 0.4)' }}
+                    className="p-4 rounded-xl bg-zinc-900/60 border border-white/[0.05] transition-all space-y-1 group cursor-default"
                   >
-                    <div className="flex items-center gap-2.5 text-zinc-100 text-xs font-bold font-mono">
-                      <Icon className="w-4 h-4 text-[#09C8FF]" />
+                    <div className="flex items-center gap-2.5 text-zinc-100 text-xs font-bold font-mono group-hover:text-[#09C8FF] transition-colors">
+                      <Icon className="w-4 h-4 text-[#09C8FF] group-hover:scale-110 transition-transform" />
                       <span>{item.title[currentLang]}</span>
                     </div>
                     <p className="text-[11px] text-zinc-400 leading-relaxed pl-6.5">
                       {item.desc[currentLang]}
                     </p>
-                  </div>
+                  </motion.div>
                 );
               })}
             </div>
 
           </div>
 
-        </div>
+        </motion.div>
 
       </div>
     </section>
