@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'motion/react';
 import { Language } from '../types';
 import { 
   Layers, 
@@ -10,7 +11,8 @@ import {
   Layout, 
   Check, 
   Sparkles,
-  ArrowRight
+  ArrowRight,
+  Activity
 } from 'lucide-react';
 
 interface MicroFrontendVisualizerProps {
@@ -149,7 +151,13 @@ export const MicroFrontendVisualizer: React.FC<MicroFrontendVisualizerProps> = (
     <section id="arquitetura" className="py-20 border-t border-white/[0.06] relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <div className="space-y-3 max-w-3xl mb-12">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.6 }}
+          className="space-y-3 max-w-3xl mb-12"
+        >
           <div className="inline-flex items-center gap-2 text-xs font-mono font-semibold uppercase tracking-widest text-[#09C8FF]">
             <Boxes className="w-3.5 h-3.5" />
             <span>{currentLang === 'pt' ? 'Especialidade de Engenharia' : 'Engineering Focus'}</span>
@@ -159,18 +167,29 @@ export const MicroFrontendVisualizer: React.FC<MicroFrontendVisualizerProps> = (
           </h2>
           <p className="text-zinc-400 text-sm sm:text-base leading-relaxed">
             {currentLang === 'pt'
-              ? 'Conhecimento prático vivenciado na FFIT em projetos internos corporativos: estruturação de aplicações modulares em React e TypeScript para alta escalabilidade, isolamento de domínios e deploys desacoplados.'
-              : 'Real-world expertise cultivated at FFIT across enterprise platforms: architecting modular React and TypeScript applications for high scalability, domain isolation, and decoupled deployments.'}
+              ? 'Conhecimento prático vivenciado projetos corporativos: estruturação de aplicações modulares em React e TypeScript para alta escalabilidade, isolamento de domínios e deploys desacoplados. Clique nos blocos abaixo para explorar as camadas.'
+              : 'Practical experience gained on corporate platforms: architecting modular React and TypeScript applications for high scalability, domain isolation, and decoupled deployments. Click blocks below to inspect each layer.'}
           </p>
-        </div>
+        </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-          <div className="lg:col-span-7 space-y-4">
-            <div 
+          
+          {/* Architectural Nodes Map */}
+          <motion.div 
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.6 }}
+            className="lg:col-span-7 space-y-4"
+          >
+            {/* Host Container */}
+            <motion.div 
+              whileHover={{ scale: 1.015 }}
+              whileTap={{ scale: 0.99 }}
               onClick={() => setSelectedNode('shell')}
-              className={`p-5 rounded-2xl border transition-all cursor-pointer ${
+              className={`p-5 rounded-2xl border transition-all cursor-pointer relative overflow-hidden ${
                 selectedNode === 'shell'
-                  ? 'bg-[#09C8FF]/10 border-[#09C8FF]/80 shadow-lg shadow-[#09C8FF]/15'
+                  ? 'bg-[#09C8FF]/15 border-[#09C8FF] shadow-lg shadow-[#09C8FF]/20 ring-1 ring-[#09C8FF]/30'
                   : 'bg-zinc-900/40 border-white/[0.08] hover:border-white/20'
               }`}
             >
@@ -184,66 +203,99 @@ export const MicroFrontendVisualizer: React.FC<MicroFrontendVisualizerProps> = (
                     <p className="text-xs text-zinc-400 font-mono">React + TypeScript • Auth, Router, Remotes Orchestrator</p>
                   </div>
                 </div>
-                <span className="text-xs font-mono px-2 py-0.5 rounded bg-[#09C8FF]/20 text-[#09C8FF] font-semibold">
-                  Orquestrador
-                </span>
+                <div className="flex items-center gap-2">
+                  {selectedNode === 'shell' && (
+                    <span className="w-2 h-2 rounded-full bg-[#09C8FF] animate-ping" />
+                  )}
+                  <span className="text-xs font-mono px-2 py-0.5 rounded bg-[#09C8FF]/20 text-[#09C8FF] font-semibold">
+                    Orquestrador
+                  </span>
+                </div>
               </div>
+            </motion.div>
+
+            {/* Dynamic Mount Connectors */}
+            <div className="flex justify-around px-8 text-zinc-500 text-xs font-mono items-center">
+              <span className="flex items-center gap-1">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#09C8FF] animate-pulse" />
+                ↓ Dynamic Mount
+              </span>
+              <span className="flex items-center gap-1">
+                <span className="w-1.5 h-1.5 rounded-full bg-purple-400 animate-pulse" />
+                ↓ Dynamic Mount
+              </span>
             </div>
 
-            <div className="flex justify-around px-8 text-zinc-600 text-xs font-mono">
-              <span>↓ Dynamic Mount</span>
-              <span>↓ Dynamic Mount</span>
-            </div>
-
+            {/* MFEs Grid */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div 
+              <motion.div 
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
                 onClick={() => setSelectedNode('mfeA')}
-                className={`p-5 rounded-2xl border transition-all cursor-pointer ${
+                className={`p-5 rounded-2xl border transition-all cursor-pointer relative overflow-hidden ${
                   selectedNode === 'mfeA'
-                    ? 'bg-sky-500/10 border-sky-400/80 shadow-lg shadow-sky-500/10'
+                    ? 'bg-sky-500/15 border-sky-400 shadow-lg shadow-sky-500/20 ring-1 ring-sky-400/30'
                     : 'bg-zinc-900/40 border-white/[0.08] hover:border-white/20'
                 }`}
               >
-                <div className="flex items-center gap-3 mb-2">
-                  <div className="w-8 h-8 rounded-lg bg-sky-500/20 text-sky-400 flex items-center justify-center">
-                    <Layout className="w-4 h-4" />
+                <div className="flex items-center justify-between mb-2">
+                  <div className="flex items-center gap-3">
+                    <div className="w-8 h-8 rounded-lg bg-sky-500/20 text-sky-400 flex items-center justify-center">
+                      <Layout className="w-4 h-4" />
+                    </div>
+                    <h4 className="font-bold text-white text-xs sm:text-sm">MFE: Operações Core</h4>
                   </div>
-                  <h4 className="font-bold text-white text-xs sm:text-sm">MFE: Operações Core</h4>
+                  {selectedNode === 'mfeA' && (
+                    <span className="w-2 h-2 rounded-full bg-sky-400 animate-ping" />
+                  )}
                 </div>
                 <p className="text-[11px] text-zinc-400 font-mono">
                   React, TS, Redux • Deploy Independente
                 </p>
-              </div>
+              </motion.div>
 
-              <div 
+              <motion.div 
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
                 onClick={() => setSelectedNode('mfeB')}
-                className={`p-5 rounded-2xl border transition-all cursor-pointer ${
+                className={`p-5 rounded-2xl border transition-all cursor-pointer relative overflow-hidden ${
                   selectedNode === 'mfeB'
-                    ? 'bg-purple-500/10 border-purple-400/80 shadow-lg shadow-purple-500/10'
+                    ? 'bg-purple-500/15 border-purple-400 shadow-lg shadow-purple-500/20 ring-1 ring-purple-400/30'
                     : 'bg-zinc-900/40 border-white/[0.08] hover:border-white/20'
                 }`}
               >
-                <div className="flex items-center gap-3 mb-2">
-                  <div className="w-8 h-8 rounded-lg bg-purple-500/20 text-purple-400 flex items-center justify-center">
-                    <Cpu className="w-4 h-4" />
+                <div className="flex items-center justify-between mb-2">
+                  <div className="flex items-center gap-3">
+                    <div className="w-8 h-8 rounded-lg bg-purple-500/20 text-purple-400 flex items-center justify-center">
+                      <Cpu className="w-4 h-4" />
+                    </div>
+                    <h4 className="font-bold text-white text-xs sm:text-sm">MFE: BI & Dashboards</h4>
                   </div>
-                  <h4 className="font-bold text-white text-xs sm:text-sm">MFE: BI & Dashboards</h4>
+                  {selectedNode === 'mfeB' && (
+                    <span className="w-2 h-2 rounded-full bg-purple-400 animate-ping" />
+                  )}
                 </div>
                 <p className="text-[11px] text-zinc-400 font-mono">
                   React, TS • Lazy Loaded Analytics
                 </p>
-              </div>
+              </motion.div>
             </div>
 
-            <div className="flex justify-center text-zinc-600 text-xs font-mono">
-              <span>↓ Tokens & Components</span>
+            <div className="flex justify-center text-zinc-500 text-xs font-mono items-center">
+              <span className="flex items-center gap-1">
+                <span className="w-1.5 h-1.5 rounded-full bg-pink-400 animate-pulse" />
+                ↓ Tokens & Components
+              </span>
             </div>
 
-            <div 
+            {/* Design System Node */}
+            <motion.div 
+              whileHover={{ scale: 1.015 }}
+              whileTap={{ scale: 0.99 }}
               onClick={() => setSelectedNode('designSystem')}
-              className={`p-5 rounded-2xl border transition-all cursor-pointer ${
+              className={`p-5 rounded-2xl border transition-all cursor-pointer relative overflow-hidden ${
                 selectedNode === 'designSystem'
-                  ? 'bg-pink-500/10 border-pink-400/80 shadow-lg shadow-pink-500/10'
+                  ? 'bg-pink-500/15 border-pink-400 shadow-lg shadow-pink-500/20 ring-1 ring-pink-400/30'
                   : 'bg-zinc-900/40 border-white/[0.08] hover:border-white/20'
               }`}
             >
@@ -257,21 +309,32 @@ export const MicroFrontendVisualizer: React.FC<MicroFrontendVisualizerProps> = (
                     <p className="text-xs text-zinc-400 font-mono">UI Kit, Acessibilidade, Componentes Atômicos Pixel-Perfect</p>
                   </div>
                 </div>
-                <span className="text-xs font-mono px-2 py-0.5 rounded bg-pink-400/20 text-pink-300">
-                  Figma / UI
-                </span>
+                <div className="flex items-center gap-2">
+                  {selectedNode === 'designSystem' && (
+                    <span className="w-2 h-2 rounded-full bg-pink-400 animate-ping" />
+                  )}
+                  <span className="text-xs font-mono px-2 py-0.5 rounded bg-pink-400/20 text-pink-300">
+                    Figma / UI
+                  </span>
+                </div>
               </div>
+            </motion.div>
+
+            <div className="flex justify-center text-zinc-500 text-xs font-mono items-center">
+              <span className="flex items-center gap-1">
+                <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse" />
+                ↓ RESTful APIs & Gateways
+              </span>
             </div>
 
-            <div className="flex justify-center text-zinc-600 text-xs font-mono">
-              <span>↓ RESTful APIs & Gateways</span>
-            </div>
-
-            <div 
+            {/* Backend Node */}
+            <motion.div 
+              whileHover={{ scale: 1.015 }}
+              whileTap={{ scale: 0.99 }}
               onClick={() => setSelectedNode('backend')}
-              className={`p-5 rounded-2xl border transition-all cursor-pointer ${
+              className={`p-5 rounded-2xl border transition-all cursor-pointer relative overflow-hidden ${
                 selectedNode === 'backend'
-                  ? 'bg-amber-500/10 border-amber-400/80 shadow-lg shadow-amber-500/10'
+                  ? 'bg-amber-500/15 border-amber-400 shadow-lg shadow-amber-500/20 ring-1 ring-amber-400/30'
                   : 'bg-zinc-900/40 border-white/[0.08] hover:border-white/20'
               }`}
             >
@@ -285,50 +348,85 @@ export const MicroFrontendVisualizer: React.FC<MicroFrontendVisualizerProps> = (
                     <p className="text-xs text-zinc-400 font-mono">Node.js + TypeScript, Java 11/Spring, Bitbucket CI/CD</p>
                   </div>
                 </div>
-                <span className="text-xs font-mono px-2 py-0.5 rounded bg-amber-400/20 text-amber-300">
-                  Microservices
-                </span>
+                <div className="flex items-center gap-2">
+                  {selectedNode === 'backend' && (
+                    <span className="w-2 h-2 rounded-full bg-amber-400 animate-ping" />
+                  )}
+                  <span className="text-xs font-mono px-2 py-0.5 rounded bg-amber-400/20 text-amber-300">
+                    Microservices
+                  </span>
+                </div>
               </div>
-            </div>
+            </motion.div>
 
-          </div>
+          </motion.div>
 
-          <div className="lg:col-span-5 p-6 rounded-2xl bg-zinc-900/80 border border-white/[0.08] space-y-5 sticky top-24">
-            <div>
-              <span className="text-[11px] font-mono text-[#09C8FF] uppercase tracking-wider block mb-1">
-                {currentLang === 'pt' ? 'Módulo Selecionado:' : 'Selected Architectural Node:'}
-              </span>
-              <h3 className="text-xl font-bold text-white">
-                {active.title[currentLang]}
-              </h3>
-              <p className="text-xs font-mono text-zinc-400 mt-1">
-                {active.tech}
-              </p>
-            </div>
+          {/* Details Pane with AnimatePresence on user interaction */}
+          <motion.div 
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.6, delay: 0.15 }}
+            className="lg:col-span-5 p-6 rounded-2xl bg-zinc-900/80 border border-white/[0.08] space-y-5 sticky top-24"
+          >
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={selectedNode}
+                initial={{ opacity: 0, y: 14 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -14 }}
+                transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
+                className="space-y-5"
+              >
+                <div>
+                  <div className="flex items-center justify-between">
+                    <span className="text-[11px] font-mono text-[#09C8FF] uppercase tracking-wider block mb-1">
+                      {currentLang === 'pt' ? 'Módulo Selecionado:' : 'Selected Architectural Node:'}
+                    </span>
+                    <span className="inline-flex items-center gap-1 text-[10px] font-mono px-2 py-0.5 rounded bg-white/[0.05] text-zinc-400 border border-white/[0.06]">
+                      <Activity className="w-3 h-3 text-[#09C8FF]" />
+                      Live Architecture
+                    </span>
+                  </div>
+                  <h3 className="text-xl font-bold text-white">
+                    {active.title[currentLang]}
+                  </h3>
+                  <p className="text-xs font-mono text-zinc-400 mt-1">
+                    {active.tech}
+                  </p>
+                </div>
 
-            <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed">
-              {active.role[currentLang]}
-            </p>
+                <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed">
+                  {active.role[currentLang]}
+                </p>
 
-            <div className="space-y-3 pt-2 border-t border-white/[0.06]">
-              <span className="text-xs font-mono uppercase tracking-wider text-zinc-400 block">
-                {currentLang === 'pt' ? 'Ganhos Práticos de Engenharia:' : 'Practical Engineering Benefits:'}
-              </span>
-              <ul className="space-y-2">
-                {active.benefits[currentLang].map((benefit, i) => (
-                  <li key={i} className="flex items-start gap-2 text-xs text-zinc-300">
-                    <Check className="w-4 h-4 text-[#09C8FF] shrink-0 mt-0.5" />
-                    <span>{benefit}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
+                <div className="space-y-3 pt-2 border-t border-white/[0.06]">
+                  <span className="text-xs font-mono uppercase tracking-wider text-zinc-400 block">
+                    {currentLang === 'pt' ? 'Ganhos Práticos de Engenharia:' : 'Practical Engineering Benefits:'}
+                  </span>
+                  <ul className="space-y-2">
+                    {active.benefits[currentLang].map((benefit, i) => (
+                      <motion.li 
+                        key={i} 
+                        initial={{ opacity: 0, x: -8 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ delay: i * 0.08, duration: 0.3 }}
+                        className="flex items-start gap-2 text-xs text-zinc-300"
+                      >
+                        <Check className="w-4 h-4 text-[#09C8FF] shrink-0 mt-0.5" />
+                        <span>{benefit}</span>
+                      </motion.li>
+                    ))}
+                  </ul>
+                </div>
 
-            <div className="p-3 rounded-xl bg-black/40 border border-white/[0.05] text-[11px] font-mono text-zinc-400 flex items-center justify-between">
-              <span>{currentLang === 'pt' ? 'Padrão corporativo FFIT' : 'FFIT Enterprise Standard'}</span>
-              <span className="text-[#09C8FF] font-semibold">Production Tested</span>
-            </div>
-          </div>
+                <div className="p-3 rounded-xl bg-black/40 border border-white/[0.05] text-[11px] font-mono text-zinc-400 flex items-center justify-between">
+                  <span>{currentLang === 'pt' ? 'Padrão corporativo FFIT' : 'FFIT Enterprise Standard'}</span>
+                  <span className="text-[#09C8FF] font-semibold">Production Tested</span>
+                </div>
+              </motion.div>
+            </AnimatePresence>
+          </motion.div>
 
         </div>
 

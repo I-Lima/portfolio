@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'motion/react';
 import { GithubRepo, getRepoCategory } from '../services/githubService';
 import { Language } from '../types';
 import { 
@@ -53,9 +54,12 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
   };
 
   return (
-    <div 
+    <motion.div 
+      layout
+      whileHover={{ y: -6, borderColor: 'rgba(9, 200, 255, 0.5)' }}
+      whileTap={{ scale: 0.98 }}
       onClick={() => onOpenReadme(repo)}
-      className="group relative flex flex-col justify-between rounded-2xl bg-[#0c0e14] border border-white/[0.07] hover:border-[#09C8FF]/40 transition-all duration-300 p-6 sm:p-7 shadow-lg hover:shadow-[#09C8FF]/10 hover:-translate-y-1 cursor-pointer"
+      className="group relative flex flex-col justify-between rounded-2xl bg-[#0c0e14] border border-white/[0.07] transition-all duration-300 p-6 sm:p-7 shadow-lg hover:shadow-[#09C8FF]/10 cursor-pointer"
     >
       <div className="absolute -inset-px rounded-2xl bg-gradient-to-b from-[#09C8FF]/15 via-transparent to-transparent opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity duration-300" />
 
@@ -144,6 +148,6 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };

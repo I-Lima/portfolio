@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
+import { motion, useInView } from 'motion/react';
 import { Language } from '../types';
 import { PERSONAL_INFO, STATS } from '../data/portfolioData';
 import { InteractiveTerminal } from './InteractiveTerminal';
@@ -20,6 +21,48 @@ interface HeroProps {
   currentLang: Language;
   onOpenCV: () => void;
 }
+
+const AnimatedCounter: React.FC<{ value: string }> = ({ value }) => {
+  const match = value.match(/^(\d+)(.*)$/);
+  const targetNum = match ? parseInt(match[1], 10) : null;
+  const suffix = match ? match[2] : '';
+
+  const [count, setCount] = useState(0);
+  const ref = useRef<HTMLSpanElement>(null);
+  const isInView = useInView(ref, { once: true, amount: 0.5 });
+
+  useEffect(() => {
+    if (!isInView || targetNum === null) return;
+    const duration = 1400; // ms
+    const startTime = performance.now();
+
+    const step = (currentTime: number) => {
+      const elapsed = currentTime - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      // Ease out cubic
+      const easeOut = 1 - Math.pow(1 - progress, 3);
+      setCount(Math.floor(easeOut * targetNum));
+
+      if (progress < 1) {
+        requestAnimationFrame(step);
+      } else {
+        setCount(targetNum);
+      }
+    };
+
+    requestAnimationFrame(step);
+  }, [isInView, targetNum]);
+
+  if (targetNum === null) {
+    return <span>{value}</span>;
+  }
+
+  return (
+    <span ref={ref} className="tabular-nums">
+      {count}{suffix}
+    </span>
+  );
+};
 
 export const Hero: React.FC<HeroProps> = ({ currentLang, onOpenCV }) => {
   const [currentRoleIndex, setCurrentRoleIndex] = useState(0);
@@ -47,7 +90,12 @@ export const Hero: React.FC<HeroProps> = ({ currentLang, onOpenCV }) => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
-        <div className="flex flex-wrap items-center gap-3 mb-6">
+        <motion.div 
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="flex flex-wrap items-center gap-3 mb-6"
+        >
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#09C8FF]/10 border border-[#09C8FF]/25 text-xs text-[#09C8FF] font-medium">
             <span className="w-2 h-2 rounded-full bg-[#09C8FF] animate-ping" />
             <span className="w-2 h-2 rounded-full bg-[#09C8FF] -ml-4" />
@@ -63,11 +111,16 @@ export const Hero: React.FC<HeroProps> = ({ currentLang, onOpenCV }) => {
             <ShieldCheck className="w-3.5 h-3.5 text-[#09C8FF]" />
             <span>ISTQB® CTFL Certified</span>
           </div>
-        </div>
+        </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
           
-          <div className="lg:col-span-7 space-y-6">
+          <motion.div 
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            className="lg:col-span-7 space-y-6"
+          >
             
             <div className="flex items-center gap-4">
               <div className="relative group">
@@ -128,19 +181,20 @@ export const Hero: React.FC<HeroProps> = ({ currentLang, onOpenCV }) => {
                 { name: 'Kotlin', color: 'text-orange-400 border-orange-400/20 bg-orange-400/10' },
                 { name: 'Figma', color: 'text-pink-400 border-pink-400/20 bg-pink-400/10' },
               ].map((tech) => (
-                <span
+                <motion.span
                   key={tech.name}
-                  className={`text-xs font-mono font-medium px-2.5 py-1 rounded-md border ${tech.color}`}
+                  whileHover={{ scale: 1.05 }}
+                  className={`text-xs font-mono font-medium px-2.5 py-1 rounded-md border ${tech.color} cursor-default`}
                 >
                   {tech.name}
-                </span>
+                </motion.span>
               ))}
             </div>
 
             <div className="flex flex-wrap items-center gap-3 pt-3">
               <a
                 href="#projetos"
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#09C8FF] hover:bg-[#4cd7ff] text-[#041a24] font-bold text-sm transition-all shadow-md shadow-[#09C8FF]/20 hover:shadow-[#09C8FF]/30 cursor-pointer"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#09C8FF] hover:bg-[#4cd7ff] text-[#041a24] font-bold text-sm transition-all shadow-md shadow-[#09C8FF]/20 hover:shadow-[#09C8FF]/30 cursor-pointer active:scale-95"
               >
                 <span>{currentLang === 'pt' ? 'Ver Projetos e GitHub' : 'Explore Projects & GitHub'}</span>
                 <ArrowUpRight className="w-4 h-4" />
@@ -148,7 +202,7 @@ export const Hero: React.FC<HeroProps> = ({ currentLang, onOpenCV }) => {
 
               <a
                 href="#consultoria"
-                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-zinc-900/90 hover:bg-zinc-800 border border-white/10 hover:border-[#09C8FF]/40 text-zinc-200 hover:text-white font-medium text-sm transition-all cursor-pointer"
+                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-zinc-900/90 hover:bg-zinc-800 border border-white/10 hover:border-[#09C8FF]/40 text-zinc-200 hover:text-white font-medium text-sm transition-all cursor-pointer active:scale-95"
               >
                 <Compass className="w-4 h-4 text-[#09C8FF]" />
                 <span>{currentLang === 'pt' ? 'Consultorias' : 'Consulting'}</span>
@@ -156,7 +210,7 @@ export const Hero: React.FC<HeroProps> = ({ currentLang, onOpenCV }) => {
 
               <button
                 onClick={onOpenCV}
-                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-zinc-900/60 hover:bg-zinc-800 border border-white/10 text-zinc-300 hover:text-white font-medium text-sm transition-all cursor-pointer"
+                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-zinc-900/60 hover:bg-zinc-800 border border-white/10 text-zinc-300 hover:text-white font-medium text-sm transition-all cursor-pointer active:scale-95"
               >
                 <FileText className="w-4 h-4 text-zinc-400" />
                 <span>{currentLang === 'pt' ? 'Currículo Completo' : 'Complete Resume'}</span>
@@ -203,22 +257,33 @@ export const Hero: React.FC<HeroProps> = ({ currentLang, onOpenCV }) => {
               </a>
             </div>
 
-          </div>
+          </motion.div>
 
-          <div className="lg:col-span-5">
+          <motion.div 
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+            className="lg:col-span-5"
+          >
             <InteractiveTerminal currentLang={currentLang} />
-          </div>
+          </motion.div>
 
         </div>
 
+        {/* Scroll-triggered Animated Stats Row */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 mt-12 sm:mt-16">
           {STATS.map((stat, idx) => (
-            <div
+            <motion.div
               key={idx}
-              className="p-4 sm:p-5 rounded-xl bg-zinc-900/40 border border-white/[0.06] hover:border-[#09C8FF]/40 transition-all group"
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.5, delay: idx * 0.1 }}
+              whileHover={{ y: -4, borderColor: 'rgba(9, 200, 255, 0.4)' }}
+              className="p-4 sm:p-5 rounded-xl bg-zinc-900/40 border border-white/[0.06] transition-all group"
             >
               <div className="text-2xl sm:text-3xl font-bold font-mono text-[#09C8FF] group-hover:text-[#4cd7ff] transition-colors">
-                {stat.value}
+                <AnimatedCounter value={stat.value} />
               </div>
               <div className="text-xs sm:text-sm font-semibold text-zinc-200 mt-1">
                 {stat.label[currentLang]}
@@ -226,7 +291,7 @@ export const Hero: React.FC<HeroProps> = ({ currentLang, onOpenCV }) => {
               <div className="text-[11px] text-zinc-400 mt-0.5">
                 {stat.detail[currentLang]}
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
 
